@@ -11,8 +11,7 @@
 * Windows 32-bit binary: [53.0.2785.116-1](releases/53.0.2785.116-1/windows_32bit)
 * macOS: [55.0.2883.75-1](releases/55.0.2883.75-1/macos)
 
-### By version
-* 
+### [By version](releases)
 
 ## Latest development versions
 
