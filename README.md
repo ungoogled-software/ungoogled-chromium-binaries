@@ -10,4 +10,8 @@ For problems, suggestions, and questions, please use the Issue tracker.
 
 When creating new pages or adding new versions, use an existing version as a template to follow. If you have questions or suggestions, please create an Issue.
 
-Use `utilities/github_release_helper.py` to generate Markdown with the correct URLs to binaries. Pass in `--help` for usage information.
+### Updating the website
+
+Use `utilities/platform_ini_generator.py` to generate INI file content with the correct URLs to binaries. Redirect the standard output to an `.ini` file in the `config/platforms` directory with the corresponding tag version. Pass in `--help` for usage information.
+
+When finished with updating the website, run `utilities/site_generator.py`. There are no arguments

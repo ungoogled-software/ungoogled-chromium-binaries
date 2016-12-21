@@ -1,8 +1,0 @@
-# Download 55.0.2883.95-1, macOS
-
-Link(s) to file downloads:
-
-* [ungoogled-chromium_55.0.2883.95-1_macos.dmg](https://github.com/ungoogled-software/ungoogled-chromium-binaries/releases/download/55.0.2883.95/ungoogled-chromium_55.0.2883.95-1_macos.dmg)
-    * SHA1: `49e4abf0dbeac78cc36ad111e36d188e574aece6`
-    * SHA256: `ce3059098bc77dcc298bf2f81c08bcb541495bdddc3d6a1cc0651fd39ab6f271`
-    * MD5: `79f557b5f472e3431fd34672aa44d84f`

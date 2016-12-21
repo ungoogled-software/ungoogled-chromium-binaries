@@ -1,0 +1,11 @@
+# This file is a list of all of the versions accepted in the config files
+# Used for config file checking
+# Comments must start at the beginning of the line with a "#"
+# Blank lines are ignored
+
+# MAKE SURE TO UPDATE THIS FILE WHEN ADDING NEW VERSIONS
+
+53.0.2785.116-1
+55.0.2883.75-1
+55.0.2883.87-1
+55.0.2883.95-1
