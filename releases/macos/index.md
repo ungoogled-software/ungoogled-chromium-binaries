@@ -1,6 +1,6 @@
 # Directory Listing
 
-Navigation: [Front page](/) / [Releases](/ungoogled-chromium-binaries/releases/) / [macOS](/ungoogled-chromium-binaries/releases/macos)
+Navigation: [Front page](/ungoogled-chromium-binaries/) / [Releases](/ungoogled-chromium-binaries/releases/) / [macOS](/ungoogled-chromium-binaries/releases/macos)
 
 ## Available versions
 

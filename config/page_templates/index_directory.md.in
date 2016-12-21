@@ -1,6 +1,6 @@
 # Directory Listing
 
-Navigation: [Front page](/) / $ungoog{current_path}
+Navigation: $ungoog{current_path}
 
 $ungoog{versions_list}
 $ungoog{directory_list}

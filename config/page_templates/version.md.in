@@ -1,6 +1,6 @@
-# $ungoog(version) Binaries for $ungoog{display_name}
+# $ungoog{version} Binaries for $ungoog{display_name}
 
-Navigation: [Front page](/) / $ungoog{current_path}
+Navigation: $ungoog{current_path}
 
 $ungoog{note}
 $ungoog{download_list}

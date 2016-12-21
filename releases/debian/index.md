@@ -1,6 +1,6 @@
 # Directory Listing
 
-Navigation: [Front page](/) / [Releases](/ungoogled-chromium-binaries/releases/) / [Debian](/ungoogled-chromium-binaries/releases/debian)
+Navigation: [Front page](/ungoogled-chromium-binaries/) / [Releases](/ungoogled-chromium-binaries/releases/) / [Debian](/ungoogled-chromium-binaries/releases/debian)
 
 
 ## Subgroupings

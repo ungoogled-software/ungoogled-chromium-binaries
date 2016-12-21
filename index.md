@@ -18,4 +18,4 @@
     * [32-bit](/ungoogled-chromium-binaries/releases/windows/32bit): [55.0.2883.87-1](/ungoogled-chromium-binaries/releases/windows/32bit/55.0.2883.87-1)
     * [64-bit](/ungoogled-chromium-binaries/releases/windows/64bit): [55.0.2883.87-1](/ungoogled-chromium-binaries/releases/windows/64bit/55.0.2883.87-1)
 
-### [By version](releases)
+### [Browse releases](releases)

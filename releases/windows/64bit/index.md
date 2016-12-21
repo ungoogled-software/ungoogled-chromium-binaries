@@ -1,6 +1,6 @@
 # Directory Listing
 
-Navigation: [Front page](/) / [Releases](/ungoogled-chromium-binaries/releases/) / [Windows](/ungoogled-chromium-binaries/releases/windows) / [64-bit](/ungoogled-chromium-binaries/releases/windows/64bit)
+Navigation: [Front page](/ungoogled-chromium-binaries/) / [Releases](/ungoogled-chromium-binaries/releases/) / [Windows](/ungoogled-chromium-binaries/releases/windows) / [64-bit](/ungoogled-chromium-binaries/releases/windows/64bit)
 
 ## Available versions
 

@@ -222,6 +222,7 @@ def _write_directory_index(directory_node):
     while not current_node is None:
         markdown_urls.insert(0, "[{}]({})".format(current_node.display_name, _get_node_weburl(current_node)))
         current_node = current_node.parent
+    markdown_urls.insert(0, "[Front page]({})".format(_ABSOLUTE_URL_PREFIX))
 
     versions_list_markdown = str()
     if len(directory_node.versions) > 0:
@@ -259,6 +260,7 @@ def _write_version_page(version_node):
     while not current_node is None:
         markdown_urls.insert(0, "[{}]({})".format(current_node.display_name, _get_node_weburl(current_node)))
         current_node = current_node.parent
+    markdown_urls.insert(0, "[Front page]({})".format(_ABSOLUTE_URL_PREFIX))
 
     if not version_node.note is None:
         note_markdown = version_node.note
