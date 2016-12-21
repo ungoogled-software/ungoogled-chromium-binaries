@@ -1,13 +1,13 @@
 # Directory Listing
 
-Navigation: [Front page](/) / [Releases](/releases/)
+Navigation: [Front page](/) / [Releases](/ungoogled-chromium-binaries/releases/)
 
 
 ## Subgroupings
 
-* [Debian](/releases/debian)
-* [Semi-statically-linked Linux build](/releases/linux_static)
-* [macOS](/releases/macos)
-* [Ubuntu](/releases/ubuntu)
-* [Windows](/releases/windows)
+* [Debian](/ungoogled-chromium-binaries/releases/debian)
+* [Semi-statically-linked Linux build](/ungoogled-chromium-binaries/releases/linux_static)
+* [macOS](/ungoogled-chromium-binaries/releases/macos)
+* [Ubuntu](/ungoogled-chromium-binaries/releases/ubuntu)
+* [Windows](/ungoogled-chromium-binaries/releases/windows)
 

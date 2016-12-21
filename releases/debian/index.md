@@ -1,9 +1,9 @@
 # Directory Listing
 
-Navigation: [Front page](/) / [Releases](/releases/) / [Debian](/releases/debian)
+Navigation: [Front page](/) / [Releases](/ungoogled-chromium-binaries/releases/) / [Debian](/ungoogled-chromium-binaries/releases/debian)
 
 
 ## Subgroupings
 
-* [9.0 (stretch) amd64](/releases/debian/stretch_amd64)
+* [9.0 (stretch) amd64](/ungoogled-chromium-binaries/releases/debian/stretch_amd64)
 

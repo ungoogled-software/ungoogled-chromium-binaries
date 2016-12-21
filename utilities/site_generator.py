@@ -29,6 +29,8 @@ import string
 import re
 import shutil
 
+_ABSOLUTE_URL_PREFIX = "/ungoogled-chromium-binaries/"
+
 _CONFIG = pathlib.Path("config")
 _PAGE_TEMPLATES = _CONFIG / pathlib.Path("page_templates")
 _OUTPUT_SUFFIX = ".md"
@@ -187,7 +189,7 @@ def print_config(root_dir):
 
 def _get_node_weburl(node):
     # Hacky
-    return "/" + _RELEASES.name + "/" + "/".join(node.path.parts)
+    return _ABSOLUTE_URL_PREFIX + _RELEASES.name + "/" + "/".join(node.path.parts)
 
 def _write_frontpage_index(root_dir):
     target_path = _OUTPUT_INDEX
