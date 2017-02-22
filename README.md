@@ -12,6 +12,13 @@ When creating new pages or adding new versions, use an existing version as a tem
 
 ### Updating the website
 
+Prerequisites:
+* [Python-Markdown](//github.com/waylan/Python-Markdown) for `site_generator.py`
+
 Use `utilities/platform_ini_generator.py` to generate INI file content with the correct URLs to binaries. Redirect the standard output to an `.ini` file in the `config/platforms` directory with the corresponding tag version. Pass in `--help` for usage information.
 
 When finished with updating the website, run `utilities/site_generator.py`. There are no arguments
+
+## External resources
+
+* [github-markdown-css](//github.com/sindresorhus/github-markdown-css)

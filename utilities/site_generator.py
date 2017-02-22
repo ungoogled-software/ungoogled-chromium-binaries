@@ -29,15 +29,19 @@ import string
 import re
 import shutil
 
+import markdown # Python-Markdown: https://github.com/waylan/Python-Markdown
+
 _ABSOLUTE_URL_PREFIX = "/ungoogled-chromium-binaries/"
 
 _CONFIG = pathlib.Path("config")
 _PAGE_TEMPLATES = _CONFIG / pathlib.Path("page_templates")
-_OUTPUT_SUFFIX = ".md"
-_INDEX_FRONTPAGE = _PAGE_TEMPLATES / pathlib.Path("index_frontpage" + _OUTPUT_SUFFIX + ".in")
-_INDEX_DIRECTORY = _PAGE_TEMPLATES / pathlib.Path("index_directory" + _OUTPUT_SUFFIX + ".in")
+_INPUT_SUFFIX = ".md"
+_OUTPUT_SUFFIX = ".html"
+_INDEX_FRONTPAGE = _PAGE_TEMPLATES / pathlib.Path("index_frontpage" + _INPUT_SUFFIX + ".in")
+_INDEX_DIRECTORY = _PAGE_TEMPLATES / pathlib.Path("index_directory" + _INPUT_SUFFIX + ".in")
+_OUTPUT_WRAPPER = _PAGE_TEMPLATES / pathlib.Path("output_wrapper" + _OUTPUT_SUFFIX + ".in")
 _OUTPUT_INDEX = pathlib.Path("index" + _OUTPUT_SUFFIX)
-_VERSION_INPUT = _PAGE_TEMPLATES / pathlib.Path("version" + _OUTPUT_SUFFIX + ".in")
+_VERSION_INPUT = _PAGE_TEMPLATES / pathlib.Path("version" + _INPUT_SUFFIX + ".in")
 _PLATFORMS = _CONFIG / pathlib.Path("platforms")
 _VALID_VERSIONS = _CONFIG / pathlib.Path("valid_versions")
 _RELEASES = pathlib.Path("releases")
@@ -191,6 +195,17 @@ def _get_node_weburl(node):
     # Hacky
     return _ABSOLUTE_URL_PREFIX + _RELEASES.name + "/" + "/".join(node.path.parts)
 
+def _write_output_file(target_path, md_content):
+    page_subs = dict(
+        title=md_content.splitlines()[0][1:].strip(),
+        github_markdown_css=_ABSOLUTE_URL_PREFIX + "github-markdown.css",
+        body=markdown.markdown(md_content, output_format="xhtml5")
+    )
+    with _OUTPUT_WRAPPER.open() as input_file:
+        content = PageFileStringTemplate(input_file.read()).substitute(**page_subs)
+    with target_path.open("w") as output_file:
+        output_file.write(content)
+
 def _write_frontpage_index(root_dir):
     target_path = _OUTPUT_INDEX
 
@@ -211,8 +226,7 @@ def _write_frontpage_index(root_dir):
     )
     with _INDEX_FRONTPAGE.open() as input_file:
         content = PageFileStringTemplate(input_file.read()).substitute(**page_subs)
-    with target_path.open("w") as output_file:
-        output_file.write(content)
+    _write_output_file(target_path, content)
 
 def _write_directory_index(directory_node):
     target_path = _RELEASES / directory_node.path / _OUTPUT_INDEX
@@ -243,8 +257,7 @@ def _write_directory_index(directory_node):
     )
     with _INDEX_DIRECTORY.open() as input_file:
         content = PageFileStringTemplate(input_file.read()).substitute(**page_subs)
-    with target_path.open("w") as output_file:
-        output_file.write(content)
+    _write_output_file(target_path, content)
 
 def _write_version_page(version_node):
     target_path = _RELEASES / version_node.path.parent / (version_node.version + _OUTPUT_SUFFIX)
@@ -283,8 +296,7 @@ def _write_version_page(version_node):
     )
     with _VERSION_INPUT.open() as input_file:
         content = PageFileStringTemplate(input_file.read()).substitute(**page_subs)
-    with target_path.open("w") as output_file:
-        output_file.write(content)
+    _write_output_file(target_path, content)
 
 def write_website(root_dir):
     if _RELEASES.exists():

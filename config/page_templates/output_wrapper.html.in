@@ -1,0 +1,19 @@
+<html>
+<head>
+<meta charset="UTF-8"></meta>
+<title>$ungoog{title}</title>
+<link rel="stylesheet" href="$ungoog{github_markdown_css}"></link>
+<style>
+    .markdown-body {
+        box-sizing: border-box;
+        min-width: 0%;
+        max-width: 100%;
+        margin: 0 auto;
+        padding: 2em;
+    }
+</style>
+</head>
+<body class="markdown-body">
+$ungoog{body}
+</body>
+</html>
