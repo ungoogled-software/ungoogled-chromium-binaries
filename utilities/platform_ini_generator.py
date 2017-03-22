@@ -29,9 +29,6 @@ import pathlib
 import hashlib
 import collections
 
-USERNAME = "ungoogled-software"
-PROJECT = "ungoogled-chromium-binaries"
-
 class DownloadsManager:
     _algorithms = ["md5", "sha1", "sha256"]
     _downloads = dict()
@@ -86,7 +83,7 @@ url = {url}
                 fileobj.seek(0)
 
 def print_usage_info():
-    print("Usage: tag_version [file_name [file_name [...]]]", file=sys.stderr)
+    print("Usage: tag_version github_user_or_organization_name github_project_name [file_name [file_name [...]]]", file=sys.stderr)
 
 def main(args):
     print(args, file=sys.stderr)
@@ -95,7 +92,9 @@ def main(args):
         return 0
     args_parser = iter(args)
     current_version = next(args_parser)
-    DownloadsManager.set_params(USERNAME, PROJECT, current_version)
+    username = next(args_parser)
+    project = next(args_parser)
+    DownloadsManager.set_params(username, project, current_version)
     for filename in args_parser:
         DownloadsManager.add_download(pathlib.Path(filename))
     print(DownloadsManager.to_ini())
