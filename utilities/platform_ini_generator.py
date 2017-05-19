@@ -83,7 +83,17 @@ url = {url}
                 fileobj.seek(0)
 
 def print_usage_info():
-    print("Usage: tag_version github_user_or_organization_name github_project_name [file_name [file_name [...]]]", file=sys.stderr)
+    print("\n".join([
+        "Arguments: release_name github_user_or_organization_name github_project_name [file_name [file_name [...]]]",
+        "",
+        "This script outputs an INI file to standard output containing hashes and links to files from a GitHub Release.",
+        "This script *cannot* be used to reference non-GitHub Release files.",
+        "",
+        "Argument descriptions:",
+        "release_name is the name of the GitHub Release.",
+        "github_user_or_organization_name and github_project_name specify the repository to use",
+        "file_name are one or more paths to local files with the same name as the ones in the GitHub Release."
+        ]), file=sys.stderr)
 
 def main(args):
     print(args, file=sys.stderr)
