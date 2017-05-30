@@ -70,15 +70,16 @@ url = {url}
 
 def print_usage_info():
     print("\n".join([
-        "Arguments: release_name github_user_or_organization_name github_project_name [file_name [file_name [...]]]",
+        "Arguments: release_name github_user_or_organization_name github_project_name file_path [file_path [...]]",
         "",
-        "This script outputs an INI file to standard output containing hashes and links to files from a GitHub Release.",
-        "This script *cannot* be used to reference non-GitHub Release files.",
+        "This script outputs an INI file to standard output containing hashes and links to files as if they were uploaded to a GitHub Release.",
+        "The files that are passed in are read to generate hashes. Also, their file names are assumed to be identical in the GitHub Release.",
+        "This script *cannot* be used to generate non-GitHub Release file URLs.",
         "",
         "Argument descriptions:",
         "release_name is the name of the GitHub Release.",
         "github_user_or_organization_name and github_project_name specify the repository to use",
-        "file_name are one or more paths to local files with the same name as the ones in the GitHub Release."
+        "file_path are one or more paths to local files with the same name as the ones in the GitHub Release."
         ]), file=sys.stderr)
 
 def main(args):
