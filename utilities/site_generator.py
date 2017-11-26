@@ -309,7 +309,7 @@ def _write_version_page(version_node):
             version_node.publication_time.isoformat(sep=' ')
         )
     if version_node.github_author:
-        github_author_markdown = '[{author}](//github.com/{author}) ([view all releases from user](//github.com/{author}/{repository}/releases)'.format(
+        github_author_markdown = '[{author}](//github.com/{author}) ([view all releases from user](//github.com/{author}/{repository}/releases))'.format(
             author=version_node.github_author,
             repository=_REPOSITORY_NAME
         )
