@@ -363,7 +363,7 @@ def write_website(root_dir, feed_path):
                     version=node.version
                     ),
                 content=_FEED_CONTENT_TEMPLATE.format(
-                    author=node.github_author,
+                    author=(node.github_author or '(unspecified)'),
                     file_count=len(node.files)
                     ),
                 content_type='html',
