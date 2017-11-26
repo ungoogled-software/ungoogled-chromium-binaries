@@ -14,6 +14,9 @@ import sys
 import pathlib
 import hashlib
 import collections
+import datetime
+
+_REPOSITORY_NAME = 'ungoogled-chromium-binaries'
 
 class DownloadsManager:
     _algorithms = ["md5", "sha1", "sha256"]
@@ -38,6 +41,14 @@ class DownloadsManager:
 
     @classmethod
     def to_ini(cls):
+        ini_header_template = '''[_metadata]
+publication_time = {iso_timestamp}
+github_author = {github_author}
+# Add a `note` field here for additional information. Markdown is supported'''
+        ini_header = ini_header_template.format(
+            iso_timestamp=datetime.datetime.utcnow().isoformat(),
+            github_author=cls._username
+        )
         download_template = '''[{filename}]
 url = {url}
 {hashes}'''
@@ -53,8 +64,10 @@ url = {url}
             downloads_list.append(download_template.format(
                 filename=filename,
                 url=cls._create_download_url(filename),
-                hashes="\n".join(hashes_list)))
-        return "\n\n".join(downloads_list)
+                hashes="\n".join(sorted(hashes_list))
+                )
+            )
+        return ini_header + '\n\n' + '\n\n'.join(downloads_list)
 
     @classmethod
     def add_download(self, filepath):
@@ -70,7 +83,7 @@ url = {url}
 
 def print_usage_info():
     print("\n".join([
-        "Arguments: release_name github_user_or_organization_name github_project_name file_path [file_path [...]]",
+        "Arguments: release_name github_username file_path [file_path [...]]",
         "",
         "This script outputs an INI file to standard output containing hashes and links to files as if they were uploaded to a GitHub Release.",
         "The files that are passed in are read to generate hashes. Also, their file names are assumed to be identical in the GitHub Release.",
@@ -78,7 +91,7 @@ def print_usage_info():
         "",
         "Argument descriptions:",
         "release_name is the name of the GitHub Release.",
-        "github_user_or_organization_name and github_project_name specify the repository to use",
+        "github_username is your username that contains the ungoogled-chromium-binaries fork.",
         "file_path are one or more paths to local files with the same name as the ones in the GitHub Release."
         ]), file=sys.stderr)
 
@@ -90,8 +103,7 @@ def main(args):
     args_parser = iter(args)
     current_version = next(args_parser)
     username = next(args_parser)
-    project = next(args_parser)
-    DownloadsManager.set_params(username, project, current_version)
+    DownloadsManager.set_params(username, _REPOSITORY_NAME, current_version)
     for filename in args_parser:
         DownloadsManager.add_download(pathlib.Path(filename))
     print(DownloadsManager.to_ini())

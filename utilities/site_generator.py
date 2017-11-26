@@ -14,10 +14,33 @@ import configparser
 import string
 import re
 import shutil
+import datetime
+import os.path
+import sys
 
 import markdown # Python-Markdown: https://github.com/waylan/Python-Markdown
 
-_ABSOLUTE_URL_PREFIX = "/ungoogled-chromium-binaries/"
+if __name__ == "__main__" and (__package__ is None or __package__ == ""):
+    def _fix_relative_import():
+        """Allow relative imports to work from anywhere"""
+        parent_path = os.path.dirname(os.path.realpath(os.path.abspath(__file__)))
+        sys.path.insert(0, os.path.dirname(parent_path))
+        global __package__ #pylint: disable=global-variable-undefined
+        __package__ = os.path.basename(parent_path) #pylint: disable=redefined-builtin
+        __import__(__package__)
+        sys.path.pop(0)
+    _fix_relative_import()
+
+from . import pyatom # pylint: disable=wrong-import-position
+
+_USER_NAME = 'ungoogled-software'
+_REPOSITORY_NAME = 'ungoogled-chromium-binaries'
+_HOMEPAGE_URL = 'https://{user}.github.io/{repo}/'.format(
+    user=_USER_NAME,
+    repo=_REPOSITORY_NAME
+)
+_FEED_FILE = 'feed.xml'
+_ABSOLUTE_URL_PREFIX = "/{}/".format(_REPOSITORY_NAME)
 
 _CONFIG = pathlib.Path("config")
 _PAGE_TEMPLATES = _CONFIG / pathlib.Path("page_templates")
@@ -35,6 +58,16 @@ _DISPLAY_NAME = pathlib.Path("display_name")
 
 # For printing out info and Markdown
 _INDENTATION = "    "
+
+_FEED_CONTENT_TEMPLATE = '''<h2>Release Summary</h2>
+<p>
+<div>Author: {author}</div>
+<div>Number of files: {file_count}</div>
+</p>'''
+
+_DATETIME_UNSPECIFIED = datetime.datetime(
+    2017, 1, 1, tzinfo=datetime.timezone.utc
+)
 
 _valid_versions = list()
 
@@ -67,16 +100,25 @@ class PlatformVersion:
         if not self.version in _valid_versions:
             raise ValueError("{} is not a valid version. Directory: {}".format(self.version, str(self.path.parent)))
         self.files = dict()
-        self.note = None
+        self.publication_time = _DATETIME_UNSPECIFIED
+        self.github_author = None
+        self.note = '*(none)*'
 
         version_config = configparser.ConfigParser()
         version_config.read(str(self._real_path))
         for section in version_config:
             if section == "DEFAULT":
                 continue
-            elif section.lower() == "config":
+            elif section.lower() == "_metadata":
                 for config_attribute in version_config[section]:
-                    if config_attribute.lower() == "note":
+                    if config_attribute.lower() == "publication_time":
+                        self.publication_time = datetime.datetime.strptime(
+                            version_config[section][config_attribute],
+                            "%Y-%m-%dT%H:%M:%S.%f"
+                        ).replace(tzinfo=datetime.timezone.utc)
+                    elif config_attribute.lower() == "github_author":
+                        self.github_author = version_config[section][config_attribute]
+                    elif config_attribute.lower() == "note":
                         self.note = version_config[section][config_attribute]
             else:
                 file_hashes = dict()
@@ -166,10 +208,7 @@ def print_config(root_dir):
             print()
         elif isinstance(node, PlatformVersion):
             indentation_amt = len(node.path.parts)
-            if node.note:
-                print(" (HAS NOTE)")
-            else:
-                print()
+            print()
             for filename in sorted(node.files):
                 for i in range(indentation_amt + 1):
                     print(_INDENTATION, end="")
@@ -177,9 +216,9 @@ def print_config(root_dir):
         else:
             print("Unknown node ", node)
 
-def _get_node_weburl(node):
+def _get_node_weburl(node, prefix=_ABSOLUTE_URL_PREFIX):
     # Hacky
-    return _ABSOLUTE_URL_PREFIX + _RELEASES.name + "/" + "/".join(node.path.parts)
+    return prefix + _RELEASES.name + "/" + "/".join(node.path.parts)
 
 def _write_output_file(target_path, md_content):
     page_subs = dict(
@@ -245,14 +284,16 @@ def _write_directory_index(directory_node):
         content = PageFileStringTemplate(input_file.read()).substitute(**page_subs)
     _write_output_file(target_path, content)
 
-def _write_version_page(version_node):
-    target_path = _RELEASES / version_node.path.parent / (version_node.version + _OUTPUT_SUFFIX)
-
+def _get_display_names(version_node):
     display_names = list()
     current_node = version_node.parent
     while not current_node.parent is None:
         display_names.insert(0, current_node.display_name)
         current_node = current_node.parent
+    return display_names
+
+def _write_version_page(version_node):
+    target_path = _RELEASES / version_node.path.parent / (version_node.version + _OUTPUT_SUFFIX)
 
     markdown_urls = list()
     current_node = version_node
@@ -261,10 +302,20 @@ def _write_version_page(version_node):
         current_node = current_node.parent
     markdown_urls.insert(0, "[Front page]({})".format(_ABSOLUTE_URL_PREFIX))
 
-    if not version_node.note is None:
-        note_markdown = version_node.note
+    if version_node.publication_time == _DATETIME_UNSPECIFIED:
+        publication_time_markdown = '*(unspecified)*'
     else:
-        note_markdown = str()
+        publication_time_markdown = '`{}`'.format(
+            version_node.publication_time.isoformat(sep=' ')
+        )
+    if version_node.github_author:
+        github_author_markdown = '[{author}](//github.com/{author}) ([view all releases from user](//github.com/{author}/{repository}/releases)'.format(
+            author=version_node.github_author,
+            repository=_REPOSITORY_NAME
+        )
+    else:
+        github_author_markdown = '*(unspecified)*'
+    note_markdown = version_node.note
 
     download_list_markdown = str()
     for filename in sorted(version_node.files.keys()):
@@ -275,8 +326,10 @@ def _write_version_page(version_node):
 
     page_subs = dict(
         version=version_node.version,
-        display_name=" - ".join(display_names),
+        display_name=" - ".join(_get_display_names(version_node)),
         current_path=" / ".join(markdown_urls),
+        author=github_author_markdown,
+        publication_time=publication_time_markdown,
         note=note_markdown,
         download_list=download_list_markdown
     )
@@ -284,11 +337,18 @@ def _write_version_page(version_node):
         content = PageFileStringTemplate(input_file.read()).substitute(**page_subs)
     _write_output_file(target_path, content)
 
-def write_website(root_dir):
+def write_website(root_dir, feed_path):
     if _RELEASES.exists():
         if not _RELEASES.is_dir():
             raise NotADirectoryError("The releases directory is not a directory")
         shutil.rmtree(str(_RELEASES))
+
+    feed = pyatom.AtomFeed(
+        title='ungoogled-chromium Binary Downloads',
+        subtitle='Feed of contributor-submitted binaries',
+        feed_url=_HOMEPAGE_URL + _FEED_FILE,
+        url=_HOMEPAGE_URL
+    )
 
     for node in preorder_traversal(root_dir, include_versions=True):
         if isinstance(node, PlatformDirectory):
@@ -296,10 +356,27 @@ def write_website(root_dir):
             _write_directory_index(node)
         elif isinstance(node, PlatformVersion):
             _write_version_page(node)
+            display_name = ' - '.join(_get_display_names(node))
+            feed.add(
+                title='{platform}: {version}'.format(
+                    platform=display_name,
+                    version=node.version
+                    ),
+                content=_FEED_CONTENT_TEMPLATE.format(
+                    author=node.github_author,
+                    file_count=len(node.files)
+                    ),
+                content_type='html',
+                updated=node.publication_time,
+                url=_get_node_weburl(node, prefix=_HOMEPAGE_URL),
+                id=node.publication_time.isoformat() + node.version + display_name
+            )
         else:
             print("Unknown node ", node)
 
     _write_frontpage_index(root_dir)
+    with feed_path.open('w') as feed_file:
+        feed_file.write(feed.to_string())
 
 if __name__ == "__main__":
     read_valid_versions()
@@ -307,4 +384,7 @@ if __name__ == "__main__":
     root_dir = read_config()
 
     print_config(root_dir)
-    write_website(root_dir)
+    write_website(
+        root_dir,
+        pathlib.Path(__file__).resolve().parent.parent / _FEED_FILE
+    )
