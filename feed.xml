@@ -92,10 +92,10 @@
 &lt;/p&gt;</content>
   </entry>
   <entry xml:base="https://ungoogled-software.github.io/ungoogled-chromium-binaries/feed.xml">
-    <title type="text">macOS: 62.0.3202.94-1</title>
-    <id>2017-12-19T01:23:48.515949+00:0062.0.3202.94-1macOS</id>
+    <title type="text">macOS: 62.0.3202.94-2</title>
+    <id>2017-12-19T01:23:48.515949+00:0062.0.3202.94-2macOS</id>
     <updated>2017-12-19T01:23:48Z</updated>
-    <link href="https://ungoogled-software.github.io/ungoogled-chromium-binaries/releases/macos/62.0.3202.94-1" />
+    <link href="https://ungoogled-software.github.io/ungoogled-chromium-binaries/releases/macos/62.0.3202.94-2" />
     <author>
       <name></name>
     </author>
