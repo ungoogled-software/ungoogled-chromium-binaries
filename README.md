@@ -22,8 +22,9 @@ Steps to publish new binaries to the website:
 2. Create a new Release (i.e. using GitHub's Release feature) in the fork and upload binaries to it. A new tag can be created or an existing one can be used for the Release; the behavior is the same.
 3. Upload binaries to the new Release
 4. Use `utilities/platform_ini_generator.py` to generate an INI file with the correct URLs to binaries. Redirect the standard output to an `.ini` file in the `config/platforms` directory with the corresponding version as the name. Pass in `--help` for usage information.
-5. Run `utilities/site_generator.py` to generate the new HTML files. There are no arguments. It must be run from the root of the repository.
-6. Push the resulting changes in the repository. Make a pull request against the main repository.
+5. If necessary, update `config/valid_versions`.
+6. Run `utilities/site_generator.py` to generate the new HTML files. There are no arguments. It must be run from the root of the repository.
+7. Push the resulting changes in the repository. Make a pull request against the main repository.
     * This can be bypassed if one is part of the [Binaries Team](//github.com/orgs/ungoogled-software/teams/binaries-team).
 
 Notes:
