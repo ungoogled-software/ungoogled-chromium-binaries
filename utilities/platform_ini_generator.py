@@ -18,6 +18,11 @@ import datetime
 
 _REPOSITORY_NAME = 'ungoogled-chromium-binaries'
 
+# GitHub Releases automatically replaces some characters
+_URL_REPLACEMENTS = {
+    '~': '.',
+}
+
 class DownloadsManager:
     _algorithms = ["md5", "sha1", "sha256"]
     _downloads = dict()
@@ -33,11 +38,14 @@ class DownloadsManager:
 
     @classmethod
     def _create_download_url(cls, filename):
-        return "https://github.com/{username}/{project}/releases/download/{version}/{filename}".format(
+        url = "https://github.com/{username}/{project}/releases/download/{version}/{filename}".format(
             filename=filename,
             version=cls._version,
             username=cls._username,
             project=cls._project)
+        for initial, replacement in _URL_REPLACEMENTS.items():
+            url = url.replace(initial, replacement)
+        return url
 
     @classmethod
     def to_ini(cls):
