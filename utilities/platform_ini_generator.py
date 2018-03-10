@@ -91,14 +91,14 @@ url = {url}
 
 def print_usage_info():
     print("\n".join([
-        "Arguments: release_name github_username file_path [file_path [...]]",
+        "Arguments: tag_name github_username file_path [file_path [...]]",
         "",
         "This script outputs an INI file to standard output containing hashes and links to files as if they were uploaded to a GitHub Release.",
         "The files that are passed in are read to generate hashes. Also, their file names are assumed to be identical in the GitHub Release.",
         "This script *cannot* be used to generate non-GitHub Release file URLs.",
         "",
         "Argument descriptions:",
-        "release_name is the name of the GitHub Release.",
+        "tag_name is the name of the tag used in the GitHub Release.",
         "github_username is your username that contains the ungoogled-chromium-binaries fork.",
         "file_path are one or more paths to local files with the same name as the ones in the GitHub Release."
         ]), file=sys.stderr)
