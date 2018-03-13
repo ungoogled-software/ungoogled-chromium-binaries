@@ -2,6 +2,8 @@
 
 Repository containing website for ungoogled-chromium binaries.
 
+**IMPORTANT: These binaries are provided by anyone who are willing to build and submit them. Because these binaries are not necessarily [reproducible](https://reproducible-builds.org/), authenticity cannot be guaranteed.**
+
 This website uses GitHub Pages on the `master` branch. [Use this link](//ungoogled-software.github.io/ungoogled-chromium-binaries/) to see the webpage. [An Atom feed is available here](//raw.githubusercontent.com/ungoogled-software/ungoogled-chromium-binaries/master/feed.xml).
 
 For problems, suggestions, and questions, please use the Issue tracker.
