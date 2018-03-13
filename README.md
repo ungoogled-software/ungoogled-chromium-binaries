@@ -15,7 +15,9 @@ When creating new pages or adding new versions, use an existing version as a tem
 Prerequisites:
 * [Python-Markdown](//github.com/waylan/Python-Markdown) for `site_generator.py`
 
-Steps to publish new binaries to the website:
+#### Steps
+
+Steps to publish a new binary. An example of these steps is in the next section.
 
 1. Fork the main binaries repository ([ungoogled-software/ungoogled-chromium-binaries](//github.com/ungoogled-software/ungoogled-chromium-binaries))
     * If this has been done before, pull in new changes from this one if necessary.
@@ -31,6 +33,36 @@ Notes:
 
 * `platform_ini_generator.py` is currently restricted to generating INI files with URLs to binaries in GitHub releases. If binaries are uploaded elsewhere, then the INI must be created by other means.
 * Additional changes can be made to the website configuration before step 5 as necessary.
+
+#### Example
+
+Example command-line steps (with comments, denoted by a hash `#` symbol). Replace `YOURNAME` in the steps with your GitHub username.
+
+**First-time setup**:
+
+```
+# In GitHub, fork ungoogled-software/ungoogled-chromium-binaries to YOURNAME/ungoogled-chromium-binaries
+git clone https://github.com/YOURNAME/ungoogled-chromium-binaries.git
+cd ungoogled-chromium-binaries
+git remote add upstream https://github.com/ungoogled-software/ungoogled-chromium-binaries.git
+```
+
+**Publish binaries**:
+
+This example demonstrates publishing Debian 9 (stretch) amd64 packages located in `/path/to/binaries/` for ungoogled-chromium version `99.0.1234.567-1`:
+
+```
+# In GitHub, create a new Release on YOURNAME/ungoogled-chromium-binaries with a name "99.0.1234.567-1" (without quotes) and a new tag "99.0.1234.567-1" (without quotes; insert it into the tag field). Upload all necessary files from /path/to/binaries/ into the Release.
+cd ungoogled-chromium-binaries # The same as the one setup above
+git pull
+# Edit config/valid_versions and add "99.0.1234.567-1" (without quotes) only if it does NOT exist.
+./utilities/platform_ini_generator.py 99.0.1234.567-1 YOURNAME /path/to/binaries/*.deb /path/to/binaries/*.changes /path/to/binaries/*.buildinfo > config/platforms/debian/stretch_amd64/99.0.1234.567-1.ini
+./utilities/site_generator.py
+git add *
+git commit -m 'Add 99.0.1234.567-1 binaries for Debian stretch amd64'
+git push origin master
+# In GitHub, create a pull request in ungoogled-software/ungoogled-chromium-binaries with the new change in YOURNAME/ungoogled-chromium-binaries
+```
 
 ## External resources
 

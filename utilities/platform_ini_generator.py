@@ -5,12 +5,12 @@
 # found in the LICENSE file.
 
 '''
-This script takes in files and generates a platform ini as if they were uploaded to the Releases page
+This script takes in files and generates a platform ini as if they were uploaded to the Releases page.
 
 Output is to stdout, so consider redirecting the output to a file
 '''
 
-import sys
+import argparse
 import pathlib
 import hashlib
 import collections
@@ -89,33 +89,28 @@ url = {url}
                 self._downloads[filepath.name][algorithm] = hasher.hexdigest()
                 fileobj.seek(0)
 
-def print_usage_info():
-    print("\n".join([
-        "Arguments: tag_name github_username file_path [file_path [...]]",
-        "",
-        "This script outputs an INI file to standard output containing hashes and links to files as if they were uploaded to a GitHub Release.",
-        "The files that are passed in are read to generate hashes. Also, their file names are assumed to be identical in the GitHub Release.",
-        "This script *cannot* be used to generate non-GitHub Release file URLs.",
-        "",
-        "Argument descriptions:",
-        "tag_name is the name of the tag used in the GitHub Release.",
-        "github_username is your username that contains the ungoogled-chromium-binaries fork.",
-        "file_path are one or more paths to local files with the same name as the ones in the GitHub Release."
-        ]), file=sys.stderr)
-
-def main(args):
-    print(args, file=sys.stderr)
-    if args[0] == "--help" or args[0] == "-h" or args[0] == "help":
-        print_usage_info()
-        return 0
-    args_parser = iter(args)
-    current_version = next(args_parser)
-    username = next(args_parser)
-    DownloadsManager.set_params(username, _REPOSITORY_NAME, current_version)
-    for filename in args_parser:
+def main(arg_list=None):
+    """
+    This script outputs an INI file to standard output containing hashes and links to files as if they were uploaded to a GitHub Release.
+    The files that are passed in are read to generate hashes. Also, their file names are assumed to be identical in the GitHub Release.
+    This script *cannot* be used to generate non-GitHub Release file URLs.
+    """
+    parser = argparse.ArgumentParser(description=main.__doc__)
+    parser.add_argument('tag_name', help='Name of the tag used in the GitHub Release')
+    parser.add_argument(
+        'github_username',
+        help='GitHub username containing the fork of ungoogled-chromium-binaries')
+    parser.add_argument(
+        'file_path', nargs='+',
+        help=('One or more paths to local files with the same name as the ones '
+              'in the GitHub Release.'))
+    args = parser.parse_args(args=arg_list)
+    DownloadsManager.set_params(
+        args.github_username, _REPOSITORY_NAME, args.tag_name)
+    for filename in args.file_path:
         DownloadsManager.add_download(pathlib.Path(filename))
     print(DownloadsManager.to_ini())
     return 0
 
 if __name__ == "__main__":
-    exit(main(sys.argv[1:]))
+    exit(main())
