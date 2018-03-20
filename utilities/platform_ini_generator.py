@@ -103,7 +103,7 @@ def main(arg_list=None):
     parser.add_argument(
         'file_path', nargs='+',
         help=('One or more paths to local files with the same name as the ones '
-              'in the GitHub Release.'))
+              'in the GitHub Release. Used for URL and hash generation in the INI.'))
     args = parser.parse_args(args=arg_list)
     DownloadsManager.set_params(
         args.github_username, _REPOSITORY_NAME, args.tag_name)

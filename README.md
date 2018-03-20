@@ -25,7 +25,8 @@ Steps to publish a new binary. An example of these steps is in the next section.
     * If this has been done before, pull in new changes from this one if necessary.
 2. Create a new Release (i.e. using GitHub's Release feature) in the fork and upload binaries to it. The tag name used must be unique for each Release; it normally matches the ungoogled-chromium version.
 3. Upload binaries to the new Release
-4. Use `utilities/platform_ini_generator.py` to generate an INI file with the correct URLs to binaries. Redirect the standard output to an `.ini` file in the `config/platforms` directory with the corresponding version as the name. Pass in `--help` for usage information.
+4. Use `utilities/platform_ini_generator.py` to generate an INI file with the correct URLs to binaries. It requires paths to a locally stored copy of the binaries for computing hashes. Redirect the standard output to an `.ini` file in the `config/platforms` directory with the corresponding version as the name. Use the `-h` or `--help` argument for more details.
+    * If a directory structure in `config/platforms` doesn't exist for the binary's target platform and version, create the necessary directories with the associated `display_name` files in the same manner as existing platforms.
 5. If necessary, update `config/valid_versions`. If you are uploading the first build for a new version of ungoogled-chromium, this needs to be updated.
 6. Run `utilities/site_generator.py` to generate the new HTML files. There are no arguments. It must be run from the root of the repository.
 7. Push the resulting changes in the repository. Make a pull request against the main repository.
@@ -51,14 +52,15 @@ git remote add upstream https://github.com/ungoogled-software/ungoogled-chromium
 
 **Publish binaries**:
 
-This example demonstrates publishing Debian 9 (stretch) amd64 packages located in `/path/to/binaries/` for ungoogled-chromium version `99.0.1234.567-1`:
+The following example demonstrates publishing Debian 9 (stretch) amd64 packages located in `/home/user/ungoogled-chromium/buildspace/` (which is assumed to be the shell expanded form of `~/ungoogled-chromium/buildspace/`) for ungoogled-chromium version `99.0.1234.567-1`:
 
 ```
-# In GitHub, create a new Release on YOURNAME/ungoogled-chromium-binaries with a name "99.0.1234.567-1" (without quotes) and a new tag "99.0.1234.567-1" (without quotes; insert it into the tag field). Upload all necessary files from /path/to/binaries/ into the Release.
+# In GitHub, create a new Release on YOURNAME/ungoogled-chromium-binaries with a name "99.0.1234.567-1" (without quotes) and a new tag "99.0.1234.567-1" (without quotes; insert it into the tag field). Upload all necessary files from /home/user/ungoogled-chromium/buildspace/ into the Release.
 cd ungoogled-chromium-binaries # The same as the one setup above
 git pull
-# Edit config/valid_versions and add "99.0.1234.567-1" (without quotes) only if it does NOT exist.
-./utilities/platform_ini_generator.py 99.0.1234.567-1 YOURNAME /path/to/binaries/*.deb /path/to/binaries/*.changes /path/to/binaries/*.buildinfo > config/platforms/debian/stretch_amd64/99.0.1234.567-1.ini
+# Edit config/valid_versions and add "99.0.1234.567-1" (without quotes) ONLY if it does not exist.
+# Create the directories debian/ and debian/stretch_amd64 with corresponding display_name files in config/platforms/ ONLY if they do NOT exist.
+./utilities/platform_ini_generator.py 99.0.1234.567-1 YOURNAME ~/ungoogled-chromium/buildspace/*.deb ~/ungoogled-chromium/buildspace/*.changes ~/ungoogled-chromium/buildspace/*.buildinfo > config/platforms/debian/stretch_amd64/99.0.1234.567-1.ini
 ./utilities/site_generator.py
 git add *
 git commit -m 'Add 99.0.1234.567-1 binaries for Debian stretch amd64'
