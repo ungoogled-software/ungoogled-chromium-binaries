@@ -15,6 +15,7 @@ When creating new pages or adding new versions, use an existing version as a tem
 ### Publishing new binaries
 
 Prerequisites:
+* Python 3 for scripts under `utilities/`
 * [Python-Markdown](//github.com/waylan/Python-Markdown) for `site_generator.py`
 
 #### Steps
