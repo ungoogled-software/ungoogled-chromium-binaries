@@ -10,7 +10,7 @@
 
 ## Latest production versions
 
-**NOTE FOR LINUX USERS: Make sure to download packages for the correct system**
+**NOTE FOR LINUX USERS: Make sure to download packages for the correct system. Portable Linux build works on any Linux platform supported by Chromium.**
 
 $ungoog{latest_downloads}
 ### [Browse releases](releases)
