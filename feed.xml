@@ -316,6 +316,20 @@
 &lt;/p&gt;</content>
   </entry>
   <entry xml:base="https://ungoogled-software.github.io/ungoogled-chromium-binaries/feed.xml">
+    <title type="text">Windows - 64-bit: 65.0.3325.181-1</title>
+    <id>2018-03-30T15:27:54.578368+00:0065.0.3325.181-1Windows - 64-bit</id>
+    <updated>2018-03-30T15:27:54Z</updated>
+    <link href="https://ungoogled-software.github.io/ungoogled-chromium-binaries/releases/windows/64bit/65.0.3325.181-1" />
+    <author>
+      <name></name>
+    </author>
+    <content type="html">&lt;h2&gt;Release Summary&lt;/h2&gt;
+&lt;p&gt;
+&lt;div&gt;Author: squalus&lt;/div&gt;
+&lt;div&gt;Number of files: 1&lt;/div&gt;
+&lt;/p&gt;</content>
+  </entry>
+  <entry xml:base="https://ungoogled-software.github.io/ungoogled-chromium-binaries/feed.xml">
     <title type="text">Windows - 64-bit: 55.0.2883.87-1</title>
     <id>2017-01-01T00:00:00+00:0055.0.2883.87-1Windows - 64-bit</id>
     <updated>2017-01-01T00:00:00Z</updated>
