@@ -1,10 +1,16 @@
 # Downloads for ungoogled-chromium
 
-[ungoogled-chromium's GitHub page](//github.com/Eloston/ungoogled-chromium)
+**IMPORTANT: These binaries are provided by anyone who are willing to build and submit them. Because these binaries are not necessarily [reproducible](https://reproducible-builds.org/), authenticity cannot be guaranteed.**
+
+[**ungoogled-chromium's GitHub page**](//github.com/Eloston/ungoogled-chromium)
+
+[Atom feed of all releases](//raw.githubusercontent.com/ungoogled-software/ungoogled-chromium-binaries/master/feed.xml)
+
+[Page source code and contribution instructions](//github.com/ungoogled-software/ungoogled-chromium-binaries)
 
 ## Latest production versions
 
-**NOTE FOR LINUX USERS: Make sure to download packages for the correct system**
+**NOTE FOR LINUX USERS: Make sure to download packages for the correct system. Portable Linux build works on any Linux platform supported by Chromium.**
 
 $ungoog{latest_downloads}
 ### [Browse releases](releases)

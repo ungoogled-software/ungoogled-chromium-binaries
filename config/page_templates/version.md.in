@@ -1,6 +1,13 @@
-# $ungoog{version} Binaries for $ungoog{display_name}
+# $ungoog{version}: Binaries for $ungoog{display_name}
 
 Navigation: $ungoog{current_path}
 
-$ungoog{note}
+## Release Information
+
+* Author: $ungoog{author}
+* Publication time (in UTC): $ungoog{publication_time}
+* Notes: $ungoog{note}
+
+## Downloads
+
 $ungoog{download_list}
