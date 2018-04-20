@@ -49,6 +49,8 @@ Example command-line steps (with comments, denoted by a hash `#` symbol). Replac
 git clone https://github.com/YOURNAME/ungoogled-chromium-binaries.git
 cd ungoogled-chromium-binaries
 git remote add upstream https://github.com/ungoogled-software/ungoogled-chromium-binaries.git
+git config branch.master.remote upstream
+git config branch.master.pushRemote origin
 ```
 
 **Publish binaries**:
@@ -65,7 +67,7 @@ git pull
 ./utilities/site_generator.py
 git add *
 git commit -m 'Add 99.0.1234.567-1 binaries for Debian stretch amd64'
-git push origin master
+git push
 # In GitHub, create a pull request in ungoogled-software/ungoogled-chromium-binaries with the new change in YOURNAME/ungoogled-chromium-binaries
 ```
 
