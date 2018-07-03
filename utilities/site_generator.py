@@ -265,17 +265,11 @@ def _write_frontpage_index(root_dir):
 
     download_markdown = "||" + "|".join(map(lambda x: "**%s**" % x.capitalize(), _STATUSES)) + "\n"
     download_markdown += "|".join(map(lambda x: ":--", range(len(_STATUSES) + 1))) + "\n"
-    current_node_stack = list()
     for node in preorder_traversal(root_dir):
-        if node == root_dir:
-            continue
-        while current_node_stack and current_node_stack[-1].path != node.path.parent:
-            current_node_stack.pop()
-        current_node_stack.append(node)
-        if not node.versions:
+        if node == root_dir or not node.versions:
             continue
         download_markdown += "**[{}]({})**".format(
-            " ".join(map(lambda x: x.display_name, current_node_stack)),
+            " ".join(_get_display_names(node)),
             _get_node_weburl(node))
         for status_name in _STATUSES:
             download_markdown += "|"
@@ -326,9 +320,14 @@ def _write_directory_index(directory_node):
         content = PageFileStringTemplate(input_file.read()).substitute(**page_subs)
     _write_output_file(target_path, content)
 
-def _get_display_names(version_node):
+def _get_display_names(node):
     display_names = list()
-    current_node = version_node.parent
+    if isinstance(node, PlatformVersion):
+        current_node = node.parent
+    elif isinstance(node, PlatformDirectory):
+        current_node = node
+    else:
+        raise ValueError("Unknown node type {}".format(type(node).__name__))
     while not current_node.parent is None:
         display_names.insert(0, current_node.display_name)
         current_node = current_node.parent
