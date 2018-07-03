@@ -419,7 +419,7 @@ def write_website(root_dir, feed_path):
         if isinstance(node, PlatformDirectory):
             (_RELEASES / node.path).mkdir()
             _write_directory_index(node)
-            for node_feed in node.latest_by_status.values():
+            for node_feed in sorted(node.latest_by_status.values()):
                 _add_node_to_feed(feed, node_feed)
         elif isinstance(node, PlatformVersion):
             _write_version_page(node)
