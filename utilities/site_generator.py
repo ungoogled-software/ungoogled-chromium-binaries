@@ -55,6 +55,10 @@ _PLATFORMS = _CONFIG / pathlib.Path("platforms")
 _VALID_VERSIONS = _CONFIG / pathlib.Path("valid_versions")
 _RELEASES = pathlib.Path("releases")
 _DISPLAY_NAME = pathlib.Path("display_name")
+_STATUSES = [
+    "release",
+    "development",
+]
 
 # For printing out info and Markdown
 _INDENTATION = "    "
@@ -103,6 +107,7 @@ class PlatformVersion:
         self.publication_time = _DATETIME_UNSPECIFIED
         self.github_author = None
         self.note = '*(none)*'
+        self.status = None
 
         version_config = configparser.ConfigParser()
         version_config.read(str(self._real_path))
@@ -120,6 +125,15 @@ class PlatformVersion:
                         self.github_author = version_config[section][config_attribute]
                     elif config_attribute.lower() == "note":
                         self.note = version_config[section][config_attribute]
+                    elif config_attribute.lower() == "status":
+                        if version_config[section][config_attribute] in _STATUSES:
+                            self.status = version_config[section][config_attribute]
+                        else:
+                            raise ValueError("Unknown status value '{}'".format(
+                                version_config[section][config_attribute]))
+                    else:
+                        raise ValueError("Unknown _metadata attribute '{}'".format(
+                            config_attribute))
             else:
                 file_hashes = dict()
                 url = None
@@ -131,6 +145,8 @@ class PlatformVersion:
                 if url is None:
                     raise ValueError("url is None. Section: {}, Path: {}".format(section, str(self.path)))
                 self.files[section] = (url, file_hashes)
+        if not self.status:
+            raise ValueError("Required 'status' key not in _metadata")
 
     def __lt__(self, other):
         return self.version < other.version
@@ -150,12 +166,17 @@ class PlatformDirectory:
         self.parent = parent
         self.children = list()
         self.versions = list()
+        self.latest_by_status = dict() # Lowercase status -> version string
 
         with (dir_path / _DISPLAY_NAME).open() as display_name_file:
             self.display_name = display_name_file.read().splitlines()[0]
 
         for config_path in sorted(self._real_path.glob("*.ini"), reverse=True):
-            self.versions.append(PlatformVersion(config_path, self))
+            print("Parsing version ini: {}".format(str(config_path)))
+            new_version = PlatformVersion(config_path, self)
+            self.versions.append(new_version)
+            if new_version.status not in self.latest_by_status:
+                self.latest_by_status[new_version.status] = new_version
 
     def __lt__(self, other):
         return self.path < other.path
@@ -224,7 +245,13 @@ def _write_output_file(target_path, md_content):
     page_subs = dict(
         title=md_content.splitlines()[0][1:].strip(),
         github_markdown_css=_ABSOLUTE_URL_PREFIX + "github-markdown.css",
-        body=markdown.markdown(md_content, output_format="xhtml5")
+        body=markdown.markdown(
+            md_content,
+            extensions=[
+                "markdown.extensions.tables",
+            ],
+            output_format="xhtml5"
+        )
     )
     with _OUTPUT_WRAPPER.open() as input_file:
         content = PageFileStringTemplate(input_file.read()).substitute(**page_subs)
@@ -236,14 +263,29 @@ def _write_frontpage_index(root_dir):
 
     download_markdown = str()
 
+    download_markdown = "||" + "|".join(map(lambda x: "**%s**" % x.capitalize(), _STATUSES)) + "\n"
+    download_markdown += "|".join(map(lambda x: ":--", range(len(_STATUSES) + 1))) + "\n"
+    current_node_stack = list()
     for node in preorder_traversal(root_dir):
         if node == root_dir:
             continue
-        for i in range(len(node.path.parts) - 1):
-            download_markdown += _INDENTATION
-        download_markdown += "* [{}]({})".format(node.display_name, _get_node_weburl(node))
-        if len(node.versions) > 0:
-            download_markdown += ": [{}]({})".format(node.versions[0].version, _get_node_weburl(node.versions[0]))
+        while current_node_stack and current_node_stack[-1].path != node.path.parent:
+            current_node_stack.pop()
+        current_node_stack.append(node)
+        if not node.versions:
+            continue
+        download_markdown += "**[{}]({})**".format(
+            " ".join(map(lambda x: x.display_name, current_node_stack)),
+            _get_node_weburl(node))
+        for status_name in _STATUSES:
+            download_markdown += "|"
+            if status_name in node.latest_by_status:
+                current_version = node.latest_by_status[status_name]
+                download_markdown += "[{}]({})".format(
+                    current_version.version,
+                    _get_node_weburl(current_version))
+            else:
+                download_markdown += '*(none)*'
         download_markdown += "\n"
 
     page_subs = dict(
@@ -326,16 +368,39 @@ def _write_version_page(version_node):
 
     page_subs = dict(
         version=version_node.version,
-        display_name=" - ".join(_get_display_names(version_node)),
+        display_name=" ".join(_get_display_names(version_node)),
         current_path=" / ".join(markdown_urls),
         author=github_author_markdown,
         publication_time=publication_time_markdown,
         note=note_markdown,
+        status=version_node.status.capitalize(),
         download_list=download_list_markdown
     )
     with _VERSION_INPUT.open() as input_file:
         content = PageFileStringTemplate(input_file.read()).substitute(**page_subs)
     _write_output_file(target_path, content)
+
+def _add_node_to_feed(feed, node_feed):
+    display_name = ' '.join(_get_display_names(node_feed))
+    feed_id = node_feed.publication_time.isoformat()
+    feed_id += node_feed.version
+    feed_id += node_feed.status
+    feed_id += display_name.replace(" ", '')
+    feed.add(
+        title='{platform}: {version} ({status})'.format(
+            platform=display_name,
+            version=node_feed.version,
+            status=node_feed.status,
+            ),
+        content=_FEED_CONTENT_TEMPLATE.format(
+            author=(node_feed.github_author or '(unspecified)'),
+            file_count=len(node_feed.files)
+            ),
+        content_type='html',
+        updated=node_feed.publication_time,
+        url=_get_node_weburl(node_feed, prefix=_HOMEPAGE_URL),
+        id=feed_id,
+    )
 
 def write_website(root_dir, feed_path):
     if _RELEASES.exists():
@@ -354,23 +419,10 @@ def write_website(root_dir, feed_path):
         if isinstance(node, PlatformDirectory):
             (_RELEASES / node.path).mkdir()
             _write_directory_index(node)
+            for node_feed in node.latest_by_status.values():
+                _add_node_to_feed(feed, node_feed)
         elif isinstance(node, PlatformVersion):
             _write_version_page(node)
-            display_name = ' - '.join(_get_display_names(node))
-            feed.add(
-                title='{platform}: {version}'.format(
-                    platform=display_name,
-                    version=node.version
-                    ),
-                content=_FEED_CONTENT_TEMPLATE.format(
-                    author=(node.github_author or '(unspecified)'),
-                    file_count=len(node.files)
-                    ),
-                content_type='html',
-                updated=node.publication_time,
-                url=_get_node_weburl(node, prefix=_HOMEPAGE_URL),
-                id=node.publication_time.isoformat() + node.version + display_name
-            )
         else:
             print("Unknown node ", node)
 
@@ -383,7 +435,7 @@ if __name__ == "__main__":
 
     root_dir = read_config()
 
-    print_config(root_dir)
+    #print_config(root_dir)
     write_website(
         root_dir,
         pathlib.Path(__file__).resolve().parent.parent / _FEED_FILE

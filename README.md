@@ -71,6 +71,15 @@ git push
 # In GitHub, create a pull request in ungoogled-software/ungoogled-chromium-binaries with the new change in YOURNAME/ungoogled-chromium-binaries
 ```
 
+### Changing version statuses
+
+Change the `status` key in the corresponding `.ini` and regenerate the site with `utilities/site_generator.py`.
+
+The current statuses are:
+
+* `development` - For binaries needing testing
+* `release` - For binaries ready for general use
+
 ## External resources
 
 * [github-markdown-css](//github.com/sindresorhus/github-markdown-css)

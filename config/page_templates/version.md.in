@@ -8,6 +8,8 @@ Navigation: $ungoog{current_path}
 * Publication time (in UTC): $ungoog{publication_time}
 * Notes: $ungoog{note}
 
+Status: **$ungoog{status}**
+
 ## Downloads
 
 $ungoog{download_list}
