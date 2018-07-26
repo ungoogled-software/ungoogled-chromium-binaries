@@ -12,5 +12,9 @@
 
 **NOTE FOR LINUX USERS: Make sure to download packages for the correct system. Portable Linux build works on any Linux platform supported by Chromium.**
 
+Binary classifications (the labels in the first row of the following table):
+* **Release** - Binaries ready for general use
+* **Development** - Binaries needing testing
+
 $ungoog{latest_downloads}
 ### [Browse releases](releases)
