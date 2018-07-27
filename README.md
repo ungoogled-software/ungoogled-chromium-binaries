@@ -8,9 +8,24 @@ This website uses GitHub Pages on the `master` branch. [Use this link](//ungoogl
 
 For problems, suggestions, and questions, please use the Issue tracker.
 
+## Binary classifications
+
+There are two kinds of binaries:
+
+* Development - Binaries needing testing
+* Release - Binaries ready for general use
+
+Development binaries are currently promoted to release binaries if they have gone for at least two weeks with no issues.
+* If a bug occurs during the two weeks, the development build will never be promoted to a release build.
+* If a severe bug occurs after two weeks, the build can be demoted to a development build.
+
 ## Developer info
 
 When creating new pages or adding new versions, use an existing version as a template to follow. If you have questions or suggestions, please create an Issue.
+
+### Changing the binary classification
+
+Change the `status` key in the corresponding platform ini to either `development` or `release`.
 
 ### Publishing new binaries
 
@@ -70,15 +85,6 @@ git commit -m 'Add 99.0.1234.567-1 binaries for Debian stretch amd64'
 git push
 # In GitHub, create a pull request in ungoogled-software/ungoogled-chromium-binaries with the new change in YOURNAME/ungoogled-chromium-binaries
 ```
-
-### Changing version statuses
-
-Change the `status` key in the corresponding `.ini` and regenerate the site with `utilities/site_generator.py`.
-
-The current statuses are:
-
-* `development` - For binaries needing testing
-* `release` - For binaries ready for general use
 
 ## External resources
 
