@@ -8,22 +8,8 @@
   <subtitle type="text">Feed of contributor-submitted binaries</subtitle>
   <generator>PyAtom</generator>
   <entry xml:base="https://ungoogled-software.github.io/ungoogled-chromium-binaries/feed.xml">
-    <title type="text">Debian 9.0 (stretch) amd64: 67.0.3396.87-1 (release)</title>
-    <id>2018-06-19T19:15:43.497892+00:0067.0.3396.87-1releaseDebian9.0(stretch)amd64</id>
-    <updated>2018-06-19T19:15:43Z</updated>
-    <link href="https://ungoogled-software.github.io/ungoogled-chromium-binaries/releases/debian/stretch_amd64/67.0.3396.87-1" />
-    <author>
-      <name></name>
-    </author>
-    <content type="html">&lt;h2&gt;Release Summary&lt;/h2&gt;
-&lt;p&gt;
-&lt;div&gt;Author: Eloston&lt;/div&gt;
-&lt;div&gt;Number of files: 7&lt;/div&gt;
-&lt;/p&gt;</content>
-  </entry>
-  <entry xml:base="https://ungoogled-software.github.io/ungoogled-chromium-binaries/feed.xml">
-    <title type="text">Debian 9.0 (stretch) amd64: 68.0.3440.106-1 (development)</title>
-    <id>2018-08-22T22:30:20.633235+00:0068.0.3440.106-1developmentDebian9.0(stretch)amd64</id>
+    <title type="text">Debian 9.0 (stretch) amd64: 68.0.3440.106-1 (release)</title>
+    <id>2018-08-22T22:30:20.633235+00:0068.0.3440.106-1releaseDebian9.0(stretch)amd64</id>
     <updated>2018-08-22T22:30:20Z</updated>
     <link href="https://ungoogled-software.github.io/ungoogled-chromium-binaries/releases/debian/stretch_amd64/68.0.3440.106-1" />
     <author>
