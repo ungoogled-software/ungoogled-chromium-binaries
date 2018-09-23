@@ -2,7 +2,9 @@
 # Used for config file checking
 # Comments must start at the beginning of the line with a "#"
 # Blank lines are ignored
-
+#
+# IMPORTANT: This file must be sorted in descending order
+#
 # MAKE SURE TO UPDATE THIS FILE WHEN ADDING NEW VERSIONS
 
 53.0.2785.116-1

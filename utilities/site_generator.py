@@ -9,13 +9,14 @@
 Generates the website files
 '''
 
-import pathlib
 import configparser
-import string
+import datetime
+import itertools
+import os.path
+import pathlib
 import re
 import shutil
-import datetime
-import os.path
+import string
 import sys
 
 import markdown # Python-Markdown: https://github.com/waylan/Python-Markdown
@@ -73,7 +74,7 @@ _DATETIME_UNSPECIFIED = datetime.datetime(
     2017, 1, 1, tzinfo=datetime.timezone.utc
 )
 
-_valid_versions = list()
+_valid_versions = dict() # tag version -> order number
 
 class PageFileStringTemplate(string.Template):
     '''
@@ -101,8 +102,6 @@ class PlatformVersion:
         self.parent = parent
         self.version = self.path.name
         self.display_name = self.version
-        if not self.version in _valid_versions:
-            raise ValueError("{} is not a valid version. Directory: {}".format(self.version, str(self.path.parent)))
         self.files = dict()
         self.publication_time = _DATETIME_UNSPECIFIED
         self.github_author = None
@@ -157,6 +156,16 @@ class PlatformVersion:
     def __repr__(self):
         return str(self)
 
+def _version_sorting_key(ini_path):
+    """
+    Returns an integer representing the sorting key for the INI path
+    """
+    version = ini_path.stem
+    index = _valid_versions.get(version)
+    if index is None:
+        raise ValueError("{} is not a valid version. Directory: {}".format(version, str(ini_path.parent)))
+    return index
+
 class PlatformDirectory:
     def __init__(self, dir_path, parent):
         if not dir_path.is_dir():
@@ -171,7 +180,7 @@ class PlatformDirectory:
         with (dir_path / _DISPLAY_NAME).open() as display_name_file:
             self.display_name = display_name_file.read().splitlines()[0]
 
-        for config_path in sorted(self._real_path.glob("*.ini"), reverse=True):
+        for config_path in sorted(self._real_path.glob("*.ini"), key=_version_sorting_key, reverse=True):
             print("Parsing version ini: {}".format(str(config_path)))
             new_version = PlatformVersion(config_path, self)
             self.versions.append(new_version)
@@ -197,10 +206,10 @@ class PlatformDirectory:
 
 def read_valid_versions():
     with _VALID_VERSIONS.open() as valid_versions_file:
+        counter = itertools.count()
         for line in valid_versions_file.read().splitlines():
             if len(line) > 0 and not line.startswith("#"):
-                _valid_versions.append(line)
-    _valid_versions.sort()
+                _valid_versions[line.strip()] = next(counter)
 
 def read_config():
     root_dir = PlatformDirectory(_PLATFORMS, None)
