@@ -13,14 +13,14 @@ site_generation_task:
         - git diff --cached --exit-code
         - git diff --exit-code
         - python3 utilities/site_generator.py
-        - ! git diff --exit-code || exit
+        - #eval '! git diff --exit-code' || exit
         - git add *
         - git config user.email 'cirrus@null'
         - git config user.name 'Cirrus CI'
         - eval "$(ssh-agent -s)"
         - printf "$DEPLOYKEY_PRIVATE_BASE64" | base64 -d | ssh-add -
-        - git pull --ff-only "git@github.com/${CIRRUS_REPO_FULL_NAME}.git" $CIRRUS_BRANCH
+        - git pull --ff-only "git@github.com:${CIRRUS_REPO_FULL_NAME}.git" $CIRRUS_BRANCH
         - git commit -m "Regenerate site with $CIRRUS_CHANGE_IN_REPO\n\n$CIRRUS_CHANGE_MESSAGE\n[skip ci]"
-        - git push "git@github.com/${CIRRUS_REPO_FULL_NAME}.git" $CIRRUS_BRANCH
+        - git push "git@github.com:${CIRRUS_REPO_FULL_NAME}.git" $CIRRUS_BRANCH
 
 # vim: set expandtab shiftwidth=4 softtabstop=4:
