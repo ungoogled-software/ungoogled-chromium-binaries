@@ -13,7 +13,7 @@ site_generation_task:
         - git diff --cached --exit-code
         - git diff --exit-code
         - python3 utilities/site_generator.py
-        - eval '! git diff --exit-code || exit'
+        - git diff --exit-code && exit 0
         - git add *
         - git config user.email 'cirrus@null'
         - git config user.name 'Cirrus CI'
