@@ -8,8 +8,8 @@
   <subtitle type="text">Feed of contributor-submitted binaries</subtitle>
   <generator>PyAtom</generator>
   <entry xml:base="https://ungoogled-software.github.io/ungoogled-chromium-binaries/feed.xml">
-    <title type="text">Linux AppImage 64-bit: 69.0.3497.100-2 (development)</title>
-    <id>2018-10-06T00:17:40.773894+00:0069.0.3497.100-2developmentLinuxAppImage64-bit</id>
+    <title type="text">Linux AppImage 64-bit: 69.0.3497.100-2 (release)</title>
+    <id>2018-10-06T00:17:40.773894+00:0069.0.3497.100-2releaseLinuxAppImage64-bit</id>
     <updated>2018-10-06T00:17:40Z</updated>
     <link href="https://ungoogled-software.github.io/ungoogled-chromium-binaries/releases/appimage/64bit/69.0.3497.100-2" />
     <author>
@@ -22,22 +22,8 @@
 &lt;/p&gt;</content>
   </entry>
   <entry xml:base="https://ungoogled-software.github.io/ungoogled-chromium-binaries/feed.xml">
-    <title type="text">Debian 9.0 (stretch) amd64: 68.0.3440.106-1 (release)</title>
-    <id>2018-08-22T22:30:20.633235+00:0068.0.3440.106-1releaseDebian9.0(stretch)amd64</id>
-    <updated>2018-08-22T22:30:20Z</updated>
-    <link href="https://ungoogled-software.github.io/ungoogled-chromium-binaries/releases/debian/stretch_amd64/68.0.3440.106-1" />
-    <author>
-      <name></name>
-    </author>
-    <content type="html">&lt;h2&gt;Release Summary&lt;/h2&gt;
-&lt;p&gt;
-&lt;div&gt;Author: Eloston&lt;/div&gt;
-&lt;div&gt;Number of files: 7&lt;/div&gt;
-&lt;/p&gt;</content>
-  </entry>
-  <entry xml:base="https://ungoogled-software.github.io/ungoogled-chromium-binaries/feed.xml">
-    <title type="text">Debian 9.0 (stretch) amd64: 69.0.3497.100-2 (development)</title>
-    <id>2018-09-29T22:14:21.246673+00:0069.0.3497.100-2developmentDebian9.0(stretch)amd64</id>
+    <title type="text">Debian 9.0 (stretch) amd64: 69.0.3497.100-2 (release)</title>
+    <id>2018-09-29T22:14:21.246673+00:0069.0.3497.100-2releaseDebian9.0(stretch)amd64</id>
     <updated>2018-09-29T22:14:21Z</updated>
     <link href="https://ungoogled-software.github.io/ungoogled-chromium-binaries/releases/debian/stretch_amd64/69.0.3497.100-2" />
     <author>
@@ -50,22 +36,8 @@
 &lt;/p&gt;</content>
   </entry>
   <entry xml:base="https://ungoogled-software.github.io/ungoogled-chromium-binaries/feed.xml">
-    <title type="text">Portable Linux 64-bit: 67.0.3396.87-2 (release)</title>
-    <id>2018-06-30T00:17:40.773894+00:0067.0.3396.87-2releasePortableLinux64-bit</id>
-    <updated>2018-06-30T00:17:40Z</updated>
-    <link href="https://ungoogled-software.github.io/ungoogled-chromium-binaries/releases/linux_portable/64bit/67.0.3396.87-2" />
-    <author>
-      <name></name>
-    </author>
-    <content type="html">&lt;h2&gt;Release Summary&lt;/h2&gt;
-&lt;p&gt;
-&lt;div&gt;Author: Eloston&lt;/div&gt;
-&lt;div&gt;Number of files: 1&lt;/div&gt;
-&lt;/p&gt;</content>
-  </entry>
-  <entry xml:base="https://ungoogled-software.github.io/ungoogled-chromium-binaries/feed.xml">
-    <title type="text">Portable Linux 64-bit: 69.0.3497.100-2 (development)</title>
-    <id>2018-10-04T00:17:40.773894+00:0069.0.3497.100-2developmentPortableLinux64-bit</id>
+    <title type="text">Portable Linux 64-bit: 69.0.3497.100-2 (release)</title>
+    <id>2018-10-04T00:17:40.773894+00:0069.0.3497.100-2releasePortableLinux64-bit</id>
     <updated>2018-10-04T00:17:40Z</updated>
     <link href="https://ungoogled-software.github.io/ungoogled-chromium-binaries/releases/linux_portable/64bit/69.0.3497.100-2" />
     <author>
@@ -78,22 +50,8 @@
 &lt;/p&gt;</content>
   </entry>
   <entry xml:base="https://ungoogled-software.github.io/ungoogled-chromium-binaries/feed.xml">
-    <title type="text">macOS: 68.0.3440.106-1 (release)</title>
-    <id>2018-08-29T12:56:48.244321+00:0068.0.3440.106-1releasemacOS</id>
-    <updated>2018-08-29T12:56:48Z</updated>
-    <link href="https://ungoogled-software.github.io/ungoogled-chromium-binaries/releases/macos/68.0.3440.106-1" />
-    <author>
-      <name></name>
-    </author>
-    <content type="html">&lt;h2&gt;Release Summary&lt;/h2&gt;
-&lt;p&gt;
-&lt;div&gt;Author: tectiv3&lt;/div&gt;
-&lt;div&gt;Number of files: 1&lt;/div&gt;
-&lt;/p&gt;</content>
-  </entry>
-  <entry xml:base="https://ungoogled-software.github.io/ungoogled-chromium-binaries/feed.xml">
-    <title type="text">macOS: 69.0.3497.100-1 (development)</title>
-    <id>2018-09-25T16:43:41.045997+00:0069.0.3497.100-1developmentmacOS</id>
+    <title type="text">macOS: 69.0.3497.100-1 (release)</title>
+    <id>2018-09-25T16:43:41.045997+00:0069.0.3497.100-1releasemacOS</id>
     <updated>2018-09-25T16:43:41Z</updated>
     <link href="https://ungoogled-software.github.io/ungoogled-chromium-binaries/releases/macos/69.0.3497.100-1" />
     <author>
@@ -120,22 +78,8 @@
 &lt;/p&gt;</content>
   </entry>
   <entry xml:base="https://ungoogled-software.github.io/ungoogled-chromium-binaries/feed.xml">
-    <title type="text">Ubuntu 18.04 (bionic) amd64: 67.0.3396.87-2 (release)</title>
-    <id>2018-07-01T03:34:31.531734+00:0067.0.3396.87-2releaseUbuntu18.04(bionic)amd64</id>
-    <updated>2018-07-01T03:34:31Z</updated>
-    <link href="https://ungoogled-software.github.io/ungoogled-chromium-binaries/releases/ubuntu/bionic_amd64/67.0.3396.87-2" />
-    <author>
-      <name></name>
-    </author>
-    <content type="html">&lt;h2&gt;Release Summary&lt;/h2&gt;
-&lt;p&gt;
-&lt;div&gt;Author: Clae224&lt;/div&gt;
-&lt;div&gt;Number of files: 5&lt;/div&gt;
-&lt;/p&gt;</content>
-  </entry>
-  <entry xml:base="https://ungoogled-software.github.io/ungoogled-chromium-binaries/feed.xml">
-    <title type="text">Ubuntu 18.04 (bionic) amd64: 69.0.3497.100-1 (development)</title>
-    <id>2018-09-20T16:56:03.110538+00:0069.0.3497.100-1developmentUbuntu18.04(bionic)amd64</id>
+    <title type="text">Ubuntu 18.04 (bionic) amd64: 69.0.3497.100-1 (release)</title>
+    <id>2018-09-20T16:56:03.110538+00:0069.0.3497.100-1releaseUbuntu18.04(bionic)amd64</id>
     <updated>2018-09-20T16:56:03Z</updated>
     <link href="https://ungoogled-software.github.io/ungoogled-chromium-binaries/releases/ubuntu/bionic_amd64/69.0.3497.100-1" />
     <author>
