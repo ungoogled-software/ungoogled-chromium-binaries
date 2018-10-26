@@ -31,9 +31,10 @@ Change the `status` key in the corresponding platform ini to either `development
 
 Prerequisites:
 * Python 3 for all scripts under `utilities/`
-* [Python-Markdown](//github.com/waylan/Python-Markdown) for `utilities/site_generator.py`
 
 #### Steps
+
+**UPDATE AS OF 2018-10-26**: You no longer need to run `utilities/site_generator.py`; the CI job (in `.cirrus.yml`) will invoke this automatically.
 
 Steps to publish a new binary. An example of these steps is in the next section.
 
@@ -44,8 +45,7 @@ Steps to publish a new binary. An example of these steps is in the next section.
 4. Use `utilities/platform_ini_generator.py` to generate an INI file with the correct URLs to binaries. It requires paths to a locally stored copy of the binaries for computing hashes. Redirect the standard output to an `.ini` file in the `config/platforms` directory with the corresponding version as the name. Use the `-h` or `--help` argument for more details.
     * If a directory structure in `config/platforms` doesn't exist for the binary's target platform and version, create the necessary directories with the associated `display_name` files in the same manner as existing platforms.
 5. If necessary, update `config/valid_versions`. If you are uploading the first build for a new version of ungoogled-chromium, this needs to be updated.
-6. Run `utilities/site_generator.py` to generate the new HTML files. There are no arguments. It must be run from the root of the repository.
-7. Push the resulting changes in the repository. Make a pull request against the main repository.
+6. Push your changes in the repository; these changes should only be of files in `config/`. Make a pull request against the main repository.
     * This can be bypassed if one is part of the [Binaries Team](//github.com/orgs/ungoogled-software/teams/binaries-team).
 
 Notes:
@@ -79,8 +79,7 @@ git pull
 # Edit config/valid_versions and add "99.0.1234.567-1" (without quotes) ONLY if it does not exist.
 # Create the directories debian/ and debian/stretch_amd64 with corresponding display_name files in config/platforms/ ONLY if they do NOT exist.
 ./utilities/platform_ini_generator.py 99.0.1234.567-1 YOURNAME ~/ungoogled-chromium/buildspace/*.deb ~/ungoogled-chromium/buildspace/*.changes ~/ungoogled-chromium/buildspace/*.buildinfo > config/platforms/debian/stretch_amd64/99.0.1234.567-1.ini
-./utilities/site_generator.py
-git add *
+git add config/
 git commit -m 'Add 99.0.1234.567-1 binaries for Debian stretch amd64'
 git push
 # In GitHub, create a pull request in ungoogled-software/ungoogled-chromium-binaries with the new change in YOURNAME/ungoogled-chromium-binaries
