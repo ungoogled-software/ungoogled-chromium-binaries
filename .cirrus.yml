@@ -17,6 +17,7 @@ site_generation_task:
         - git add *
         - git config user.email 'cirrus@null'
         - git config user.name 'Cirrus CI'
+        - mkdir -p ~/.ssh
         - ssh-keyscan -t rsa github.com >> ~/.ssh/known_hosts
         - eval "$(ssh-agent -s)"
         - printf "$DEPLOYKEY_PRIVATE_BASE64" | base64 -d | ssh-add -
