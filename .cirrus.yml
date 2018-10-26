@@ -1,10 +1,10 @@
 container:
-    image: python:3.5-slim
+    dockerfile: .cirrus_Dockerfile
 
 site_generation_task:
     only_if: $CIRRUS_USER_COLLABORATOR == 'true' && $CIRRUS_BRANCH == 'master' && $CIRRUS_TAG == '' && $CIRRUS_PR == '' && $CIRRUS_REPO_FULL_NAME == 'ungoogled-software/ungoogled-chromium-binaries'
     environment:
-        GITHUB_PUSH_TOKEN: ENCRYPTED[TODO]
+        DEPLOYKEY_PRIVATE_BASE64: ENCRYPTED[1ffa134598cb5024cd48612a16e397e5e531db1fd65733e37404a122359c252093ad9c57e5045a101c714559099e9ecc]
     pip_cache:
         folder: ~/.cache/pip
         populate_script: pip install Markdown
@@ -17,7 +17,10 @@ site_generation_task:
         - git add *
         - git config user.email 'cirrus@null'
         - git config user.name 'Cirrus CI'
+        - eval "$(ssh-agent -s)"
+        - printf "$DEPLOYKEY_PRIVATE_BASE64" | base64 -d | ssh-add -
+        - git pull --ff-only "git@github.com/${CIRRUS_REPO_FULL_NAME}.git" $CIRRUS_BRANCH
         - git commit -m "Regenerate site with $CIRRUS_CHANGE_IN_REPO\n\n$CIRRUS_CHANGE_MESSAGE\n[skip ci]"
-        - git push -q "https://${GITHUB_PUSH_TOKEN}@github.com/${CIRRUS_REPO_FULL_NAME}.git" $CIRRUS_BRANCH
+        - git push "git@github.com/${CIRRUS_REPO_FULL_NAME}.git" $CIRRUS_BRANCH
 
 # vim: set expandtab shiftwidth=4 softtabstop=4:
