@@ -22,7 +22,7 @@ site_generation_task:
         - eval "$(ssh-agent -s)"
         - printf "$DEPLOYKEY_PRIVATE_BASE64" | base64 -d | ssh-add -
         - git pull --ff-only "git@github.com:${CIRRUS_REPO_FULL_NAME}.git" $CIRRUS_BRANCH
-        - git commit -m "Regenerate site with $CIRRUS_CHANGE_IN_REPO\n\n$CIRRUS_CHANGE_MESSAGE\n[skip ci]"
+        - git commit -m "Regenerate site with $CIRRUS_CHANGE_IN_REPO" -m "$CIRRUS_CHANGE_MESSAGE" -m '[skip ci]'
         - git push "git@github.com:${CIRRUS_REPO_FULL_NAME}.git" $CIRRUS_BRANCH
 
 # vim: set expandtab shiftwidth=4 softtabstop=4:
