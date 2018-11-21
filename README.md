@@ -85,6 +85,14 @@ git push
 # In GitHub, create a pull request in ungoogled-software/ungoogled-chromium-binaries with the new change in YOURNAME/ungoogled-chromium-binaries
 ```
 
+**Testing changes**
+
+```
+python3 utilities/site_generator.py
+./utilities/local_server.py
+# Open a webpage to http://localhost:8086
+```
+
 ## External resources
 
 * [github-markdown-css](//github.com/sindresorhus/github-markdown-css)
