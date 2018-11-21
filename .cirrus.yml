@@ -2,7 +2,7 @@ container:
     dockerfile: .cirrus_Dockerfile
 
 site_generation_task:
-    only_if: $CIRRUS_BRANCH == 'master' && $CIRRUS_REPO_ONWER == 'ungoogled-software'
+    only_if: $CIRRUS_REPO_ONWER == 'ungoogled-software'
     environment:
         DEPLOYKEY_PRIVATE_BASE64: ENCRYPTED[1ffa134598cb5024cd48612a16e397e5e531db1fd65733e37404a122359c252093ad9c57e5045a101c714559099e9ecc]
     pip_cache:
