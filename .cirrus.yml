@@ -2,7 +2,6 @@ container:
     dockerfile: .cirrus_Dockerfile
 
 site_generation_task:
-    only_if: $CIRRUS_REPO_ONWER == 'ungoogled-software'
     environment:
         DEPLOYKEY_PRIVATE_BASE64: ENCRYPTED[1ffa134598cb5024cd48612a16e397e5e531db1fd65733e37404a122359c252093ad9c57e5045a101c714559099e9ecc]
     pip_cache:
@@ -10,6 +9,11 @@ site_generation_task:
         populate_script: pip install Markdown
     pip_install_script: pip install Markdown
     site_generator_script:
+        - [ $CIRRUS_USER_COLLABORATOR == 'true' ] || exit 0
+        - [ $CIRRUS_BRANCH == 'master' ] || exit 0
+        - [ $CIRRUS_TAG == '' ] || exit 0
+        - [ $CIRRUS_PR == '' ] || exit 0
+        - [ $CIRRUS_REPO_FULL_NAME == 'ungoogled-software/ungoogled-chromium-binaries' ] || exit 0
         - git diff --cached --exit-code
         - git diff --exit-code
         - python3 utilities/site_generator.py
