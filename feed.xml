@@ -176,10 +176,10 @@
 &lt;/p&gt;</content>
   </entry>
   <entry xml:base="https://ungoogled-software.github.io/ungoogled-chromium-binaries/feed.xml">
-    <title type="text">Ubuntu 18.10 (cosmic) amd64: 71.0.3578.98-1 (development)</title>
-    <id>2018-12-13T22:49:55.970913+00:0071.0.3578.98-1developmentUbuntu18.10(cosmic)amd64</id>
-    <updated>2018-12-13T22:49:55Z</updated>
-    <link href="https://ungoogled-software.github.io/ungoogled-chromium-binaries/releases/ubuntu/cosmic_amd64/71.0.3578.98-1" />
+    <title type="text">Ubuntu 18.10 (cosmic) amd64: 71.0.3578.98-2 (development)</title>
+    <id>2018-12-17T23:13:50.645436+00:0071.0.3578.98-2developmentUbuntu18.10(cosmic)amd64</id>
+    <updated>2018-12-17T23:13:50Z</updated>
+    <link href="https://ungoogled-software.github.io/ungoogled-chromium-binaries/releases/ubuntu/cosmic_amd64/71.0.3578.98-2" />
     <author>
       <name></name>
     </author>
