@@ -8,8 +8,22 @@
   <subtitle type="text">Feed of contributor-submitted binaries</subtitle>
   <generator>PyAtom</generator>
   <entry xml:base="https://ungoogled-software.github.io/ungoogled-chromium-binaries/feed.xml">
-    <title type="text">Linux AppImage 64-bit: 71.0.3578.98-2 (release)</title>
-    <id>2018-12-29T00:17:40.773894+00:0071.0.3578.98-2releaseLinuxAppImage64-bit</id>
+    <title type="text">Linux AppImage 64-bit: 70.0.3538.110-1 (release)</title>
+    <id>2018-11-20T00:17:40.773894+00:0070.0.3538.110-1releaseLinuxAppImage64-bit</id>
+    <updated>2018-11-20T00:17:40Z</updated>
+    <link href="https://ungoogled-software.github.io/ungoogled-chromium-binaries/releases/appimage/64bit/70.0.3538.110-1" />
+    <author>
+      <name></name>
+    </author>
+    <content type="html">&lt;h2&gt;Release Summary&lt;/h2&gt;
+&lt;p&gt;
+&lt;div&gt;Author: Intika&lt;/div&gt;
+&lt;div&gt;Number of files: 1&lt;/div&gt;
+&lt;/p&gt;</content>
+  </entry>
+  <entry xml:base="https://ungoogled-software.github.io/ungoogled-chromium-binaries/feed.xml">
+    <title type="text">Linux AppImage 64-bit: 71.0.3578.98-2 (development)</title>
+    <id>2018-12-29T00:17:40.773894+00:0071.0.3578.98-2developmentLinuxAppImage64-bit</id>
     <updated>2018-12-29T00:17:40Z</updated>
     <link href="https://ungoogled-software.github.io/ungoogled-chromium-binaries/releases/appimage/64bit/71.0.3578.98-2" />
     <author>
