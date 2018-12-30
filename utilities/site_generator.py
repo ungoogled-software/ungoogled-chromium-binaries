@@ -53,7 +53,6 @@ _OUTPUT_WRAPPER = _PAGE_TEMPLATES / pathlib.Path("output_wrapper" + _OUTPUT_SUFF
 _OUTPUT_INDEX = pathlib.Path("index" + _OUTPUT_SUFFIX)
 _VERSION_INPUT = _PAGE_TEMPLATES / pathlib.Path("version" + _INPUT_SUFFIX + ".in")
 _PLATFORMS = _CONFIG / pathlib.Path("platforms")
-_VALID_VERSIONS = _CONFIG / pathlib.Path("valid_versions")
 _RELEASES = pathlib.Path("releases")
 _DISPLAY_NAME = pathlib.Path("display_name")
 _STATUSES = [
@@ -73,8 +72,6 @@ _FEED_CONTENT_TEMPLATE = '''<h2>Release Summary</h2>
 _DATETIME_UNSPECIFIED = datetime.datetime(
     2017, 1, 1, tzinfo=datetime.timezone.utc
 )
-
-_valid_versions = dict() # tag version -> order number
 
 class PageFileStringTemplate(string.Template):
     '''
@@ -158,12 +155,14 @@ class PlatformVersion:
 
 def _version_sorting_key(ini_path):
     """
-    Returns an integer representing the sorting key for the INI path
+    Returns a comparable object representing the sorting key for the INI path
     """
     version = ini_path.stem
-    index = _valid_versions.get(version)
-    if index is None:
-        raise ValueError("{} is not a valid version. Directory: {}".format(version, str(ini_path.parent)))
+    try:
+        # Assume all components of a version string are numbers
+        index = tuple(map(int, version.replace('-', '.').split('.')))
+    except ValueError as exc:
+        raise ValueError("{} is not a valid version. Error: {}. Directory: {}".format(version, str(exc), str(ini_path.parent)))
     return index
 
 class PlatformDirectory:
@@ -203,13 +202,6 @@ class PlatformDirectory:
 
     def __repr__(self):
         return str(self)
-
-def read_valid_versions():
-    with _VALID_VERSIONS.open() as valid_versions_file:
-        counter = itertools.count()
-        for line in valid_versions_file.read().splitlines():
-            if len(line) > 0 and not line.startswith("#"):
-                _valid_versions[line.strip()] = next(counter)
 
 def read_config():
     root_dir = PlatformDirectory(_PLATFORMS, None)
@@ -439,8 +431,6 @@ def write_website(root_dir, feed_path):
         feed_file.write(feed.to_string())
 
 if __name__ == "__main__":
-    read_valid_versions()
-
     root_dir = read_config()
 
     #print_config(root_dir)
