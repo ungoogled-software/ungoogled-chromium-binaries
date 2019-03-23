@@ -1,7 +1,7 @@
 #!/usr/bin/env python3
 # -*- coding: UTF-8 -*-
 
-# Copyright (c) 2017 The ungoogled-chromium Authors. All rights reserved.
+# Copyright (c) 2019 The ungoogled-chromium Authors. All rights reserved.
 # Use of this source code is governed by a BSD-style license that can be
 # found in the LICENSE file.
 
@@ -20,6 +20,7 @@ import string
 import sys
 
 import markdown # Python-Markdown: https://github.com/waylan/Python-Markdown
+from pkg_resources.extern.packaging.version import LegacyVersion as VersionSortKey
 
 if __name__ == "__main__" and (__package__ is None or __package__ == ""):
     def _fix_relative_import():
@@ -157,13 +158,7 @@ def _version_sorting_key(ini_path):
     """
     Returns a comparable object representing the sorting key for the INI path
     """
-    version = ini_path.stem
-    try:
-        # Assume all components of a version string are numbers
-        index = tuple(map(int, version.replace('-', '.').split('.')))
-    except ValueError as exc:
-        raise ValueError("{} is not a valid version. Error: {}. Directory: {}".format(version, str(exc), str(ini_path.parent)))
-    return index
+    return VersionSortKey(ini_path.stem)
 
 class PlatformDirectory:
     def __init__(self, dir_path, parent):
