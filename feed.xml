@@ -2,7 +2,7 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
   <title type="text">ungoogled-chromium Binary Downloads</title>
   <id>https://ungoogled-software.github.io/ungoogled-chromium-binaries/feed.xml</id>
-  <updated>2019-05-03T13:06:56Z</updated>
+  <updated>2019-05-09T20:19:46Z</updated>
   <link href="https://ungoogled-software.github.io/ungoogled-chromium-binaries/" />
   <link href="https://ungoogled-software.github.io/ungoogled-chromium-binaries/feed.xml" rel="self" />
   <subtitle type="text">Feed of contributor-submitted binaries</subtitle>
@@ -134,16 +134,16 @@
 &lt;/p&gt;</content>
   </entry>
   <entry xml:base="https://ungoogled-software.github.io/ungoogled-chromium-binaries/feed.xml">
-    <title type="text">macOS: 73.0.3683.103-1.1 (development)</title>
-    <id>2019-04-12T22:06:02.256370+00:0073.0.3683.103-1.1developmentmacOS</id>
-    <updated>2019-04-12T22:06:02Z</updated>
-    <link href="https://ungoogled-software.github.io/ungoogled-chromium-binaries/releases/macos/73.0.3683.103-1.1" />
+    <title type="text">macOS: 74.0.3729.131-1 (development)</title>
+    <id>2019-05-09T20:19:46.303079+00:0074.0.3729.131-1developmentmacOS</id>
+    <updated>2019-05-09T20:19:46Z</updated>
+    <link href="https://ungoogled-software.github.io/ungoogled-chromium-binaries/releases/macos/74.0.3729.131-1" />
     <author>
       <name></name>
     </author>
     <content type="html">&lt;h2&gt;Release Summary&lt;/h2&gt;
 &lt;p&gt;
-&lt;div&gt;Author: chase9&lt;/div&gt;
+&lt;div&gt;Author: unpredictable&lt;/div&gt;
 &lt;div&gt;Number of files: 1&lt;/div&gt;
 &lt;/p&gt;</content>
   </entry>
