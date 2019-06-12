@@ -2,7 +2,7 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
   <title type="text">ungoogled-chromium Binary Downloads</title>
   <id>https://ungoogled-software.github.io/ungoogled-chromium-binaries/feed.xml</id>
-  <updated>2019-05-22T13:30:33Z</updated>
+  <updated>2019-06-12T00:19:10Z</updated>
   <link href="https://ungoogled-software.github.io/ungoogled-chromium-binaries/" />
   <link href="https://ungoogled-software.github.io/ungoogled-chromium-binaries/feed.xml" rel="self" />
   <subtitle type="text">Feed of contributor-submitted binaries</subtitle>
@@ -50,10 +50,10 @@
 &lt;/p&gt;</content>
   </entry>
   <entry xml:base="https://ungoogled-software.github.io/ungoogled-chromium-binaries/feed.xml">
-    <title type="text">Debian 10 (buster) amd64: 74.0.3729.108-1.buster1 (development)</title>
-    <id>2019-05-01T04:53:31.169483+00:0074.0.3729.108-1.buster1developmentDebian10(buster)amd64</id>
-    <updated>2019-05-01T04:53:31Z</updated>
-    <link href="https://ungoogled-software.github.io/ungoogled-chromium-binaries/releases/debian/buster_amd64/74.0.3729.108-1.buster1" />
+    <title type="text">Debian 10 (buster) amd64: 75.0.3770.80-1.buster1 (development)</title>
+    <id>2019-06-12T00:19:10.513614+00:0075.0.3770.80-1.buster1developmentDebian10(buster)amd64</id>
+    <updated>2019-06-12T00:19:10Z</updated>
+    <link href="https://ungoogled-software.github.io/ungoogled-chromium-binaries/releases/debian/buster_amd64/75.0.3770.80-1.buster1" />
     <author>
       <name></name>
     </author>
