@@ -134,16 +134,16 @@
 &lt;/p&gt;</content>
   </entry>
   <entry xml:base="https://ungoogled-software.github.io/ungoogled-chromium-binaries/feed.xml">
-    <title type="text">macOS: 74.0.3729.157-1.1 (development)</title>
-    <id>2019-05-22T13:30:33.130266+00:0074.0.3729.157-1.1developmentmacOS</id>
-    <updated>2019-05-22T13:30:33Z</updated>
-    <link href="https://ungoogled-software.github.io/ungoogled-chromium-binaries/releases/macos/74.0.3729.157-1.1" />
+    <title type="text">macOS: 75.0.3770.80-1 (development)</title>
+    <id>2019-06-13T04:40:33.130266+00:0075.0.3770.80-1developmentmacOS</id>
+    <updated>2019-06-13T04:40:33Z</updated>
+    <link href="https://ungoogled-software.github.io/ungoogled-chromium-binaries/releases/macos/75.0.3770.80-1" />
     <author>
       <name></name>
     </author>
     <content type="html">&lt;h2&gt;Release Summary&lt;/h2&gt;
 &lt;p&gt;
-&lt;div&gt;Author: kramred&lt;/div&gt;
+&lt;div&gt;Author: macvip&lt;/div&gt;
 &lt;div&gt;Number of files: 1&lt;/div&gt;
 &lt;/p&gt;</content>
   </entry>
