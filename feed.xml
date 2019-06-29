@@ -162,22 +162,22 @@
 &lt;/p&gt;</content>
   </entry>
   <entry xml:base="https://ungoogled-software.github.io/ungoogled-chromium-binaries/feed.xml">
-    <title type="text">Ubuntu 18.04 (bionic) amd64: 69.0.3497.100-1 (release)</title>
-    <id>2018-09-20T16:56:03.110538+00:0069.0.3497.100-1releaseUbuntu18.04(bionic)amd64</id>
-    <updated>2018-09-20T16:56:03Z</updated>
-    <link href="https://ungoogled-software.github.io/ungoogled-chromium-binaries/releases/ubuntu/bionic_amd64/69.0.3497.100-1" />
+    <title type="text">Ubuntu 18.04 (bionic) amd64: 71.0.3578.98-2 (development)</title>
+    <id>2018-12-18T17:04:48.264129+00:0071.0.3578.98-2developmentUbuntu18.04(bionic)amd64</id>
+    <updated>2018-12-18T17:04:48Z</updated>
+    <link href="https://ungoogled-software.github.io/ungoogled-chromium-binaries/releases/ubuntu/bionic_amd64/71.0.3578.98-2" />
     <author>
       <name></name>
     </author>
     <content type="html">&lt;h2&gt;Release Summary&lt;/h2&gt;
 &lt;p&gt;
-&lt;div&gt;Author: Eloston&lt;/div&gt;
-&lt;div&gt;Number of files: 7&lt;/div&gt;
+&lt;div&gt;Author: riyad&lt;/div&gt;
+&lt;div&gt;Number of files: 8&lt;/div&gt;
 &lt;/p&gt;</content>
   </entry>
   <entry xml:base="https://ungoogled-software.github.io/ungoogled-chromium-binaries/feed.xml">
-    <title type="text">Ubuntu 18.04 (bionic) amd64: 72.0.3626.122-3.bionic1 (development)</title>
-    <id>2019-03-24T00:22:56.533539+00:0072.0.3626.122-3.bionic1developmentUbuntu18.04(bionic)amd64</id>
+    <title type="text">Ubuntu 18.04 (bionic) amd64: 72.0.3626.122-3.bionic1 (release)</title>
+    <id>2019-03-24T00:22:56.533539+00:0072.0.3626.122-3.bionic1releaseUbuntu18.04(bionic)amd64</id>
     <updated>2019-03-24T00:22:56Z</updated>
     <link href="https://ungoogled-software.github.io/ungoogled-chromium-binaries/releases/ubuntu/bionic_amd64/72.0.3626.122-3.bionic1" />
     <author>
