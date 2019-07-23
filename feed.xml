@@ -2,7 +2,7 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
   <title type="text">ungoogled-chromium Binary Downloads</title>
   <id>https://ungoogled-software.github.io/ungoogled-chromium-binaries/feed.xml</id>
-  <updated>2019-07-17T16:08:38Z</updated>
+  <updated>2019-07-22T07:12:41Z</updated>
   <link href="https://ungoogled-software.github.io/ungoogled-chromium-binaries/" />
   <link href="https://ungoogled-software.github.io/ungoogled-chromium-binaries/feed.xml" rel="self" />
   <subtitle type="text">Feed of contributor-submitted binaries</subtitle>
@@ -36,16 +36,16 @@
 &lt;/p&gt;</content>
   </entry>
   <entry xml:base="https://ungoogled-software.github.io/ungoogled-chromium-binaries/feed.xml">
-    <title type="text">Arch Linux: 74.0.3729.136-1 (development)</title>
-    <id>2019-05-11T20:31:05.204745+00:0074.0.3729.136-1developmentArchLinux</id>
-    <updated>2019-05-11T20:31:05Z</updated>
-    <link href="https://ungoogled-software.github.io/ungoogled-chromium-binaries/releases/archlinux/74.0.3729.136-1" />
+    <title type="text">Arch Linux: 75.0.3770.100-1 (development)</title>
+    <id>2019-07-22T07:12:41.642044+00:0075.0.3770.100-1developmentArchLinux</id>
+    <updated>2019-07-22T07:12:41Z</updated>
+    <link href="https://ungoogled-software.github.io/ungoogled-chromium-binaries/releases/archlinux/75.0.3770.100-1" />
     <author>
       <name></name>
     </author>
     <content type="html">&lt;h2&gt;Release Summary&lt;/h2&gt;
 &lt;p&gt;
-&lt;div&gt;Author: tangalbert919&lt;/div&gt;
+&lt;div&gt;Author: rtMis&lt;/div&gt;
 &lt;div&gt;Number of files: 1&lt;/div&gt;
 &lt;/p&gt;</content>
   </entry>
