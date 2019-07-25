@@ -379,6 +379,7 @@ def _write_version_page(version_node):
         current_path=" / ".join(markdown_urls),
         author=github_author_markdown,
         publication_time=publication_time_markdown,
+        install_info=install_info,
         note=note_markdown,
         status=version_node.status.capitalize(),
         download_list=download_list_markdown

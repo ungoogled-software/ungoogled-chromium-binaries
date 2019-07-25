@@ -6,7 +6,7 @@ Navigation: $ungoog{current_path}
 
 * Author: $ungoog{author}
 * Publication time (in UTC): $ungoog{publication_time}
-* Installation instructions: $ungoog{install_instr}
+* Installation instructions: $ungoog{install_info}
 * Notes: $ungoog{note}
 
 Status: **$ungoog{status}**
