@@ -11,7 +11,6 @@ Generates the website files
 
 import configparser
 import datetime
-import itertools
 import os.path
 import pathlib
 import re
@@ -56,6 +55,7 @@ _VERSION_INPUT = _PAGE_TEMPLATES / pathlib.Path("version" + _INPUT_SUFFIX + ".in
 _PLATFORMS = _CONFIG / pathlib.Path("platforms")
 _RELEASES = pathlib.Path("releases")
 _DISPLAY_NAME = pathlib.Path("display_name")
+_INSTALL_INFO = pathlib.Path("install_info")
 _STATUSES = [
     "release",
     "development",
@@ -103,6 +103,7 @@ class PlatformVersion:
         self.files = dict()
         self.publication_time = _DATETIME_UNSPECIFIED
         self.github_author = None
+        self.install_info = None
         self.note = '*(none)*'
         self.status = None
 
@@ -120,6 +121,8 @@ class PlatformVersion:
                         ).replace(tzinfo=datetime.timezone.utc)
                     elif config_attribute.lower() == "github_author":
                         self.github_author = version_config[section][config_attribute]
+                    elif config_attribute.lower() == "install_info":
+                        self.install_info = version_config[section][config_attribute]
                     elif config_attribute.lower() == "note":
                         self.note = version_config[section][config_attribute]
                     elif config_attribute.lower() == "status":
@@ -173,6 +176,10 @@ class PlatformDirectory:
 
         with (dir_path / _DISPLAY_NAME).open() as display_name_file:
             self.display_name = display_name_file.read().splitlines()[0]
+
+        self.install_info = None
+        if (dir_path / _INSTALL_INFO).exists():
+            self.install_info = (dir_path / _INSTALL_INFO).read_text()
 
         for config_path in sorted(self._real_path.glob("*.ini"), key=_version_sorting_key, reverse=True):
             print("Parsing version ini: {}".format(str(config_path)))
@@ -333,10 +340,15 @@ def _write_version_page(version_node):
     target_path = _RELEASES / version_node.path.parent / (version_node.version + _OUTPUT_SUFFIX)
 
     markdown_urls = list()
+    install_info = None
     current_node = version_node
     while not current_node is None:
         markdown_urls.insert(0, "[{}]({})".format(current_node.display_name, _get_node_weburl(current_node)))
+        if not install_info and current_node.install_info:
+            install_info = current_node.install_info
         current_node = current_node.parent
+    if not install_info:
+        install_info = "*(unspecified)*"
     markdown_urls.insert(0, "[Front page]({})".format(_ABSOLUTE_URL_PREFIX))
 
     if version_node.publication_time == _DATETIME_UNSPECIFIED:
@@ -425,7 +437,7 @@ def write_website(root_dir, feed_path):
     with feed_path.open('w') as feed_file:
         feed_file.write(feed.to_string())
 
-if __name__ == "__main__":
+def main():
     root_dir = read_config()
 
     #print_config(root_dir)
@@ -433,3 +445,6 @@ if __name__ == "__main__":
         root_dir,
         pathlib.Path(__file__).resolve().parent.parent / _FEED_FILE
     )
+
+if __name__ == "__main__":
+    main()
