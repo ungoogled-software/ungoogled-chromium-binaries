@@ -122,7 +122,7 @@ class PlatformVersion:
                     elif config_attribute.lower() == "github_author":
                         self.github_author = version_config[section][config_attribute]
                     elif config_attribute.lower() == "install_info":
-                        self.install_info = version_config[section][config_attribute]
+                        self.install_info = version_config[section][config_attribute].strip()
                     elif config_attribute.lower() == "note":
                         self.note = version_config[section][config_attribute]
                     elif config_attribute.lower() == "status":
@@ -179,7 +179,7 @@ class PlatformDirectory:
 
         self.install_info = None
         if (dir_path / _INSTALL_INFO).exists():
-            self.install_info = (dir_path / _INSTALL_INFO).read_text()
+            self.install_info = (dir_path / _INSTALL_INFO).read_text().strip()
 
         for config_path in sorted(self._real_path.glob("*.ini"), key=_version_sorting_key, reverse=True):
             print("Parsing version ini: {}".format(str(config_path)))
