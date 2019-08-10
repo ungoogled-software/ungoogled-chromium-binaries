@@ -2,7 +2,7 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
   <title type="text">ungoogled-chromium Binary Downloads</title>
   <id>https://ungoogled-software.github.io/ungoogled-chromium-binaries/feed.xml</id>
-  <updated>2019-07-25T13:06:40Z</updated>
+  <updated>2019-08-10T18:52:14Z</updated>
   <link href="https://ungoogled-software.github.io/ungoogled-chromium-binaries/" />
   <link href="https://ungoogled-software.github.io/ungoogled-chromium-binaries/feed.xml" rel="self" />
   <subtitle type="text">Feed of contributor-submitted binaries</subtitle>
@@ -50,17 +50,17 @@
 &lt;/p&gt;</content>
   </entry>
   <entry xml:base="https://ungoogled-software.github.io/ungoogled-chromium-binaries/feed.xml">
-    <title type="text">Debian 10 (buster) amd64: 75.0.3770.142-1.buster1 (development)</title>
-    <id>2019-07-25T06:29:26.721639+00:0075.0.3770.142-1.buster1developmentDebian10(buster)amd64</id>
-    <updated>2019-07-25T06:29:26Z</updated>
-    <link href="https://ungoogled-software.github.io/ungoogled-chromium-binaries/releases/debian/buster_amd64/75.0.3770.142-1.buster1" />
+    <title type="text">Debian 10 (buster) amd64: 76.0.3809.100-1.buster1 (development)</title>
+    <id>2019-08-10T18:52:14.480580+00:0076.0.3809.100-1.buster1developmentDebian10(buster)amd64</id>
+    <updated>2019-08-10T18:52:14Z</updated>
+    <link href="https://ungoogled-software.github.io/ungoogled-chromium-binaries/releases/debian/buster_amd64/76.0.3809.100-1.buster1" />
     <author>
       <name></name>
     </author>
     <content type="html">&lt;h2&gt;Release Summary&lt;/h2&gt;
 &lt;p&gt;
 &lt;div&gt;Author: Eloston&lt;/div&gt;
-&lt;div&gt;Number of files: 8&lt;/div&gt;
+&lt;div&gt;Number of files: 12&lt;/div&gt;
 &lt;/p&gt;</content>
   </entry>
   <entry xml:base="https://ungoogled-software.github.io/ungoogled-chromium-binaries/feed.xml">
@@ -120,24 +120,24 @@
 &lt;/p&gt;</content>
   </entry>
   <entry xml:base="https://ungoogled-software.github.io/ungoogled-chromium-binaries/feed.xml">
-    <title type="text">macOS: 73.0.3683.103-1.1 (release)</title>
-    <id>2019-04-12T22:06:02.256370+00:0073.0.3683.103-1.1releasemacOS</id>
-    <updated>2019-04-12T22:06:02Z</updated>
-    <link href="https://ungoogled-software.github.io/ungoogled-chromium-binaries/releases/macos/73.0.3683.103-1.1" />
+    <title type="text">macOS: 75.0.3770.90-1.1 (release)</title>
+    <id>2019-06-18T04:50:33.130266+00:0075.0.3770.90-1.1releasemacOS</id>
+    <updated>2019-06-18T04:50:33Z</updated>
+    <link href="https://ungoogled-software.github.io/ungoogled-chromium-binaries/releases/macos/75.0.3770.90-1.1" />
     <author>
       <name></name>
     </author>
     <content type="html">&lt;h2&gt;Release Summary&lt;/h2&gt;
 &lt;p&gt;
-&lt;div&gt;Author: chase9&lt;/div&gt;
+&lt;div&gt;Author: macvip&lt;/div&gt;
 &lt;div&gt;Number of files: 1&lt;/div&gt;
 &lt;/p&gt;</content>
   </entry>
   <entry xml:base="https://ungoogled-software.github.io/ungoogled-chromium-binaries/feed.xml">
-    <title type="text">macOS: 75.0.3770.142-1 (development)</title>
-    <id>2019-07-16T16:11:06.558237+00:0075.0.3770.142-1developmentmacOS</id>
-    <updated>2019-07-16T16:11:06Z</updated>
-    <link href="https://ungoogled-software.github.io/ungoogled-chromium-binaries/releases/macos/75.0.3770.142-1" />
+    <title type="text">macOS: 76.0.3809.87-1 (development)</title>
+    <id>2019-08-05T22:32:34.137221+00:0076.0.3809.87-1developmentmacOS</id>
+    <updated>2019-08-05T22:32:34Z</updated>
+    <link href="https://ungoogled-software.github.io/ungoogled-chromium-binaries/releases/macos/76.0.3809.87-1" />
     <author>
       <name></name>
     </author>
