@@ -106,16 +106,16 @@
 &lt;/p&gt;</content>
   </entry>
   <entry xml:base="https://ungoogled-software.github.io/ungoogled-chromium-binaries/feed.xml">
-    <title type="text">Portable Linux 64-bit: 75.0.3770.100-1.2 (development)</title>
-    <id>2019-07-07T22:44:07.665599+00:0075.0.3770.100-1.2developmentPortableLinux64-bit</id>
-    <updated>2019-07-07T22:44:07Z</updated>
-    <link href="https://ungoogled-software.github.io/ungoogled-chromium-binaries/releases/linux_portable/64bit/75.0.3770.100-1.2" />
+    <title type="text">Portable Linux 64-bit: 77.0.3865.120-1 (development)</title>
+    <id>2019-10-23T09:48:35.163233+00:0077.0.3865.120-1developmentPortableLinux64-bit</id>
+    <updated>2019-10-23T09:48:35Z</updated>
+    <link href="https://ungoogled-software.github.io/ungoogled-chromium-binaries/releases/linux_portable/64bit/77.0.3865.120-1" />
     <author>
       <name></name>
     </author>
     <content type="html">&lt;h2&gt;Release Summary&lt;/h2&gt;
 &lt;p&gt;
-&lt;div&gt;Author: Eloston&lt;/div&gt;
+&lt;div&gt;Author: laamalif&lt;/div&gt;
 &lt;div&gt;Number of files: 1&lt;/div&gt;
 &lt;/p&gt;</content>
   </entry>
