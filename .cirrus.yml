@@ -6,8 +6,8 @@ site_generation_task:
         DEPLOYKEY_PRIVATE_BASE64: ENCRYPTED[1ffa134598cb5024cd48612a16e397e5e531db1fd65733e37404a122359c252093ad9c57e5045a101c714559099e9ecc]
     pip_cache:
         folder: ~/.cache/pip
-        populate_script: pip install Markdown
-    pip_install_script: pip install Markdown
+        populate_script: pip install -r utilities/requirements.txt
+    pip_install_script: pip install -r utilities/requirements.txt
     site_generator_script:
         - eval '[[ "$CIRRUS_USER_COLLABORATOR" == "true" ]]' || exit 0
         - eval '[[ "$CIRRUS_BRANCH" == "master" ]]' || exit 0

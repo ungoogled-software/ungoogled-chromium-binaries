@@ -92,6 +92,7 @@ git push
 **Testing changes**
 
 ```
+python3 -m pip install -r utilities/requirements.txt
 python3 utilities/site_generator.py
 ./utilities/local_server.py
 # Open a webpage to http://localhost:8086
