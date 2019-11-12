@@ -114,13 +114,13 @@ def _get_tag_name(args):
 
 
 def _get_platform_name(output_path):
-    current_path = output_path
+    current_path = output_path.resolve()
     names = list()
     while current_path != _CONFIG_ROOT:
         names.append((current_path / 'display_name').read_text().strip())
         current_path = current_path.parent
     names.reverse()
-    return names
+    return ' '.join(names)
 
 
 def _is_path_inside(inner, outer):
