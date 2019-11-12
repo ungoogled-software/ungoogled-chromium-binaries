@@ -48,14 +48,14 @@ Steps to publish a new binary. An example of these steps is in the next section.
     * If this has been done before, pull in new changes from this one if necessary.
 2. Create a new Release (i.e. using GitHub's Release feature) in the fork and upload binaries to it. The tag name used must be unique for each Release; it normally matches the ungoogled-chromium version.
 3. Upload binaries to the new Release
-4. Use `utilities/platform_ini_generator.py` to generate an INI file with the correct URLs to binaries. It requires paths to a locally stored copy of the binaries for computing hashes. Use the `-h` or `--help` argument for more details.
+4. Use `utilities/submit_github_binary.py` to generate an INI file with the correct URLs to the GitHub Release. It requires paths to a locally stored copy of the binaries for computing hashes. Use the `-h` or `--help` argument for more details.
     * If a directory structure in `config/platforms` doesn't exist for the binary's target platform and version, create the necessary directories with the associated `display_name` files in the same manner as existing platforms.
 5. Push your changes in the repository; these changes should only be of files in `config/`. Make a pull request against the main repository.
     * This can be bypassed if one is part of the [Binaries Team](//github.com/orgs/ungoogled-software/teams/binaries-team).
 
 Notes:
 
-* `platform_ini_generator.py` is currently restricted to generating INI files with URLs to binaries in GitHub releases. If binaries are uploaded elsewhere, then the INI must be created by other means.
+* `submit_github_binary.py` is currently restricted to generating INI files with URLs to binaries in GitHub releases. If binaries are uploaded elsewhere, then the INI must be created by other means.
 * Additional changes can be made to the website configuration before step 5 as necessary.
 
 #### Example
@@ -83,11 +83,8 @@ cd ungoogled-chromium-binaries # The same as the one setup above
 git pull
 # Create the directories debian/ and debian/buster_amd64 with corresponding display_name files in config/platforms/ ONLY if they do NOT exist.
 # NOTE: You can use either --git to fetch the latest tag on the current branch, or specify it manually with --tag
-./utilities/platform_ini_generator.py --git path/to/ungoogled-chromium-debian --username YOURNAME --output config/platforms/debian/buster_amd64/ ~/ungoogled-chromium/build/ungoogled-chromium*
-# Check to ensure that the INI files point to valid URLs
-./utilities/check_platform_ini.py
-git add config/
-git commit -m 'Add 99.0.1234.567-1 binaries for Debian buster amd64'
+./utilities/submit_github_binary.py --git path/to/ungoogled-chromium-debian --username YOURNAME --output config/platforms/debian/buster_amd64/ ~/ungoogled-chromium/build/ungoogled-chromium*
+# A commit will be created automatically. Ensure commits are correct before proceeding
 git push
 # In GitHub, create a pull request in ungoogled-software/ungoogled-chromium-binaries with the new change in YOURNAME/ungoogled-chromium-binaries
 ```

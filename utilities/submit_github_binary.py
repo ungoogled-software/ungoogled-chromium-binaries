@@ -4,19 +4,35 @@
 # Use of this source code is governed by a BSD-style license that can be
 # found in the LICENSE file.
 '''
-This script takes in files and generates a platform ini as if they were uploaded to the Releases page.
-
-Output is to stdout, so consider redirecting the output to a file
+Tool to generate a platform .ini as if it were uploaded to GitHub Releases
 '''
 
 import argparse
 import collections
 import datetime
 import hashlib
+import os.path
 import subprocess
+import sys
 from pathlib import Path
 
+if __name__ == "__main__" and (__package__ is None or __package__ == ""):
+
+    def _fix_relative_import():
+        """Allow relative imports to work from anywhere"""
+        parent_path = os.path.dirname(os.path.realpath(os.path.abspath(__file__)))
+        sys.path.insert(0, os.path.dirname(parent_path))
+        global __package__ #pylint: disable=global-variable-undefined
+        __package__ = os.path.basename(parent_path) #pylint: disable=redefined-builtin
+        __import__(__package__)
+        sys.path.pop(0)
+
+    _fix_relative_import()
+
+from . import check_platform_ini
+
 _REPOSITORY_NAME = 'ungoogled-chromium-binaries'
+_CONFIG_ROOT = Path(__file__).resolve().parent.parent / 'config' / 'platforms'
 
 # GitHub Releases automatically replaces some characters
 _URL_REPLACEMENTS = {
@@ -97,6 +113,20 @@ def _get_tag_name(args):
                               cwd=args.git).stdout.strip()
 
 
+def _get_platform_name(output_path):
+    current_path = output_path
+    names = list()
+    while current_path != _CONFIG_ROOT:
+        names.append((current_path / 'display_name').read_text().strip())
+        current_path = current_path.parent
+    names.reverse()
+    return names
+
+
+def _is_path_inside(inner, outer):
+    return outer.parts == inner.parts[:len(outer.parts)]
+
+
 def main(arg_list=None):
     """
     This script outputs an INI file to standard output containing hashes and links to files as if they were uploaded to a GitHub Release.
@@ -119,18 +149,62 @@ def main(arg_list=None):
         required=True,
         help='GitHub username containing the fork of ungoogled-chromium-binaries')
     parser.add_argument(
+        '--skip-commit',
+        action='store_true',
+        help='Skip creating a git commit automatically with the .ini file')
+    parser.add_argument(
+        '--skip-checks',
+        action='store_true',
+        help='Skip validation of the URLs for the new platform .ini')
+    parser.add_argument(
+        '--project',
+        '-p',
+        default=_REPOSITORY_NAME,
+        help='GitHub project containing the Release (Default: %(default)s)')
+    parser.add_argument(
         'file_path',
         nargs='+',
         help=('One or more paths to local files with the same name as the ones '
               'in the GitHub Release. Used for URL and hash generation in the INI.'))
     args = parser.parse_args(args=arg_list)
+
+    # Check script preconditions and set required variables
+    if not _is_path_inside(args.output.resolve(),
+                           _CONFIG_ROOT) and not len(args.output.parts) > len(_CONFIG_ROOT.parts):
+        parser.error('Directory for .ini must be inside config/platforms/PLATFORM_HERE')
     tag_name = _get_tag_name(args)
-    DownloadsManager.set_params(args.username, _REPOSITORY_NAME, tag_name)
+    ini_path = args.output / f'{tag_name}.ini'
+    if not ini_path.parent.exists():
+        parser.error('Parent directory for output .ini does not exist. '
+                     'Please create it and add display_name at each level.')
+    if not args.skip_commit:
+        # Abort early if files are staged, since we can't commit only the .ini
+        if subprocess.run(['git', 'diff', '--staged', '--quiet', '--exit-code']).returncode != 0:
+            parser.error('You have staged changes in your git working tree. '
+                         'Please clear the staging area (commit or stash), or use --skip-commit')
+
+    # Actual work
+    DownloadsManager.set_params(args.username, args.project, tag_name)
     for filename in args.file_path:
         DownloadsManager.add_download(Path(filename))
-    (args.output / f'{tag_name}.ini').write_text(DownloadsManager.to_ini())
+    ini_path.write_text(DownloadsManager.to_ini())
+
+    # Postconditions and finalizing
+    if not args.skip_checks:
+        if check_platform_ini.verify_ini_files((ini_path, )):
+            print(
+                'ERROR: Validation of new .ini failed. '
+                'Check that your release is published and your arguments are correct.',
+                file=sys.stderr)
+            return 1
+    if not args.skip_commit:
+        subprocess.run(['git', 'add', str(ini_path)], check=True)
+        subprocess.run(
+            ['git', 'commit', '-m', f'Add {tag_name} for {_get_platform_name(args.output)}'],
+            check=True)
+        print('INFO: Commit successful. Make sure to push your commit.')
     return 0
 
 
 if __name__ == "__main__":
-    exit(main())
+    sys.exit(main())

@@ -66,19 +66,9 @@ def get_ini_set(filelist_args):
     return set(x for x in map(Path, file_set) if x.suffix.lower() == '.ini')
 
 
-def main(arg_list=None):
-    """CLI interface"""
-    parser = argparse.ArgumentParser(description=__doc__)
-    parser.add_argument(
-        'ini_path',
-        nargs='*',
-        help=('Zero or more paths to platform INIs to check. '
-              'If nothing is specified, then the git working tree will be checked. '
-              'Specify "-" to read standard input.'))
-    args = parser.parse_args(args=arg_list)
-    inipath_set = get_ini_set(args.ini_path)
+def verify_ini_files(inipath_iter):
     with requests.Session() as request_session:
-        for inipath in inipath_set:
+        for inipath in inipath_iter:
             print('Checking', str(inipath))
             platform_version = site_generator.PlatformVersion(inipath, None)
             for filename, filemeta in platform_version.files.items():
@@ -90,6 +80,22 @@ def main(arg_list=None):
                         f'ERROR: Got {response.status_code} ({response.reason}) for file: {filename}',
                         file=sys.stderr)
                     return 1
+    return 0
+
+
+def main(arg_list=None):
+    """CLI interface"""
+    parser = argparse.ArgumentParser(description=__doc__)
+    parser.add_argument(
+        'ini_path',
+        nargs='*',
+        help=('Zero or more paths to platform INIs to check. '
+              'If nothing is specified, then the git working tree will be checked. '
+              'Specify "-" to read standard input.'))
+    args = parser.parse_args(args=arg_list)
+    inipath_set = get_ini_set(args.ini_path)
+    if verify_ini_files(inipath_set):
+        return 1
     if not inipath_set:
         print('Did not find any .ini files to check')
     return 0
