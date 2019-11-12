@@ -83,6 +83,8 @@ cd ungoogled-chromium-binaries # The same as the one setup above
 git pull
 # Create the directories debian/ and debian/stretch_amd64 with corresponding display_name files in config/platforms/ ONLY if they do NOT exist.
 ./utilities/platform_ini_generator.py 99.0.1234.567-1 YOURNAME ~/ungoogled-chromium/buildspace/*.deb ~/ungoogled-chromium/buildspace/*.changes ~/ungoogled-chromium/buildspace/*.buildinfo > config/platforms/debian/stretch_amd64/99.0.1234.567-1.ini
+# Check to ensure that the INI files point to valid URLs
+./utilities/check_platform_ini.py
 git add config/
 git commit -m 'Add 99.0.1234.567-1 binaries for Debian stretch amd64'
 git push

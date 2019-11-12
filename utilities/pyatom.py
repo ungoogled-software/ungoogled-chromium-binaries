@@ -38,7 +38,6 @@ if sys.version_info.major >= 3:
 #Patch for issue #8 for Python 3 compatibility
 _unicode = str if sys.version_info.major >= 3 else unicode
 
-
 XHTML_NAMESPACE = 'http://www.w3.org/1999/xhtml'
 
 
@@ -71,8 +70,7 @@ def _make_text_block(name, content, content_type=None):
                (name, XHTML_NAMESPACE, content, name)
     if not content_type:
         return u'<%s>%s</%s>\n' % (name, escape(content), name)
-    return u'<%s type="%s">%s</%s>\n' % (name, content_type,
-                                         escape(content), name)
+    return u'<%s type="%s">%s</%s>\n' % (name, content_type, escape(content), name)
 
 
 def format_iso8601(obj, timezone):
@@ -182,18 +180,14 @@ class AtomFeed(object):
             self.entries.append(FeedEntry(*args, **kwargs))
 
     def __repr__(self):
-        return '<%s %r (%d entries)>' % (
-            self.__class__.__name__,
-            self.title,
-            len(self.entries)
-        )
+        return '<%s %r (%d entries)>' % (self.__class__.__name__, self.title, len(self.entries))
 
     def generate(self):
         """Return a generator that yields pieces of XML."""
         # atom demands either an author element in every entry or a global one
         if not self.author:
             if False in map(lambda e: bool(e.author), self.entries):
-                self.author = ({'name': u'unbekannter Autor'},)
+                self.author = ({'name': u'unbekannter Autor'}, )
 
         if not self.updated:
             dates = sorted([entry.updated for entry in self.entries])
@@ -221,15 +215,13 @@ class AtomFeed(object):
                 yield '    <email>%s</email>\n' % escape(author['email'])
             yield '  </author>\n'
         if self.subtitle:
-            yield '  ' + _make_text_block('subtitle', self.subtitle,
-                                          self.subtitle_type)
+            yield '  ' + _make_text_block('subtitle', self.subtitle, self.subtitle_type)
         if self.icon:
             yield u'  <icon>%s</icon>\n' % escape(self.icon)
         if self.logo:
             yield u'  <logo>%s</logo>\n' % escape(self.logo)
         if self.rights:
-            yield '  ' + _make_text_block('rights', self.rights,
-                                          self.rights_type)
+            yield '  ' + _make_text_block('rights', self.rights, self.rights_type)
         generator_name, generator_url, generator_version = self.generator
         if generator_name or generator_url or generator_version:
             tmp = [u'  <generator']
@@ -347,10 +339,7 @@ class FeedEntry(object):
             raise ValueError('updated is required')
 
     def __repr__(self):
-        return '<%s %r>' % (
-            self.__class__.__name__,
-            self.title
-        )
+        return '<%s %r>' % (self.__class__.__name__, self.title)
 
     def generate(self):
         """Yields pieces of ATOM XML."""
@@ -378,8 +367,7 @@ class FeedEntry(object):
             yield u'  <link %s/>\n' % ''.join('%s="%s" ' % \
                 (k, escape(link[k], True)) for k in link)
         if self.summary:
-            yield u'  ' + _make_text_block('summary', self.summary,
-                                           self.summary_type)
+            yield u'  ' + _make_text_block('summary', self.summary, self.summary_type)
         if self.content:
             if issubclass(self.content.__class__, dict):
                 if "content" in self.content:
@@ -389,8 +377,7 @@ class FeedEntry(object):
                     yield u'  <content %s/>\n' % ' '.join('%s="%s" ' % \
                         (k, escape(self.content[k], True)) for k in self.content)
             else:
-                yield u'  ' + _make_text_block('content', self.content,
-                                           self.content_type)
+                yield u'  ' + _make_text_block('content', self.content, self.content_type)
         yield u'</entry>\n'
 
     def to_string(self):

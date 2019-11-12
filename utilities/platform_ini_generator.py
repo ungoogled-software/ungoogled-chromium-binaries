@@ -3,7 +3,6 @@
 # Copyright (c) 2017 The ungoogled-chromium Authors. All rights reserved.
 # Use of this source code is governed by a BSD-style license that can be
 # found in the LICENSE file.
-
 '''
 This script takes in files and generates a platform ini as if they were uploaded to the Releases page.
 
@@ -23,6 +22,7 @@ _URL_REPLACEMENTS = {
     '~': '.',
 }
 
+
 class DownloadsManager:
     _algorithms = ["md5", "sha1", "sha256"]
     _downloads = dict()
@@ -39,10 +39,7 @@ class DownloadsManager:
     @classmethod
     def _create_download_url(cls, filename):
         url = "https://github.com/{username}/{project}/releases/download/{version}/{filename}".format(
-            filename=filename,
-            version=cls._version,
-            username=cls._username,
-            project=cls._project)
+            filename=filename, version=cls._version, username=cls._username, project=cls._project)
         for initial, replacement in _URL_REPLACEMENTS.items():
             url = url.replace(initial, replacement)
         return url
@@ -55,9 +52,7 @@ publication_time = {iso_timestamp}
 github_author = {github_author}
 # Add a `note` field here for additional information. Markdown is supported'''
         ini_header = ini_header_template.format(
-            iso_timestamp=datetime.datetime.utcnow().isoformat(),
-            github_author=cls._username
-        )
+            iso_timestamp=datetime.datetime.utcnow().isoformat(), github_author=cls._username)
         download_template = '''[{filename}]
 url = {url}
 {hashes}'''
@@ -67,15 +62,14 @@ url = {url}
         for filename in sorted(cls._downloads):
             hashes_list = list()
             for algorithm in cls._downloads[filename]:
-                hashes_list.append(hash_template.format(
-                    algorithm=algorithm.lower(),
-                    filehash=cls._downloads[filename][algorithm]))
-            downloads_list.append(download_template.format(
-                filename=filename,
-                url=cls._create_download_url(filename),
-                hashes="\n".join(sorted(hashes_list))
-                )
-            )
+                hashes_list.append(
+                    hash_template.format(
+                        algorithm=algorithm.lower(), filehash=cls._downloads[filename][algorithm]))
+            downloads_list.append(
+                download_template.format(
+                    filename=filename,
+                    url=cls._create_download_url(filename),
+                    hashes="\n".join(sorted(hashes_list))))
         return ini_header + '\n\n' + '\n\n'.join(downloads_list)
 
     @classmethod
@@ -90,6 +84,7 @@ url = {url}
                 self._downloads[filepath.name][algorithm] = hasher.hexdigest()
                 fileobj.seek(0)
 
+
 def main(arg_list=None):
     """
     This script outputs an INI file to standard output containing hashes and links to files as if they were uploaded to a GitHub Release.
@@ -102,16 +97,17 @@ def main(arg_list=None):
         'github_username',
         help='GitHub username containing the fork of ungoogled-chromium-binaries')
     parser.add_argument(
-        'file_path', nargs='+',
+        'file_path',
+        nargs='+',
         help=('One or more paths to local files with the same name as the ones '
               'in the GitHub Release. Used for URL and hash generation in the INI.'))
     args = parser.parse_args(args=arg_list)
-    DownloadsManager.set_params(
-        args.github_username, _REPOSITORY_NAME, args.tag_name)
+    DownloadsManager.set_params(args.github_username, _REPOSITORY_NAME, args.tag_name)
     for filename in args.file_path:
         DownloadsManager.add_download(pathlib.Path(filename))
     print(DownloadsManager.to_ini())
     return 0
+
 
 if __name__ == "__main__":
     exit(main())
