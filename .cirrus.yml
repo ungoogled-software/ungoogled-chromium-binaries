@@ -10,7 +10,7 @@ site_generation_task:
     pip_install_script: pip install -r utilities/requirements.txt
     check_config_script:
         # Check all .inis between last successful build and now
-        - git diff --names-only "${CIRRUS_LAST_GREEN_CHANGE}..${CIRRUS_CHANGE_IN_REPO}" | ./utilities/check_platform_ini.py -
+        - git diff --name-only "${CIRRUS_LAST_GREEN_CHANGE}..${CIRRUS_CHANGE_IN_REPO}" | ./utilities/check_platform_ini.py -
     site_generator_script:
         # Run site_generator.py anywhere to verify INI files are well-formed
         - git diff --cached --exit-code
