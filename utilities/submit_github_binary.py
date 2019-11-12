@@ -129,9 +129,9 @@ def _is_path_inside(inner, outer):
 
 def main(arg_list=None):
     """
-    This script outputs an INI file to standard output containing hashes and links to files as if they were uploaded to a GitHub Release.
-    The files that are passed in are read to generate hashes. Also, their file names are assumed to be identical in the GitHub Release.
-    This script *cannot* be used to generate non-GitHub Release file URLs.
+    This script writes a new config INI file assuming binaries are uploaded to a GitHub Release.
+    The binary files are read to generate hashes. Also, their file names are assumed to be identical to those in GitHub Release.
+    This script *cannot* be used to generate non-GitHub Release config INIs.
     """
     parser = argparse.ArgumentParser(description=main.__doc__)
     parser.add_argument(

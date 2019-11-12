@@ -38,10 +38,6 @@ Prerequisites:
 
 #### Steps
 
-**UPDATE AS OF 2018-12-29**: You no longer need to update `config/valid_versions`. The ordering is determined automatically.
-
-**UPDATE AS OF 2018-10-26**: You no longer need to run `utilities/site_generator.py`; the CI job (in `.cirrus.yml`) will invoke this automatically.
-
 Steps to publish a new binary. An example of these steps is in the next section.
 
 1. Fork the main binaries repository ([ungoogled-software/ungoogled-chromium-binaries](//github.com/ungoogled-software/ungoogled-chromium-binaries))
