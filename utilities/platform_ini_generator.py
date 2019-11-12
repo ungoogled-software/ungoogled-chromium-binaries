@@ -10,10 +10,11 @@ Output is to stdout, so consider redirecting the output to a file
 '''
 
 import argparse
-import pathlib
-import hashlib
 import collections
 import datetime
+import hashlib
+import subprocess
+from pathlib import Path
 
 _REPOSITORY_NAME = 'ungoogled-chromium-binaries'
 
@@ -85,6 +86,17 @@ url = {url}
                 fileobj.seek(0)
 
 
+def _get_tag_name(args):
+    if args.tag:
+        return args.tag
+    else:
+        return subprocess.run(['git', 'describe', '--abbrev=0', '--tags'],
+                              check=True,
+                              capture_output=True,
+                              text=True,
+                              cwd=args.git).stdout.strip()
+
+
 def main(arg_list=None):
     """
     This script outputs an INI file to standard output containing hashes and links to files as if they were uploaded to a GitHub Release.
@@ -92,9 +104,19 @@ def main(arg_list=None):
     This script *cannot* be used to generate non-GitHub Release file URLs.
     """
     parser = argparse.ArgumentParser(description=main.__doc__)
-    parser.add_argument('tag_name', help='Name of the tag used in the GitHub Release')
     parser.add_argument(
-        'github_username',
+        '--output', '-o', type=Path, required=True, help='Directory to write .ini files to')
+    group = parser.add_mutually_exclusive_group(required=True)
+    group.add_argument('--tag', '-t', help='Name of the tag used in the GitHub Release')
+    group.add_argument(
+        '--git',
+        '-g',
+        type=Path,
+        help='Path to the git repo to get the latest tag (of the current branch)')
+    parser.add_argument(
+        '--username',
+        '-u',
+        required=True,
         help='GitHub username containing the fork of ungoogled-chromium-binaries')
     parser.add_argument(
         'file_path',
@@ -102,10 +124,11 @@ def main(arg_list=None):
         help=('One or more paths to local files with the same name as the ones '
               'in the GitHub Release. Used for URL and hash generation in the INI.'))
     args = parser.parse_args(args=arg_list)
-    DownloadsManager.set_params(args.github_username, _REPOSITORY_NAME, args.tag_name)
+    tag_name = _get_tag_name(args)
+    DownloadsManager.set_params(args.username, _REPOSITORY_NAME, tag_name)
     for filename in args.file_path:
-        DownloadsManager.add_download(pathlib.Path(filename))
-    print(DownloadsManager.to_ini())
+        DownloadsManager.add_download(Path(filename))
+    (args.output / f'{tag_name}.ini').write_text(DownloadsManager.to_ini())
     return 0
 
 
