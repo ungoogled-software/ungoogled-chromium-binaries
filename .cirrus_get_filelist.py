@@ -3,6 +3,7 @@
 
 import os
 import subprocess
+import sys
 
 
 def main():
@@ -17,6 +18,9 @@ def main():
         if candidate_sha:
             base_sha = candidate_sha
             break
+
+    # Log some info to diagnose possible CI bugs
+    print(f'Found base hash {base_sha} and current hash {head_sha}', file=sys.stderr)
 
     # Get file list via git
     print(
