@@ -23,7 +23,7 @@ def main():
         subprocess.run(('git', 'diff', '--name-only', f'{base_sha}..{head_sha}'),
                        check=True,
                        capture_output=True,
-                       text=True).stdout().strip())
+                       text=True).stdout.strip())
 
 
 if __name__ == '__main__':
