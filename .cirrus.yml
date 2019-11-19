@@ -8,15 +8,20 @@ site_generation_task:
         folder: ~/.cache/pip
         populate_script: pip install -r utilities/requirements.txt
     pip_install_script: pip install -r utilities/requirements.txt
+    check_config_script:
+        # Check all .inis between last successful build and now
+        - ./.cirrus_get_filelist.py | ./utilities/check_platform_ini.py -
     site_generator_script:
+        # Run site_generator.py anywhere to verify INI files are well-formed
+        - git diff --cached --exit-code
+        - git diff --exit-code
+        - python3 utilities/site_generator.py
+        # Files are added and committed beyond this point
         - eval '[[ "$CIRRUS_USER_COLLABORATOR" == "true" ]]' || exit 0
         - eval '[[ "$CIRRUS_BRANCH" == "master" ]]' || exit 0
         - eval '[[ "$CIRRUS_TAG" == "" ]]' || exit 0
         - eval '[[ "$CIRRUS_PR" == "" ]]' || exit 0
         - eval '[[ "$CIRRUS_REPO_FULL_NAME" == "ungoogled-software/ungoogled-chromium-binaries" ]]' || exit 0
-        - git diff --cached --exit-code
-        - git diff --exit-code
-        - python3 utilities/site_generator.py
         - git diff --exit-code && exit 0
         - git add *
         - git config user.email 'cirrus@null'
