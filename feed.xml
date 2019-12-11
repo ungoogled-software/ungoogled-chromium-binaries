@@ -204,10 +204,10 @@
 &lt;/p&gt;</content>
   </entry>
   <entry xml:base="https://ungoogled-software.github.io/ungoogled-chromium-binaries/feed.xml">
-    <title type="text">Ubuntu 19.04 (disco) amd64: 78.0.3904.108-1.disco1 (development)</title>
-    <id>2019-11-21T20:45:32.374671+00:0078.0.3904.108-1.disco1developmentUbuntu19.04(disco)amd64</id>
-    <updated>2019-11-21T20:45:32Z</updated>
-    <link href="https://ungoogled-software.github.io/ungoogled-chromium-binaries/releases/ubuntu/disco_amd64/78.0.3904.108-1.disco1" />
+    <title type="text">Ubuntu 19.04 (disco) amd64: 78.0.3904.108-2.disco1 (development)</title>
+    <id>2019-12-02T07:25:05.114623+00:0078.0.3904.108-2.disco1developmentUbuntu19.04(disco)amd64</id>
+    <updated>2019-12-02T07:25:05Z</updated>
+    <link href="https://ungoogled-software.github.io/ungoogled-chromium-binaries/releases/ubuntu/disco_amd64/78.0.3904.108-2.disco1" />
     <author>
       <name></name>
     </author>
