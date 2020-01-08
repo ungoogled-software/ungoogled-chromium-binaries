@@ -134,10 +134,10 @@
 &lt;/p&gt;</content>
   </entry>
   <entry xml:base="https://ungoogled-software.github.io/ungoogled-chromium-binaries/feed.xml">
-    <title type="text">macOS: 79.0.3945.88-1.1 (development)</title>
-    <id>2019-12-18T15:48:18.024072+00:0079.0.3945.88-1.1developmentmacOS</id>
-    <updated>2019-12-18T15:48:18Z</updated>
-    <link href="https://ungoogled-software.github.io/ungoogled-chromium-binaries/releases/macos/79.0.3945.88-1.1" />
+    <title type="text">macOS: 79.0.3945.117-1 (development)</title>
+    <id>2020-01-08T18:57:05.103865+00:0079.0.3945.117-1developmentmacOS</id>
+    <updated>2020-01-08T18:57:05Z</updated>
+    <link href="https://ungoogled-software.github.io/ungoogled-chromium-binaries/releases/macos/79.0.3945.117-1" />
     <author>
       <name></name>
     </author>
