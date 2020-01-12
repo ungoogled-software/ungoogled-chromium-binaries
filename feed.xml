@@ -64,34 +64,6 @@
 &lt;/p&gt;</content>
   </entry>
   <entry xml:base="https://ungoogled-software.github.io/ungoogled-chromium-binaries/feed.xml">
-    <title type="text">Debian 9.0 (stretch) amd64: 71.0.3578.98-1 (development)</title>
-    <id>2018-12-14T00:07:01.662779+00:0071.0.3578.98-1developmentDebian9.0(stretch)amd64</id>
-    <updated>2018-12-14T00:07:01Z</updated>
-    <link href="https://ungoogled-software.github.io/ungoogled-chromium-binaries/releases/debian/stretch_amd64/71.0.3578.98-1" />
-    <author>
-      <name></name>
-    </author>
-    <content type="html">&lt;h2&gt;Release Summary&lt;/h2&gt;
-&lt;p&gt;
-&lt;div&gt;Author: Eloston&lt;/div&gt;
-&lt;div&gt;Number of files: 8&lt;/div&gt;
-&lt;/p&gt;</content>
-  </entry>
-  <entry xml:base="https://ungoogled-software.github.io/ungoogled-chromium-binaries/feed.xml">
-    <title type="text">Debian 9.0 (stretch) amd64: 72.0.3626.122-3.stretch1 (release)</title>
-    <id>2019-03-24T04:46:18.432819+00:0072.0.3626.122-3.stretch1releaseDebian9.0(stretch)amd64</id>
-    <updated>2019-03-24T04:46:18Z</updated>
-    <link href="https://ungoogled-software.github.io/ungoogled-chromium-binaries/releases/debian/stretch_amd64/72.0.3626.122-3.stretch1" />
-    <author>
-      <name></name>
-    </author>
-    <content type="html">&lt;h2&gt;Release Summary&lt;/h2&gt;
-&lt;p&gt;
-&lt;div&gt;Author: Eloston&lt;/div&gt;
-&lt;div&gt;Number of files: 8&lt;/div&gt;
-&lt;/p&gt;</content>
-  </entry>
-  <entry xml:base="https://ungoogled-software.github.io/ungoogled-chromium-binaries/feed.xml">
     <title type="text">Portable Linux 64-bit: 70.0.3538.110-1 (release)</title>
     <id>2018-11-20T00:17:40.773894+00:0070.0.3538.110-1releasePortableLinux64-bit</id>
     <updated>2018-11-20T00:17:40Z</updated>
@@ -148,20 +120,6 @@
 &lt;/p&gt;</content>
   </entry>
   <entry xml:base="https://ungoogled-software.github.io/ungoogled-chromium-binaries/feed.xml">
-    <title type="text">Ubuntu 17.10 (artful) amd64: 64.0.3282.186-1 (release)</title>
-    <id>2018-03-21T09:06:16.426619+00:0064.0.3282.186-1releaseUbuntu17.10(artful)amd64</id>
-    <updated>2018-03-21T09:06:16Z</updated>
-    <link href="https://ungoogled-software.github.io/ungoogled-chromium-binaries/releases/ubuntu/artful_amd64/64.0.3282.186-1" />
-    <author>
-      <name></name>
-    </author>
-    <content type="html">&lt;h2&gt;Release Summary&lt;/h2&gt;
-&lt;p&gt;
-&lt;div&gt;Author: brokoli-mate&lt;/div&gt;
-&lt;div&gt;Number of files: 8&lt;/div&gt;
-&lt;/p&gt;</content>
-  </entry>
-  <entry xml:base="https://ungoogled-software.github.io/ungoogled-chromium-binaries/feed.xml">
     <title type="text">Ubuntu 18.04 (bionic) amd64: 72.0.3626.122-3.bionic1 (release)</title>
     <id>2019-03-24T00:22:56.533539+00:0072.0.3626.122-3.bionic1releaseUbuntu18.04(bionic)amd64</id>
     <updated>2019-03-24T00:22:56Z</updated>
@@ -190,20 +148,6 @@
 &lt;/p&gt;</content>
   </entry>
   <entry xml:base="https://ungoogled-software.github.io/ungoogled-chromium-binaries/feed.xml">
-    <title type="text">Ubuntu 18.10 (cosmic) amd64: 73.0.3683.103-1.cosmic1 (development)</title>
-    <id>2019-04-13T13:45:40.285511+00:0073.0.3683.103-1.cosmic1developmentUbuntu18.10(cosmic)amd64</id>
-    <updated>2019-04-13T13:45:40Z</updated>
-    <link href="https://ungoogled-software.github.io/ungoogled-chromium-binaries/releases/ubuntu/cosmic_amd64/73.0.3683.103-1.cosmic1" />
-    <author>
-      <name></name>
-    </author>
-    <content type="html">&lt;h2&gt;Release Summary&lt;/h2&gt;
-&lt;p&gt;
-&lt;div&gt;Author: riyad&lt;/div&gt;
-&lt;div&gt;Number of files: 8&lt;/div&gt;
-&lt;/p&gt;</content>
-  </entry>
-  <entry xml:base="https://ungoogled-software.github.io/ungoogled-chromium-binaries/feed.xml">
     <title type="text">Ubuntu 19.04 (disco) amd64: 78.0.3904.108-2.disco1 (development)</title>
     <id>2019-12-02T07:25:05.114623+00:0078.0.3904.108-2.disco1developmentUbuntu19.04(disco)amd64</id>
     <updated>2019-12-02T07:25:05Z</updated>
@@ -229,48 +173,6 @@
 &lt;p&gt;
 &lt;div&gt;Author: riyad&lt;/div&gt;
 &lt;div&gt;Number of files: 12&lt;/div&gt;
-&lt;/p&gt;</content>
-  </entry>
-  <entry xml:base="https://ungoogled-software.github.io/ungoogled-chromium-binaries/feed.xml">
-    <title type="text">Ubuntu 16.04 (xenial) amd64: 55.0.2883.87-1 (release)</title>
-    <id>2017-01-01T00:00:00+00:0055.0.2883.87-1releaseUbuntu16.04(xenial)amd64</id>
-    <updated>2017-01-01T00:00:00Z</updated>
-    <link href="https://ungoogled-software.github.io/ungoogled-chromium-binaries/releases/ubuntu/xenial_amd64/55.0.2883.87-1" />
-    <author>
-      <name></name>
-    </author>
-    <content type="html">&lt;h2&gt;Release Summary&lt;/h2&gt;
-&lt;p&gt;
-&lt;div&gt;Author: 9Morello&lt;/div&gt;
-&lt;div&gt;Number of files: 5&lt;/div&gt;
-&lt;/p&gt;</content>
-  </entry>
-  <entry xml:base="https://ungoogled-software.github.io/ungoogled-chromium-binaries/feed.xml">
-    <title type="text">Ubuntu 16.10 (yakkety) amd64: 55.0.2883.95-1 (release)</title>
-    <id>2017-01-01T00:00:00+00:0055.0.2883.95-1releaseUbuntu16.10(yakkety)amd64</id>
-    <updated>2017-01-01T00:00:00Z</updated>
-    <link href="https://ungoogled-software.github.io/ungoogled-chromium-binaries/releases/ubuntu/yakkety_amd64/55.0.2883.95-1" />
-    <author>
-      <name></name>
-    </author>
-    <content type="html">&lt;h2&gt;Release Summary&lt;/h2&gt;
-&lt;p&gt;
-&lt;div&gt;Author: (unspecified)&lt;/div&gt;
-&lt;div&gt;Number of files: 4&lt;/div&gt;
-&lt;/p&gt;</content>
-  </entry>
-  <entry xml:base="https://ungoogled-software.github.io/ungoogled-chromium-binaries/feed.xml">
-    <title type="text">Ubuntu 17.04 (zesty) amd64: 57.0.2987.133-1 (release)</title>
-    <id>2017-01-01T00:00:00+00:0057.0.2987.133-1releaseUbuntu17.04(zesty)amd64</id>
-    <updated>2017-01-01T00:00:00Z</updated>
-    <link href="https://ungoogled-software.github.io/ungoogled-chromium-binaries/releases/ubuntu/zesty_amd64/57.0.2987.133-1" />
-    <author>
-      <name></name>
-    </author>
-    <content type="html">&lt;h2&gt;Release Summary&lt;/h2&gt;
-&lt;p&gt;
-&lt;div&gt;Author: brokoli-mate&lt;/div&gt;
-&lt;div&gt;Number of files: 6&lt;/div&gt;
 &lt;/p&gt;</content>
   </entry>
   <entry xml:base="https://ungoogled-software.github.io/ungoogled-chromium-binaries/feed.xml">
