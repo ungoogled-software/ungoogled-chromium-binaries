@@ -24,7 +24,7 @@ def main():
 
     # Get file list via git
     print(
-        subprocess.run(('git', 'diff', '--name-only', f'{base_sha}..{head_sha}'),
+        subprocess.run(('git', 'diff', '--name-only', '--diff-filter=ACMR', f'{base_sha}..{head_sha}'),
                        check=True,
                        capture_output=True,
                        text=True).stdout.strip())
