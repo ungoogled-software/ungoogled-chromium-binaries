@@ -148,20 +148,6 @@
 &lt;/p&gt;</content>
   </entry>
   <entry xml:base="https://ungoogled-software.github.io/ungoogled-chromium-binaries/feed.xml">
-    <title type="text">Ubuntu 19.04 (disco) amd64: 78.0.3904.108-2.disco1 (development)</title>
-    <id>2019-12-02T07:25:05.114623+00:0078.0.3904.108-2.disco1developmentUbuntu19.04(disco)amd64</id>
-    <updated>2019-12-02T07:25:05Z</updated>
-    <link href="https://ungoogled-software.github.io/ungoogled-chromium-binaries/releases/ubuntu/disco_amd64/78.0.3904.108-2.disco1" />
-    <author>
-      <name></name>
-    </author>
-    <content type="html">&lt;h2&gt;Release Summary&lt;/h2&gt;
-&lt;p&gt;
-&lt;div&gt;Author: riyad&lt;/div&gt;
-&lt;div&gt;Number of files: 12&lt;/div&gt;
-&lt;/p&gt;</content>
-  </entry>
-  <entry xml:base="https://ungoogled-software.github.io/ungoogled-chromium-binaries/feed.xml">
     <title type="text">Ubuntu 19.10 (eoan) amd64: 79.0.3945.130-2.eoan1 (development)</title>
     <id>2020-01-28T07:42:53.372215+00:0079.0.3945.130-2.eoan1developmentUbuntu19.10(eoan)amd64</id>
     <updated>2020-01-28T07:42:53Z</updated>
