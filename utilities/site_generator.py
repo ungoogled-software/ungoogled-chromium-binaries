@@ -54,10 +54,6 @@ _PLATFORMS = _CONFIG / pathlib.Path("platforms")
 _RELEASES = pathlib.Path("releases")
 _DISPLAY_NAME = pathlib.Path("display_name")
 _INSTALL_INFO = pathlib.Path("install_info")
-_STATUSES = [
-    "release",
-    "development",
-]
 
 # For printing out info and Markdown
 _INDENTATION = "    "
@@ -104,7 +100,6 @@ class PlatformVersion:
         self.github_author = None
         self.install_info = None
         self.note = '*(none)*'
-        self.status = None
 
         version_config = configparser.ConfigParser()
         version_config.read(str(self._real_path))
@@ -124,11 +119,8 @@ class PlatformVersion:
                     elif config_attribute.lower() == "note":
                         self.note = version_config[section][config_attribute]
                     elif config_attribute.lower() == "status":
-                        if version_config[section][config_attribute] in _STATUSES:
-                            self.status = version_config[section][config_attribute]
-                        else:
-                            raise ValueError("Unknown status value '{}'".format(
-                                version_config[section][config_attribute]))
+                        # Statuses are deprecated
+                        pass
                     else:
                         raise ValueError(
                             "Unknown _metadata attribute '{}'".format(config_attribute))
@@ -144,8 +136,6 @@ class PlatformVersion:
                     raise ValueError("url is None. Section: {}, Path: {}".format(
                         section, str(self.path)))
                 self.files[section] = (url, file_hashes)
-        if not self.status:
-            raise ValueError("Required 'status' key not in _metadata")
 
     def __lt__(self, other):
         return self.version < other.version
@@ -172,8 +162,7 @@ class PlatformDirectory:
         self.path = self._real_path.relative_to(_PLATFORMS)
         self.parent = parent
         self.children = list()
-        self.versions = list()
-        self.latest_by_status = dict() # Lowercase status -> version string
+        self.versions = list() # Latest version is first
 
         with (dir_path / _DISPLAY_NAME).open() as display_name_file:
             self.display_name = display_name_file.read().splitlines()[0]
@@ -187,8 +176,6 @@ class PlatformDirectory:
             print("Parsing version ini: {}".format(str(config_path)))
             new_version = PlatformVersion(config_path, self)
             self.versions.append(new_version)
-            if new_version.status not in self.latest_by_status:
-                self.latest_by_status[new_version.status] = new_version
 
     def __lt__(self, other):
         return self.path < other.path
@@ -200,6 +187,12 @@ class PlatformDirectory:
                 tmp_dir.recursively_read_children()
                 self.children.append(tmp_dir)
         self.children.sort()
+
+    @property
+    def latest_version(self):
+        if not self.versions:
+            return None
+        return self.versions[0]
 
     def __str__(self):
         return "Directory: {}".format(str(self.path))
@@ -270,21 +263,18 @@ def _write_frontpage_index(root_dir):
 
     download_markdown = str()
 
-    download_markdown = "||" + "|".join(map(lambda x: "**%s**" % x.capitalize(), _STATUSES)) + "\n"
-    download_markdown += "|".join(map(lambda x: ":--", range(len(_STATUSES) + 1))) + "\n"
     for node in preorder_traversal(root_dir):
         if node == root_dir or not node.versions:
             continue
         download_markdown += "**[{}]({})**".format(" ".join(_get_display_names(node)),
                                                    _get_node_weburl(node))
-        for status_name in _STATUSES:
-            download_markdown += "|"
-            if status_name in node.latest_by_status:
-                current_version = node.latest_by_status[status_name]
-                download_markdown += "[{}]({})".format(current_version.version,
-                                                       _get_node_weburl(current_version))
-            else:
-                download_markdown += '*(none)*'
+        download_markdown += "|"
+        current_version = node.latest_version
+        if not current_version:
+            raise ValueError("Node has no latest version: {}".format(
+                _get_display_names(node)))
+        download_markdown += "[{}]({})".format(current_version.version,
+                                               _get_node_weburl(current_version))
         download_markdown += "\n"
 
     page_subs = dict(latest_downloads=download_markdown)
@@ -384,7 +374,6 @@ def _write_version_page(version_node):
         publication_time=publication_time_markdown,
         install_info=install_info,
         note=note_markdown,
-        status=version_node.status.capitalize(),
         download_list=download_list_markdown)
     with _VERSION_INPUT.open() as input_file:
         content = PageFileStringTemplate(input_file.read()).substitute(**page_subs)
@@ -395,13 +384,11 @@ def _add_node_to_feed(feed, node_feed):
     display_name = ' '.join(_get_display_names(node_feed))
     feed_id = node_feed.publication_time.isoformat()
     feed_id += node_feed.version
-    feed_id += node_feed.status
     feed_id += display_name.replace(" ", '')
     feed.add(
-        title='{platform}: {version} ({status})'.format(
+        title='{platform}: {version}'.format(
             platform=display_name,
             version=node_feed.version,
-            status=node_feed.status,
         ),
         content=_FEED_CONTENT_TEMPLATE.format(
             author=(node_feed.github_author or '(unspecified)'), file_count=len(node_feed.files)),
@@ -428,8 +415,8 @@ def write_website(root_dir, feed_path):
         if isinstance(node, PlatformDirectory):
             (_RELEASES / node.path).mkdir()
             _write_directory_index(node)
-            for node_feed in sorted(node.latest_by_status.values()):
-                _add_node_to_feed(feed, node_feed)
+            if node.latest_version:
+                _add_node_to_feed(feed, node.latest_version)
         elif isinstance(node, PlatformVersion):
             _write_version_page(node)
         else:

@@ -9,8 +9,6 @@ Navigation: $ungoog{current_path}
 * Installation instructions: $ungoog{install_info}
 * Notes: $ungoog{note}
 
-Status: **$ungoog{status}**
-
 ## Downloads
 
 $ungoog{download_list}

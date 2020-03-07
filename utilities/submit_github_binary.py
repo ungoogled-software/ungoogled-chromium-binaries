@@ -64,7 +64,6 @@ class DownloadsManager:
     @classmethod
     def to_ini(cls):
         ini_header_template = '''[_metadata]
-status = development
 publication_time = {iso_timestamp}
 github_author = {github_author}
 # Add a `note` field here for additional information. Markdown is supported'''
