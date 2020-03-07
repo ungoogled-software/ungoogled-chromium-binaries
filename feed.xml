@@ -8,22 +8,8 @@
   <subtitle type="text">Feed of contributor-submitted binaries</subtitle>
   <generator>PyAtom</generator>
   <entry xml:base="https://ungoogled-software.github.io/ungoogled-chromium-binaries/feed.xml">
-    <title type="text">Linux AppImage 64-bit: 70.0.3538.110-1 (release)</title>
-    <id>2018-11-20T00:17:40.773894+00:0070.0.3538.110-1releaseLinuxAppImage64-bit</id>
-    <updated>2018-11-20T00:17:40Z</updated>
-    <link href="https://ungoogled-software.github.io/ungoogled-chromium-binaries/releases/appimage/64bit/70.0.3538.110-1" />
-    <author>
-      <name></name>
-    </author>
-    <content type="html">&lt;h2&gt;Release Summary&lt;/h2&gt;
-&lt;p&gt;
-&lt;div&gt;Author: Intika&lt;/div&gt;
-&lt;div&gt;Number of files: 1&lt;/div&gt;
-&lt;/p&gt;</content>
-  </entry>
-  <entry xml:base="https://ungoogled-software.github.io/ungoogled-chromium-binaries/feed.xml">
-    <title type="text">Linux AppImage 64-bit: 71.0.3578.98-2 (development)</title>
-    <id>2018-12-29T00:17:40.773894+00:0071.0.3578.98-2developmentLinuxAppImage64-bit</id>
+    <title type="text">Linux AppImage 64-bit: 71.0.3578.98-2</title>
+    <id>2018-12-29T00:17:40.773894+00:0071.0.3578.98-2LinuxAppImage64-bit</id>
     <updated>2018-12-29T00:17:40Z</updated>
     <link href="https://ungoogled-software.github.io/ungoogled-chromium-binaries/releases/appimage/64bit/71.0.3578.98-2" />
     <author>
@@ -36,8 +22,8 @@
 &lt;/p&gt;</content>
   </entry>
   <entry xml:base="https://ungoogled-software.github.io/ungoogled-chromium-binaries/feed.xml">
-    <title type="text">Arch Linux: 79.0.3945.130-1 (development)</title>
-    <id>2020-01-31T16:06:51.681769+00:0079.0.3945.130-1developmentArchLinux</id>
+    <title type="text">Arch Linux: 79.0.3945.130-1</title>
+    <id>2020-01-31T16:06:51.681769+00:0079.0.3945.130-1ArchLinux</id>
     <updated>2020-01-31T16:06:51Z</updated>
     <link href="https://ungoogled-software.github.io/ungoogled-chromium-binaries/releases/archlinux/79.0.3945.130-1" />
     <author>
@@ -50,8 +36,8 @@
 &lt;/p&gt;</content>
   </entry>
   <entry xml:base="https://ungoogled-software.github.io/ungoogled-chromium-binaries/feed.xml">
-    <title type="text">Debian 10 (buster) amd64: 80.0.3987.132-1.buster1 (development)</title>
-    <id>2020-03-07T07:24:46.573219+00:0080.0.3987.132-1.buster1developmentDebian10(buster)amd64</id>
+    <title type="text">Debian 10 (buster) amd64: 80.0.3987.132-1.buster1</title>
+    <id>2020-03-07T07:24:46.573219+00:0080.0.3987.132-1.buster1Debian10(buster)amd64</id>
     <updated>2020-03-07T07:24:46Z</updated>
     <link href="https://ungoogled-software.github.io/ungoogled-chromium-binaries/releases/debian/buster_amd64/80.0.3987.132-1.buster1" />
     <author>
@@ -64,22 +50,8 @@
 &lt;/p&gt;</content>
   </entry>
   <entry xml:base="https://ungoogled-software.github.io/ungoogled-chromium-binaries/feed.xml">
-    <title type="text">Portable Linux 64-bit: 70.0.3538.110-1 (release)</title>
-    <id>2018-11-20T00:17:40.773894+00:0070.0.3538.110-1releasePortableLinux64-bit</id>
-    <updated>2018-11-20T00:17:40Z</updated>
-    <link href="https://ungoogled-software.github.io/ungoogled-chromium-binaries/releases/linux_portable/64bit/70.0.3538.110-1" />
-    <author>
-      <name></name>
-    </author>
-    <content type="html">&lt;h2&gt;Release Summary&lt;/h2&gt;
-&lt;p&gt;
-&lt;div&gt;Author: Intika&lt;/div&gt;
-&lt;div&gt;Number of files: 1&lt;/div&gt;
-&lt;/p&gt;</content>
-  </entry>
-  <entry xml:base="https://ungoogled-software.github.io/ungoogled-chromium-binaries/feed.xml">
-    <title type="text">Portable Linux 64-bit: 80.0.3987.106-1.1 (development)</title>
-    <id>2020-02-18T02:59:59.824612+00:0080.0.3987.106-1.1developmentPortableLinux64-bit</id>
+    <title type="text">Portable Linux 64-bit: 80.0.3987.106-1.1</title>
+    <id>2020-02-18T02:59:59.824612+00:0080.0.3987.106-1.1PortableLinux64-bit</id>
     <updated>2020-02-18T02:59:59Z</updated>
     <link href="https://ungoogled-software.github.io/ungoogled-chromium-binaries/releases/linux_portable/64bit/80.0.3987.106-1.1" />
     <author>
@@ -92,22 +64,8 @@
 &lt;/p&gt;</content>
   </entry>
   <entry xml:base="https://ungoogled-software.github.io/ungoogled-chromium-binaries/feed.xml">
-    <title type="text">macOS: 79.0.3945.130-1.1 (release)</title>
-    <id>2020-01-17T18:01:14.991131+00:0079.0.3945.130-1.1releasemacOS</id>
-    <updated>2020-01-17T18:01:14Z</updated>
-    <link href="https://ungoogled-software.github.io/ungoogled-chromium-binaries/releases/macos/79.0.3945.130-1.1" />
-    <author>
-      <name></name>
-    </author>
-    <content type="html">&lt;h2&gt;Release Summary&lt;/h2&gt;
-&lt;p&gt;
-&lt;div&gt;Author: kramred&lt;/div&gt;
-&lt;div&gt;Number of files: 1&lt;/div&gt;
-&lt;/p&gt;</content>
-  </entry>
-  <entry xml:base="https://ungoogled-software.github.io/ungoogled-chromium-binaries/feed.xml">
-    <title type="text">macOS: 80.0.3987.132-1 (development)</title>
-    <id>2020-03-04T19:13:38.037454+00:0080.0.3987.132-1developmentmacOS</id>
+    <title type="text">macOS: 80.0.3987.132-1</title>
+    <id>2020-03-04T19:13:38.037454+00:0080.0.3987.132-1macOS</id>
     <updated>2020-03-04T19:13:38Z</updated>
     <link href="https://ungoogled-software.github.io/ungoogled-chromium-binaries/releases/macos/80.0.3987.132-1" />
     <author>
@@ -120,22 +78,8 @@
 &lt;/p&gt;</content>
   </entry>
   <entry xml:base="https://ungoogled-software.github.io/ungoogled-chromium-binaries/feed.xml">
-    <title type="text">Ubuntu 18.04 (bionic) amd64: 72.0.3626.122-3.bionic1 (release)</title>
-    <id>2019-03-24T00:22:56.533539+00:0072.0.3626.122-3.bionic1releaseUbuntu18.04(bionic)amd64</id>
-    <updated>2019-03-24T00:22:56Z</updated>
-    <link href="https://ungoogled-software.github.io/ungoogled-chromium-binaries/releases/ubuntu/bionic_amd64/72.0.3626.122-3.bionic1" />
-    <author>
-      <name></name>
-    </author>
-    <content type="html">&lt;h2&gt;Release Summary&lt;/h2&gt;
-&lt;p&gt;
-&lt;div&gt;Author: Eloston&lt;/div&gt;
-&lt;div&gt;Number of files: 8&lt;/div&gt;
-&lt;/p&gt;</content>
-  </entry>
-  <entry xml:base="https://ungoogled-software.github.io/ungoogled-chromium-binaries/feed.xml">
-    <title type="text">Ubuntu 18.04 (bionic) amd64: 79.0.3945.117-1 (development)</title>
-    <id>2020-01-10T01:56:39.441249+00:0079.0.3945.117-1developmentUbuntu18.04(bionic)amd64</id>
+    <title type="text">Ubuntu 18.04 (bionic) amd64: 79.0.3945.117-1</title>
+    <id>2020-01-10T01:56:39.441249+00:0079.0.3945.117-1Ubuntu18.04(bionic)amd64</id>
     <updated>2020-01-10T01:56:39Z</updated>
     <link href="https://ungoogled-software.github.io/ungoogled-chromium-binaries/releases/ubuntu/bionic_amd64/79.0.3945.117-1" />
     <author>
@@ -148,8 +92,8 @@
 &lt;/p&gt;</content>
   </entry>
   <entry xml:base="https://ungoogled-software.github.io/ungoogled-chromium-binaries/feed.xml">
-    <title type="text">Ubuntu 19.10 (eoan) amd64: 79.0.3945.130-2.eoan1 (development)</title>
-    <id>2020-01-28T07:42:53.372215+00:0079.0.3945.130-2.eoan1developmentUbuntu19.10(eoan)amd64</id>
+    <title type="text">Ubuntu 19.10 (eoan) amd64: 79.0.3945.130-2.eoan1</title>
+    <id>2020-01-28T07:42:53.372215+00:0079.0.3945.130-2.eoan1Ubuntu19.10(eoan)amd64</id>
     <updated>2020-01-28T07:42:53Z</updated>
     <link href="https://ungoogled-software.github.io/ungoogled-chromium-binaries/releases/ubuntu/eoan_amd64/79.0.3945.130-2.eoan1" />
     <author>
@@ -162,22 +106,8 @@
 &lt;/p&gt;</content>
   </entry>
   <entry xml:base="https://ungoogled-software.github.io/ungoogled-chromium-binaries/feed.xml">
-    <title type="text">Windows 32-bit: 55.0.2883.87-1 (release)</title>
-    <id>2017-01-01T00:00:00+00:0055.0.2883.87-1releaseWindows32-bit</id>
-    <updated>2017-01-01T00:00:00Z</updated>
-    <link href="https://ungoogled-software.github.io/ungoogled-chromium-binaries/releases/windows/32bit/55.0.2883.87-1" />
-    <author>
-      <name></name>
-    </author>
-    <content type="html">&lt;h2&gt;Release Summary&lt;/h2&gt;
-&lt;p&gt;
-&lt;div&gt;Author: Eloston&lt;/div&gt;
-&lt;div&gt;Number of files: 1&lt;/div&gt;
-&lt;/p&gt;</content>
-  </entry>
-  <entry xml:base="https://ungoogled-software.github.io/ungoogled-chromium-binaries/feed.xml">
-    <title type="text">Windows 32-bit: 79.0.3945.130-2 (development)</title>
-    <id>2020-01-23T18:31:41.339727+00:0079.0.3945.130-2developmentWindows32-bit</id>
+    <title type="text">Windows 32-bit: 79.0.3945.130-2</title>
+    <id>2020-01-23T18:31:41.339727+00:0079.0.3945.130-2Windows32-bit</id>
     <updated>2020-01-23T18:31:41Z</updated>
     <link href="https://ungoogled-software.github.io/ungoogled-chromium-binaries/releases/windows/32bit/79.0.3945.130-2" />
     <author>
@@ -190,22 +120,8 @@
 &lt;/p&gt;</content>
   </entry>
   <entry xml:base="https://ungoogled-software.github.io/ungoogled-chromium-binaries/feed.xml">
-    <title type="text">Windows 64-bit: 67.0.3396.87-3 (release)</title>
-    <id>2018-07-26T23:41:03.656883+00:0067.0.3396.87-3releaseWindows64-bit</id>
-    <updated>2018-07-26T23:41:03Z</updated>
-    <link href="https://ungoogled-software.github.io/ungoogled-chromium-binaries/releases/windows/64bit/67.0.3396.87-3" />
-    <author>
-      <name></name>
-    </author>
-    <content type="html">&lt;h2&gt;Release Summary&lt;/h2&gt;
-&lt;p&gt;
-&lt;div&gt;Author: Wyse-&lt;/div&gt;
-&lt;div&gt;Number of files: 1&lt;/div&gt;
-&lt;/p&gt;</content>
-  </entry>
-  <entry xml:base="https://ungoogled-software.github.io/ungoogled-chromium-binaries/feed.xml">
-    <title type="text">Windows 64-bit: 79.0.3945.130-2 (development)</title>
-    <id>2020-01-22T18:08:32.692353+00:0079.0.3945.130-2developmentWindows64-bit</id>
+    <title type="text">Windows 64-bit: 79.0.3945.130-2</title>
+    <id>2020-01-22T18:08:32.692353+00:0079.0.3945.130-2Windows64-bit</id>
     <updated>2020-01-22T18:08:32Z</updated>
     <link href="https://ungoogled-software.github.io/ungoogled-chromium-binaries/releases/windows/64bit/79.0.3945.130-2" />
     <author>
