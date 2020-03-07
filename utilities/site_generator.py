@@ -263,6 +263,8 @@ def _write_frontpage_index(root_dir):
 
     download_markdown = str()
 
+    download_markdown += 'Platform|Latest version\n'
+    download_markdown += ':--|:--\n' # Define table columns and alignment
     for node in preorder_traversal(root_dir):
         if node == root_dir or not node.versions:
             continue
