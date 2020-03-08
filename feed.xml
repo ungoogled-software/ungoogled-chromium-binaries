@@ -2,7 +2,7 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
   <title type="text">ungoogled-chromium Binary Downloads</title>
   <id>https://ungoogled-software.github.io/ungoogled-chromium-binaries/feed.xml</id>
-  <updated>2020-03-08T04:33:09Z</updated>
+  <updated>2020-03-08T05:50:06Z</updated>
   <link href="https://ungoogled-software.github.io/ungoogled-chromium-binaries/" />
   <link href="https://ungoogled-software.github.io/ungoogled-chromium-binaries/feed.xml" rel="self" />
   <subtitle type="text">Feed of contributor-submitted binaries</subtitle>
@@ -120,10 +120,10 @@
 &lt;/p&gt;</content>
   </entry>
   <entry xml:base="https://ungoogled-software.github.io/ungoogled-chromium-binaries/feed.xml">
-    <title type="text">Windows 64-bit: 79.0.3945.130-2</title>
-    <id>2020-01-22T18:08:32.692353+00:0079.0.3945.130-2Windows64-bit</id>
-    <updated>2020-01-22T18:08:32Z</updated>
-    <link href="https://ungoogled-software.github.io/ungoogled-chromium-binaries/releases/windows/64bit/79.0.3945.130-2" />
+    <title type="text">Windows 64-bit: 80.0.3987.132-1</title>
+    <id>2020-03-08T05:50:06.528058+00:0080.0.3987.132-1Windows64-bit</id>
+    <updated>2020-03-08T05:50:06Z</updated>
+    <link href="https://ungoogled-software.github.io/ungoogled-chromium-binaries/releases/windows/64bit/80.0.3987.132-1" />
     <author>
       <name></name>
     </author>
