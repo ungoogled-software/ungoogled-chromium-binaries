@@ -26,7 +26,8 @@ class BinariesHTTPRequestHandler(http.server.SimpleHTTPRequestHandler):
         except ValueError:
             pass
         if not translated_path.exists():
-            translated_path = translated_path.with_name(translated_path.name + '.html')
+            translated_path = translated_path.with_name(translated_path.name +
+                                                        '.html')
         print('Attempting to read path:', translated_path)
         return str(translated_path.absolute())
 
@@ -35,9 +36,14 @@ def main():
     '''CLI Entrypoint'''
     parser = argparse.ArgumentParser()
     parser.add_argument(
-        '-p', '--port', type=int, default='8086', help='Port to listen on on localhost')
+        '-p',
+        '--port',
+        type=int,
+        default='8086',
+        help='Port to listen on on localhost')
     args = parser.parse_args()
-    httpd = socketserver.TCPServer(('localhost', args.port), BinariesHTTPRequestHandler)
+    httpd = socketserver.TCPServer(('localhost', args.port),
+                                   BinariesHTTPRequestHandler)
 
     print('Serving on localhost at port', args.port)
     httpd.serve_forever()

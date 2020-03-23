@@ -20,10 +20,11 @@ if __name__ == "__main__" and (__package__ is None or __package__ == ""):
 
     def _fix_relative_import():
         """Allow relative imports to work from anywhere"""
-        parent_path = os.path.dirname(os.path.realpath(os.path.abspath(__file__)))
+        parent_path = os.path.dirname(
+            os.path.realpath(os.path.abspath(__file__)))
         sys.path.insert(0, os.path.dirname(parent_path))
-        global __package__ #pylint: disable=global-variable-undefined
-        __package__ = os.path.basename(parent_path) #pylint: disable=redefined-builtin
+        global __package__  #pylint: disable=global-variable-undefined
+        __package__ = os.path.basename(parent_path)  #pylint: disable=redefined-builtin
         __import__(__package__)
         sys.path.pop(0)
 
@@ -56,7 +57,10 @@ class DownloadsManager:
     @classmethod
     def _create_download_url(cls, filename):
         url = "https://github.com/{username}/{project}/releases/download/{version}/{filename}".format(
-            filename=filename, version=cls._version, username=cls._username, project=cls._project)
+            filename=filename,
+            version=cls._version,
+            username=cls._username,
+            project=cls._project)
         for initial, replacement in _URL_REPLACEMENTS.items():
             url = url.replace(initial, replacement)
         return url
@@ -68,7 +72,8 @@ publication_time = {iso_timestamp}
 github_author = {github_author}
 # Add a `note` field here for additional information. Markdown is supported'''
         ini_header = ini_header_template.format(
-            iso_timestamp=datetime.datetime.utcnow().isoformat(), github_author=cls._username)
+            iso_timestamp=datetime.datetime.utcnow().isoformat(),
+            github_author=cls._username)
         download_template = '''[{filename}]
 url = {url}
 {hashes}'''
@@ -80,7 +85,8 @@ url = {url}
             for algorithm in cls._downloads[filename]:
                 hashes_list.append(
                     hash_template.format(
-                        algorithm=algorithm.lower(), filehash=cls._downloads[filename][algorithm]))
+                        algorithm=algorithm.lower(),
+                        filehash=cls._downloads[filename][algorithm]))
             downloads_list.append(
                 download_template.format(
                     filename=filename,
@@ -134,19 +140,26 @@ def main(arg_list=None):
     """
     parser = argparse.ArgumentParser(description=main.__doc__)
     parser.add_argument(
-        '--output', '-o', type=Path, required=True, help='Directory to write .ini files to')
+        '--output',
+        '-o',
+        type=Path,
+        required=True,
+        help='Directory to write .ini files to')
     group = parser.add_mutually_exclusive_group(required=True)
-    group.add_argument('--tag', '-t', help='Name of the tag used in the GitHub Release')
+    group.add_argument(
+        '--tag', '-t', help='Name of the tag used in the GitHub Release')
     group.add_argument(
         '--git',
         '-g',
         type=Path,
-        help='Path to the git repo to get the latest tag (of the current branch)')
+        help=
+        'Path to the git repo to get the latest tag (of the current branch)')
     parser.add_argument(
         '--username',
         '-u',
         required=True,
-        help='GitHub username containing the fork of ungoogled-chromium-binaries')
+        help=
+        'GitHub username containing the fork of ungoogled-chromium-binaries')
     parser.add_argument(
         '--skip-commit',
         action='store_true',
@@ -163,14 +176,17 @@ def main(arg_list=None):
     parser.add_argument(
         'file_path',
         nargs='+',
-        help=('One or more paths to local files with the same name as the ones '
-              'in the GitHub Release. Used for URL and hash generation in the INI.'))
+        help=
+        ('One or more paths to local files with the same name as the ones '
+         'in the GitHub Release. Used for URL and hash generation in the INI.'
+         ))
     args = parser.parse_args(args=arg_list)
 
     # Check script preconditions and set required variables
-    if not _is_path_inside(args.output.resolve(),
-                           _CONFIG_ROOT) and not len(args.output.parts) > len(_CONFIG_ROOT.parts):
-        parser.error('Directory for .ini must be inside config/platforms/PLATFORM_HERE')
+    if not _is_path_inside(args.output.resolve(), _CONFIG_ROOT) and not len(
+            args.output.parts) > len(_CONFIG_ROOT.parts):
+        parser.error(
+            'Directory for .ini must be inside config/platforms/PLATFORM_HERE')
     tag_name = _get_tag_name(args)
     ini_path = args.output / f'{tag_name}.ini'
     if not ini_path.parent.exists():
@@ -178,9 +194,13 @@ def main(arg_list=None):
                      'Please create it and add display_name at each level.')
     if not args.skip_commit:
         # Abort early if files are staged, since we can't commit only the .ini
-        if subprocess.run(['git', 'diff', '--staged', '--quiet', '--exit-code']).returncode != 0:
-            parser.error('You have staged changes in your git working tree. '
-                         'Please clear the staging area (commit or stash), or use --skip-commit')
+        if subprocess.run([
+                'git', 'diff', '--staged', '--quiet', '--exit-code'
+        ]).returncode != 0:
+            parser.error(
+                'You have staged changes in your git working tree. '
+                'Please clear the staging area (commit or stash), or use --skip-commit'
+            )
 
     # Actual work
     DownloadsManager.set_params(args.username, args.project, tag_name)
@@ -198,9 +218,11 @@ def main(arg_list=None):
             return 1
     if not args.skip_commit:
         subprocess.run(['git', 'add', str(ini_path)], check=True)
-        subprocess.run(
-            ['git', 'commit', '-m', f'Add {tag_name} for {_get_platform_name(args.output)}'],
-            check=True)
+        subprocess.run([
+            'git', 'commit', '-m',
+            f'Add {tag_name} for {_get_platform_name(args.output)}'
+        ],
+                       check=True)
         print('INFO: Commit successful. Make sure to push your commit.')
     return 0
 

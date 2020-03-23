@@ -28,16 +28,17 @@ if __name__ == "__main__" and (__package__ is None or __package__ == ""):
 
     def _fix_relative_import():
         """Allow relative imports to work from anywhere"""
-        parent_path = os.path.dirname(os.path.realpath(os.path.abspath(__file__)))
+        parent_path = os.path.dirname(
+            os.path.realpath(os.path.abspath(__file__)))
         sys.path.insert(0, os.path.dirname(parent_path))
-        global __package__ #pylint: disable=global-variable-undefined
-        __package__ = os.path.basename(parent_path) #pylint: disable=redefined-builtin
+        global __package__  #pylint: disable=global-variable-undefined
+        __package__ = os.path.basename(parent_path)  #pylint: disable=redefined-builtin
         __import__(__package__)
         sys.path.pop(0)
 
     _fix_relative_import()
 
-from . import site_generator
+from . import _config_parsing
 
 
 def get_ini_set(filelist_args):
@@ -46,7 +47,8 @@ def get_ini_set(filelist_args):
         # Ask git for files in working tree
         # Get unstaged modified and untracked files
         file_set.update(
-            subprocess.run(('git', 'ls-files', '--modified', '--others', '--exclude-standard'),
+            subprocess.run(('git', 'ls-files', '--modified', '--others',
+                            '--exclude-standard'),
                            capture_output=True,
                            check=True,
                            text=True).stdout.splitlines())
@@ -70,11 +72,14 @@ def verify_ini_files(inipath_iter):
     with requests.Session() as request_session:
         for inipath in inipath_iter:
             print('Checking', str(inipath))
-            platform_version = site_generator.PlatformVersion(inipath, None)
-            for filename, filemeta in platform_version.files.items():
+            platform_version_files, _, _, _, _ = _config_parsing.parse_version_ini(
+                inipath)
+            for filename, filemeta in platform_version_files.items():
                 fileurl, _ = filemeta
                 response = request_session.get(
-                    fileurl, allow_redirects=True, headers={'Range': 'bytes=0-1'})
+                    fileurl,
+                    allow_redirects=True,
+                    headers={'Range': 'bytes=0-1'})
                 if not response.ok:
                     print(
                         f'ERROR: Got {response.status_code} ({response.reason}) for file: {filename}',
@@ -89,9 +94,10 @@ def main(arg_list=None):
     parser.add_argument(
         'ini_path',
         nargs='*',
-        help=('Zero or more paths to platform INIs to check. '
-              'If nothing is specified, then the git working tree will be checked. '
-              'Specify "-" to read standard input.'))
+        help=
+        ('Zero or more paths to platform INIs to check. '
+         'If nothing is specified, then the git working tree will be checked. '
+         'Specify "-" to read standard input.'))
     args = parser.parse_args(args=arg_list)
     inipath_set = get_ini_set(args.ini_path)
     if verify_ini_files(inipath_set):
