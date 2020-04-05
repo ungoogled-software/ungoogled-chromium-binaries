@@ -2,7 +2,7 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
   <title type="text">ungoogled-chromium Binary Downloads</title>
   <id>https://ungoogled-software.github.io/ungoogled-chromium-binaries/feed.xml</id>
-  <updated>2020-03-30T15:08:08Z</updated>
+  <updated>2020-04-03T08:04:56Z</updated>
   <link href="https://ungoogled-software.github.io/ungoogled-chromium-binaries/" />
   <link href="https://ungoogled-software.github.io/ungoogled-chromium-binaries/feed.xml" rel="self" />
   <subtitle type="text">Feed of contributor-submitted binaries</subtitle>
@@ -106,10 +106,10 @@
 &lt;/p&gt;</content>
   </entry>
   <entry xml:base="https://ungoogled-software.github.io/ungoogled-chromium-binaries/feed.xml">
-    <title type="text">Ubuntu 19.10 (eoan) amd64: 80.0.3987.149-1.eoan1</title>
-    <id>2020-03-21T10:51:49.821186+00:0080.0.3987.149-1.eoan1Ubuntu19.10(eoan)amd64</id>
-    <updated>2020-03-21T10:51:49Z</updated>
-    <link href="https://ungoogled-software.github.io/ungoogled-chromium-binaries/releases/ubuntu/eoan_amd64/80.0.3987.149-1.eoan1" />
+    <title type="text">Ubuntu 19.10 (eoan) amd64: 80.0.3987.162-1.eoan1</title>
+    <id>2020-04-03T08:04:56.576924+00:0080.0.3987.162-1.eoan1Ubuntu19.10(eoan)amd64</id>
+    <updated>2020-04-03T08:04:56Z</updated>
+    <link href="https://ungoogled-software.github.io/ungoogled-chromium-binaries/releases/ubuntu/eoan_amd64/80.0.3987.162-1.eoan1" />
     <author>
       <name></name>
     </author>
