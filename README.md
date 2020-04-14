@@ -18,6 +18,8 @@ When creating new pages or adding new versions, use an existing version as a tem
 
 ### Publishing new binaries
 
+**Ensure your binary has source code published to a platform repo**. Otherwise, your PR will not be merged.
+
 Prerequisites:
 * Python 3 for all scripts under `utilities/`
 
@@ -25,13 +27,14 @@ Prerequisites:
 
 Steps to publish a new binary. An example of these steps is in the next section.
 
-1. Fork the main binaries repository ([ungoogled-software/ungoogled-chromium-binaries](//github.com/ungoogled-software/ungoogled-chromium-binaries))
+1. Ensure your binary has source code published to a platform repo.
+2. Fork the main binaries repository ([ungoogled-software/ungoogled-chromium-binaries](//github.com/ungoogled-software/ungoogled-chromium-binaries))
     * If this has been done before, pull in new changes from this one if necessary.
-2. Create a new Release (i.e. using GitHub's Release feature) in the fork and upload binaries to it. The tag name used must be unique for each Release; it normally matches the ungoogled-chromium version.
-3. Upload binaries to the new Release
-4. Use `utilities/submit_github_binary.py` to generate an INI file with the correct URLs to the GitHub Release. It requires paths to a locally stored copy of the binaries for computing hashes. Use the `-h` or `--help` argument for more details.
+3. Create a new Release (i.e. using GitHub's Release feature) in the fork and upload binaries to it. The tag name used must be unique for each Release; it normally matches the ungoogled-chromium version.
+4. Upload binaries to the new Release
+5. Use `utilities/submit_github_binary.py` to generate an INI file with the correct URLs to the GitHub Release. It requires paths to a locally stored copy of the binaries for computing hashes. Use the `-h` or `--help` argument for more details.
     * If a directory structure in `config/platforms` doesn't exist for the binary's target platform and version, create the necessary directories with the associated `display_name` files in the same manner as existing platforms.
-5. Push your changes in the repository; these changes should only be of files in `config/`. Make a pull request against the main repository.
+6. Push your changes in the repository; these changes should only be of files in `config/`. Make a pull request against the main repository.
     * This can be bypassed if one is part of the [Binaries Team](//github.com/orgs/ungoogled-software/teams/binaries-team).
 
 Notes:
