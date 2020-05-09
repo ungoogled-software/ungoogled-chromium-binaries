@@ -36,17 +36,17 @@
 &lt;/p&gt;</content>
   </entry>
   <entry xml:base="https://ungoogled-software.github.io/ungoogled-chromium-binaries/feed.xml">
-    <title type="text">Debian 10 (buster) amd64: 80.0.3987.149-1.buster1</title>
-    <id>2020-03-22T00:29:32.516667+00:0080.0.3987.149-1.buster1Debian10(buster)amd64</id>
-    <updated>2020-03-22T00:29:32Z</updated>
-    <link href="https://ungoogled-software.github.io/ungoogled-chromium-binaries/releases/debian/buster_amd64/80.0.3987.149-1.buster1" />
+    <title type="text">Debian: latest</title>
+    <id>unspecifiedlatestDebian</id>
+    <updated>1-01-01T00:00:00Z</updated>
+    <link href="https://ungoogled-software.github.io/ungoogled-chromium-binaries/releases/debian/latest" />
     <author>
       <name></name>
     </author>
     <content type="html">&lt;h2&gt;Release Summary&lt;/h2&gt;
 &lt;p&gt;
-&lt;div&gt;Author: Eloston&lt;/div&gt;
-&lt;div&gt;Number of files: 12&lt;/div&gt;
+&lt;div&gt;Author: (unspecified)&lt;/div&gt;
+&lt;div&gt;Number of files: 2&lt;/div&gt;
 &lt;/p&gt;</content>
   </entry>
   <entry xml:base="https://ungoogled-software.github.io/ungoogled-chromium-binaries/feed.xml">
@@ -78,31 +78,17 @@
 &lt;/p&gt;</content>
   </entry>
   <entry xml:base="https://ungoogled-software.github.io/ungoogled-chromium-binaries/feed.xml">
-    <title type="text">Ubuntu 18.04 (bionic) amd64: 80.0.3987.149-1.bionic1</title>
-    <id>2020-03-22T00:30:31.946509+00:0080.0.3987.149-1.bionic1Ubuntu18.04(bionic)amd64</id>
-    <updated>2020-03-22T00:30:31Z</updated>
-    <link href="https://ungoogled-software.github.io/ungoogled-chromium-binaries/releases/ubuntu/bionic_amd64/80.0.3987.149-1.bionic1" />
+    <title type="text">Ubuntu: latest</title>
+    <id>unspecifiedlatestUbuntu</id>
+    <updated>1-01-01T00:00:00Z</updated>
+    <link href="https://ungoogled-software.github.io/ungoogled-chromium-binaries/releases/ubuntu/latest" />
     <author>
       <name></name>
     </author>
     <content type="html">&lt;h2&gt;Release Summary&lt;/h2&gt;
 &lt;p&gt;
-&lt;div&gt;Author: Eloston&lt;/div&gt;
-&lt;div&gt;Number of files: 12&lt;/div&gt;
-&lt;/p&gt;</content>
-  </entry>
-  <entry xml:base="https://ungoogled-software.github.io/ungoogled-chromium-binaries/feed.xml">
-    <title type="text">Ubuntu 19.10 (eoan) amd64: 81.0.4044.129-1.eoan1</title>
-    <id>2020-04-30T09:19:46.518304+00:0081.0.4044.129-1.eoan1Ubuntu19.10(eoan)amd64</id>
-    <updated>2020-04-30T09:19:46Z</updated>
-    <link href="https://ungoogled-software.github.io/ungoogled-chromium-binaries/releases/ubuntu/eoan_amd64/81.0.4044.129-1.eoan1" />
-    <author>
-      <name></name>
-    </author>
-    <content type="html">&lt;h2&gt;Release Summary&lt;/h2&gt;
-&lt;p&gt;
-&lt;div&gt;Author: riyad&lt;/div&gt;
-&lt;div&gt;Number of files: 12&lt;/div&gt;
+&lt;div&gt;Author: (unspecified)&lt;/div&gt;
+&lt;div&gt;Number of files: 2&lt;/div&gt;
 &lt;/p&gt;</content>
   </entry>
   <entry xml:base="https://ungoogled-software.github.io/ungoogled-chromium-binaries/feed.xml">
