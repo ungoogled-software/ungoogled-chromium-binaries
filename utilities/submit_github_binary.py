@@ -176,8 +176,9 @@ def main(arg_list=None):
     parser.add_argument(
         'file_path',
         nargs='+',
+        type=Path,
         help=
-        ('One or more paths to local files with the same name as the ones '
+        ('One or more file paths to local files with the same name as the ones '
          'in the GitHub Release. Used for URL and hash generation in the INI.'
          ))
     args = parser.parse_args(args=arg_list)
@@ -205,7 +206,11 @@ def main(arg_list=None):
     # Actual work
     DownloadsManager.set_params(args.username, args.project, tag_name)
     for filename in args.file_path:
-        DownloadsManager.add_download(Path(filename))
+        if not filename.exists():
+            parser.error(f'Binary filepath {filename} does not exist')
+        if not filename.is_file():
+            parser.error(f'Binary filepath {filename} is not a file')
+        DownloadsManager.add_download(filename)
     ini_path.write_text(DownloadsManager.to_ini())
 
     # Postconditions and finalizing
