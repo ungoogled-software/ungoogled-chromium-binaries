@@ -22,16 +22,16 @@
 &lt;/p&gt;</content>
   </entry>
   <entry xml:base="https://ungoogled-software.github.io/ungoogled-chromium-binaries/feed.xml">
-    <title type="text">Arch Linux: 83.0.4103.116-2</title>
-    <id>2020-07-02T22:16:07.289800+00:0083.0.4103.116-2ArchLinux</id>
-    <updated>2020-07-02T22:16:07Z</updated>
-    <link href="https://ungoogled-software.github.io/ungoogled-chromium-binaries/releases/archlinux/83.0.4103.116-2" />
+    <title type="text">Arch Linux: 84.0.4147.89-1</title>
+    <id>2020-07-18T13:28:01.974504+00:0084.0.4147.89-1ArchLinux</id>
+    <updated>2020-07-18T13:28:01Z</updated>
+    <link href="https://ungoogled-software.github.io/ungoogled-chromium-binaries/releases/archlinux/84.0.4147.89-1" />
     <author>
       <name></name>
     </author>
     <content type="html">&lt;h2&gt;Release Summary&lt;/h2&gt;
 &lt;p&gt;
-&lt;div&gt;Author: zocker-160&lt;/div&gt;
+&lt;div&gt;Author: Myl0g&lt;/div&gt;
 &lt;div&gt;Number of files: 1&lt;/div&gt;
 &lt;/p&gt;</content>
   </entry>
