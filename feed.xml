@@ -2,7 +2,7 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
   <title type="text">ungoogled-chromium Binary Downloads</title>
   <id>https://ungoogled-software.github.io/ungoogled-chromium-binaries/feed.xml</id>
-  <updated>2020-07-29T21:47:00Z</updated>
+  <updated>2020-08-04T14:56:59Z</updated>
   <link href="https://ungoogled-software.github.io/ungoogled-chromium-binaries/" />
   <link href="https://ungoogled-software.github.io/ungoogled-chromium-binaries/feed.xml" rel="self" />
   <subtitle type="text">Feed of contributor-submitted binaries</subtitle>
@@ -106,17 +106,17 @@
 &lt;/p&gt;</content>
   </entry>
   <entry xml:base="https://ungoogled-software.github.io/ungoogled-chromium-binaries/feed.xml">
-    <title type="text">Windows 64-bit: 81.0.4044.138-1.1</title>
-    <id>2020-05-17T01:52:41.986436+00:0081.0.4044.138-1.1Windows64-bit</id>
-    <updated>2020-05-17T01:52:41Z</updated>
-    <link href="https://ungoogled-software.github.io/ungoogled-chromium-binaries/releases/windows/64bit/81.0.4044.138-1.1" />
+    <title type="text">Windows 64-bit: 84.0.4147.105-1.1</title>
+    <id>2020-08-04T14:56:59.891186+00:0084.0.4147.105-1.1Windows64-bit</id>
+    <updated>2020-08-04T14:56:59Z</updated>
+    <link href="https://ungoogled-software.github.io/ungoogled-chromium-binaries/releases/windows/64bit/84.0.4147.105-1.1" />
     <author>
       <name></name>
     </author>
     <content type="html">&lt;h2&gt;Release Summary&lt;/h2&gt;
 &lt;p&gt;
-&lt;div&gt;Author: seanking2919&lt;/div&gt;
-&lt;div&gt;Number of files: 2&lt;/div&gt;
+&lt;div&gt;Author: Mathew-D&lt;/div&gt;
+&lt;div&gt;Number of files: 1&lt;/div&gt;
 &lt;/p&gt;</content>
   </entry>
 </feed>
