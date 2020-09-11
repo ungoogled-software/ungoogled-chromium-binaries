@@ -2,7 +2,7 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
   <title type="text">ungoogled-chromium Binary Downloads</title>
   <id>https://ungoogled-software.github.io/ungoogled-chromium-binaries/feed.xml</id>
-  <updated>2020-09-03T03:32:20Z</updated>
+  <updated>2020-09-10T05:36:10Z</updated>
   <link href="https://ungoogled-software.github.io/ungoogled-chromium-binaries/" />
   <link href="https://ungoogled-software.github.io/ungoogled-chromium-binaries/feed.xml" rel="self" />
   <subtitle type="text">Feed of contributor-submitted binaries</subtitle>
@@ -22,16 +22,16 @@
 &lt;/p&gt;</content>
   </entry>
   <entry xml:base="https://ungoogled-software.github.io/ungoogled-chromium-binaries/feed.xml">
-    <title type="text">Arch Linux: 84.0.4147.125-1</title>
-    <id>2020-08-14T20:39:27.546801+00:0084.0.4147.125-1ArchLinux</id>
-    <updated>2020-08-14T20:39:27Z</updated>
-    <link href="https://ungoogled-software.github.io/ungoogled-chromium-binaries/releases/archlinux/84.0.4147.125-1" />
+    <title type="text">Arch Linux: 85.0.4183.83-1</title>
+    <id>2020-09-10T05:36:10.804229+00:0085.0.4183.83-1ArchLinux</id>
+    <updated>2020-09-10T05:36:10Z</updated>
+    <link href="https://ungoogled-software.github.io/ungoogled-chromium-binaries/releases/archlinux/85.0.4183.83-1" />
     <author>
       <name></name>
     </author>
     <content type="html">&lt;h2&gt;Release Summary&lt;/h2&gt;
 &lt;p&gt;
-&lt;div&gt;Author: jstkdng&lt;/div&gt;
+&lt;div&gt;Author: Colocasian&lt;/div&gt;
 &lt;div&gt;Number of files: 1&lt;/div&gt;
 &lt;/p&gt;</content>
   </entry>
