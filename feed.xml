@@ -2,7 +2,7 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
   <title type="text">ungoogled-chromium Binary Downloads</title>
   <id>https://ungoogled-software.github.io/ungoogled-chromium-binaries/feed.xml</id>
-  <updated>2020-12-03T17:51:48Z</updated>
+  <updated>2020-12-03T22:49:09Z</updated>
   <link href="https://ungoogled-software.github.io/ungoogled-chromium-binaries/" />
   <link href="https://ungoogled-software.github.io/ungoogled-chromium-binaries/feed.xml" rel="self" />
   <subtitle type="text">Feed of contributor-submitted binaries</subtitle>
@@ -36,17 +36,17 @@
 &lt;/p&gt;</content>
   </entry>
   <entry xml:base="https://ungoogled-software.github.io/ungoogled-chromium-binaries/feed.xml">
-    <title type="text">Debian: latest</title>
-    <id>unspecifiedlatestDebian</id>
-    <updated>1-01-01T00:00:00Z</updated>
-    <link href="https://ungoogled-software.github.io/ungoogled-chromium-binaries/releases/debian/latest" />
+    <title type="text">Debian/Ubuntu (unportable) 64-bit (amd64): 87.0.4280.67-1.unportable1</title>
+    <id>2020-12-03T22:49:09.012108+00:0087.0.4280.67-1.unportable1Debian/Ubuntu(unportable)64-bit(amd64)</id>
+    <updated>2020-12-03T22:49:09Z</updated>
+    <link href="https://ungoogled-software.github.io/ungoogled-chromium-binaries/releases/debian_unportable/amd64/87.0.4280.67-1.unportable1" />
     <author>
       <name></name>
     </author>
     <content type="html">&lt;h2&gt;Release Summary&lt;/h2&gt;
 &lt;p&gt;
-&lt;div&gt;Author: (unspecified)&lt;/div&gt;
-&lt;div&gt;Number of files: 2&lt;/div&gt;
+&lt;div&gt;Author: Eloston&lt;/div&gt;
+&lt;div&gt;Number of files: 9&lt;/div&gt;
 &lt;/p&gt;</content>
   </entry>
   <entry xml:base="https://ungoogled-software.github.io/ungoogled-chromium-binaries/feed.xml">
@@ -89,20 +89,6 @@
 &lt;p&gt;
 &lt;div&gt;Author: kramred&lt;/div&gt;
 &lt;div&gt;Number of files: 1&lt;/div&gt;
-&lt;/p&gt;</content>
-  </entry>
-  <entry xml:base="https://ungoogled-software.github.io/ungoogled-chromium-binaries/feed.xml">
-    <title type="text">Ubuntu: latest</title>
-    <id>unspecifiedlatestUbuntu</id>
-    <updated>1-01-01T00:00:00Z</updated>
-    <link href="https://ungoogled-software.github.io/ungoogled-chromium-binaries/releases/ubuntu/latest" />
-    <author>
-      <name></name>
-    </author>
-    <content type="html">&lt;h2&gt;Release Summary&lt;/h2&gt;
-&lt;p&gt;
-&lt;div&gt;Author: (unspecified)&lt;/div&gt;
-&lt;div&gt;Number of files: 2&lt;/div&gt;
 &lt;/p&gt;</content>
   </entry>
   <entry xml:base="https://ungoogled-software.github.io/ungoogled-chromium-binaries/feed.xml">
