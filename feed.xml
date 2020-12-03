@@ -36,8 +36,8 @@
 &lt;/p&gt;</content>
   </entry>
   <entry xml:base="https://ungoogled-software.github.io/ungoogled-chromium-binaries/feed.xml">
-    <title type="text">Debian/Ubuntu (unportable) 64-bit (amd64): 87.0.4280.67-1.unportable1</title>
-    <id>2020-12-03T22:49:09.012108+00:0087.0.4280.67-1.unportable1Debian/Ubuntu(unportable)64-bit(amd64)</id>
+    <title type="text">Debian/Ubuntu (unportable) 64-bit: 87.0.4280.67-1.unportable1</title>
+    <id>2020-12-03T22:49:09.012108+00:0087.0.4280.67-1.unportable1Debian/Ubuntu(unportable)64-bit</id>
     <updated>2020-12-03T22:49:09Z</updated>
     <link href="https://ungoogled-software.github.io/ungoogled-chromium-binaries/releases/debian_unportable/amd64/87.0.4280.67-1.unportable1" />
     <author>
