@@ -120,10 +120,10 @@
 &lt;/p&gt;</content>
   </entry>
   <entry xml:base="https://ungoogled-software.github.io/ungoogled-chromium-binaries/feed.xml">
-    <title type="text">Windows 32-bit: 89.0.4389.90-1</title>
-    <id>2021-03-22T14:33:33.877991+00:0089.0.4389.90-1Windows32-bit</id>
-    <updated>2021-03-22T14:33:33Z</updated>
-    <link href="https://ungoogled-software.github.io/ungoogled-chromium-binaries/releases/windows/32bit/89.0.4389.90-1" />
+    <title type="text">Windows 32-bit: 89.0.4389.114-1</title>
+    <id>2021-04-04T15:29:09.514404+00:0089.0.4389.114-1Windows32-bit</id>
+    <updated>2021-04-04T15:29:09Z</updated>
+    <link href="https://ungoogled-software.github.io/ungoogled-chromium-binaries/releases/windows/32bit/89.0.4389.114-1" />
     <author>
       <name></name>
     </author>
@@ -134,10 +134,10 @@
 &lt;/p&gt;</content>
   </entry>
   <entry xml:base="https://ungoogled-software.github.io/ungoogled-chromium-binaries/feed.xml">
-    <title type="text">Windows 64-bit: 89.0.4389.90-1</title>
-    <id>2021-03-22T14:32:54.089989+00:0089.0.4389.90-1Windows64-bit</id>
-    <updated>2021-03-22T14:32:54Z</updated>
-    <link href="https://ungoogled-software.github.io/ungoogled-chromium-binaries/releases/windows/64bit/89.0.4389.90-1" />
+    <title type="text">Windows 64-bit: 89.0.4389.114-1</title>
+    <id>2021-04-04T15:28:18.927094+00:0089.0.4389.114-1Windows64-bit</id>
+    <updated>2021-04-04T15:28:18Z</updated>
+    <link href="https://ungoogled-software.github.io/ungoogled-chromium-binaries/releases/windows/64bit/89.0.4389.114-1" />
     <author>
       <name></name>
     </author>
@@ -148,10 +148,10 @@
 &lt;/p&gt;</content>
   </entry>
   <entry xml:base="https://ungoogled-software.github.io/ungoogled-chromium-binaries/feed.xml">
-    <title type="text">Windows 64-bit ARM: 89.0.4389.90-1</title>
-    <id>2021-03-23T14:57:30.424648+00:0089.0.4389.90-1Windows64-bitARM</id>
-    <updated>2021-03-23T14:57:30Z</updated>
-    <link href="https://ungoogled-software.github.io/ungoogled-chromium-binaries/releases/windows/arm64/89.0.4389.90-1" />
+    <title type="text">Windows 64-bit ARM: 89.0.4389.114-1</title>
+    <id>2021-04-04T15:30:31.691171+00:0089.0.4389.114-1Windows64-bitARM</id>
+    <updated>2021-04-04T15:30:31Z</updated>
+    <link href="https://ungoogled-software.github.io/ungoogled-chromium-binaries/releases/windows/arm64/89.0.4389.114-1" />
     <author>
       <name></name>
     </author>
