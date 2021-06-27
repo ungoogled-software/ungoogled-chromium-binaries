@@ -8,10 +8,10 @@
   <subtitle type="text">Feed of contributor-submitted binaries</subtitle>
   <generator>PyAtom</generator>
   <entry xml:base="https://ungoogled-software.github.io/ungoogled-chromium-binaries/feed.xml">
-    <title type="text">Linux AppImage 64-bit: 91.0.4472.101-1.1</title>
-    <id>2021-06-12T21:24:56.141067+00:0091.0.4472.101-1.1LinuxAppImage64-bit</id>
-    <updated>2021-06-12T21:24:56Z</updated>
-    <link href="https://ungoogled-software.github.io/ungoogled-chromium-binaries/releases/appimage/64bit/91.0.4472.101-1.1" />
+    <title type="text">Linux AppImage 64-bit: 91.0.4472.114-1.1</title>
+    <id>2021-06-20T15:43:10.185608+00:0091.0.4472.114-1.1LinuxAppImage64-bit</id>
+    <updated>2021-06-20T15:43:10Z</updated>
+    <link href="https://ungoogled-software.github.io/ungoogled-chromium-binaries/releases/appimage/64bit/91.0.4472.114-1.1" />
     <author>
       <name></name>
     </author>
@@ -50,10 +50,10 @@
 &lt;/p&gt;</content>
   </entry>
   <entry xml:base="https://ungoogled-software.github.io/ungoogled-chromium-binaries/feed.xml">
-    <title type="text">Portable Linux 64-bit: 91.0.4472.101-1.1</title>
-    <id>2021-06-12T21:22:59.187181+00:0091.0.4472.101-1.1PortableLinux64-bit</id>
-    <updated>2021-06-12T21:22:59Z</updated>
-    <link href="https://ungoogled-software.github.io/ungoogled-chromium-binaries/releases/linux_portable/64bit/91.0.4472.101-1.1" />
+    <title type="text">Portable Linux 64-bit: 91.0.4472.114-1.1</title>
+    <id>2021-06-20T15:43:38.438635+00:0091.0.4472.114-1.1PortableLinux64-bit</id>
+    <updated>2021-06-20T15:43:38Z</updated>
+    <link href="https://ungoogled-software.github.io/ungoogled-chromium-binaries/releases/linux_portable/64bit/91.0.4472.114-1.1" />
     <author>
       <name></name>
     </author>
