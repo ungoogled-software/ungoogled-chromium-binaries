@@ -78,10 +78,10 @@
 &lt;/p&gt;</content>
   </entry>
   <entry xml:base="https://ungoogled-software.github.io/ungoogled-chromium-binaries/feed.xml">
-    <title type="text">macOS 64-bit ARM ("Apple Silicon"): 88.0.4324.150-1.1</title>
-    <id>2021-02-08T17:21:35.123456+00:0088.0.4324.150-1.1macOS64-bitARM("AppleSilicon")</id>
-    <updated>2021-02-08T17:21:35Z</updated>
-    <link href="https://ungoogled-software.github.io/ungoogled-chromium-binaries/releases/macos/arm64/88.0.4324.150-1.1" />
+    <title type="text">macOS 64-bit ARM ("Apple Silicon"): 92.0.4515.131-1</title>
+    <id>2021-08-04T20:53:34.123456+00:0092.0.4515.131-1macOS64-bitARM("AppleSilicon")</id>
+    <updated>2021-08-04T20:53:34Z</updated>
+    <link href="https://ungoogled-software.github.io/ungoogled-chromium-binaries/releases/macos/arm64/92.0.4515.131-1" />
     <author>
       <name></name>
     </author>
@@ -92,10 +92,10 @@
 &lt;/p&gt;</content>
   </entry>
   <entry xml:base="https://ungoogled-software.github.io/ungoogled-chromium-binaries/feed.xml">
-    <title type="text">macOS 64-bit x86: 88.0.4324.150-1.1</title>
-    <id>2021-02-08T07:07:03.123456+00:0088.0.4324.150-1.1macOS64-bitx86</id>
-    <updated>2021-02-08T07:07:03Z</updated>
-    <link href="https://ungoogled-software.github.io/ungoogled-chromium-binaries/releases/macos/x86_64/88.0.4324.150-1.1" />
+    <title type="text">macOS 64-bit x86: 92.0.4515.131-1</title>
+    <id>2021-08-04T10:08:02.123456+00:0092.0.4515.131-1macOS64-bitx86</id>
+    <updated>2021-08-04T10:08:02Z</updated>
+    <link href="https://ungoogled-software.github.io/ungoogled-chromium-binaries/releases/macos/x86_64/92.0.4515.131-1" />
     <author>
       <name></name>
     </author>
