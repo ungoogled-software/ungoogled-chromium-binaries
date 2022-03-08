@@ -64,30 +64,16 @@
 &lt;/p&gt;</content>
   </entry>
   <entry xml:base="https://ungoogled-software.github.io/ungoogled-chromium-binaries/feed.xml">
-    <title type="text">Portable Linux: 98.0.4758.102-1.1</title>
-    <id>2022-02-22T19:48:05.115580+00:0098.0.4758.102-1.1PortableLinux</id>
+    <title type="text">Portable Linux 64-bit: 98.0.4758.102-1.1</title>
+    <id>2022-02-22T19:48:05.115580+00:0098.0.4758.102-1.1PortableLinux64-bit</id>
     <updated>2022-02-22T19:48:05Z</updated>
-    <link href="https://ungoogled-software.github.io/ungoogled-chromium-binaries/releases/linux_portable/98.0.4758.102-1.1" />
+    <link href="https://ungoogled-software.github.io/ungoogled-chromium-binaries/releases/linux_portable/64bit/98.0.4758.102-1.1" />
     <author>
       <name></name>
     </author>
     <content type="html">&lt;h2&gt;Release Summary&lt;/h2&gt;
 &lt;p&gt;
 &lt;div&gt;Author: clickot&lt;/div&gt;
-&lt;div&gt;Number of files: 1&lt;/div&gt;
-&lt;/p&gt;</content>
-  </entry>
-  <entry xml:base="https://ungoogled-software.github.io/ungoogled-chromium-binaries/feed.xml">
-    <title type="text">Portable Linux 64-bit: 95.0.4638.54-1.1</title>
-    <id>2021-10-25T16:03:45.779439+00:0095.0.4638.54-1.1PortableLinux64-bit</id>
-    <updated>2021-10-25T16:03:45Z</updated>
-    <link href="https://ungoogled-software.github.io/ungoogled-chromium-binaries/releases/linux_portable/64bit/95.0.4638.54-1.1" />
-    <author>
-      <name></name>
-    </author>
-    <content type="html">&lt;h2&gt;Release Summary&lt;/h2&gt;
-&lt;p&gt;
-&lt;div&gt;Author: mdedonno1337&lt;/div&gt;
 &lt;div&gt;Number of files: 1&lt;/div&gt;
 &lt;/p&gt;</content>
   </entry>
