@@ -333,8 +333,14 @@ def _write_version_page(version_node):
     else:
         publication_time_markdown = '*(unspecified)*'
     if version_node.github_author:
-        github_author_markdown = '[{author}](//github.com/{author}) ([view all releases from user](//github.com/{author}/{repository}/releases))'.format(
-            author=version_node.github_author, repository=_REPOSITORY_NAME)
+        if version_node.github_author == 'github-actions':
+            url = list(version_node.files.values())[0][0]
+            github_repo_url = re.sub(r'\/releases\/.+', '', url)
+
+            github_author_markdown = '[GitHub Actions]({url})'.format(url=github_repo_url + '/actions')
+        else:
+            github_author_markdown = '[{author}](//github.com/{author}) ([view all releases from user](//github.com/{author}/{repository}/releases))'.format(
+                author=version_node.github_author, repository=_REPOSITORY_NAME)
     else:
         github_author_markdown = '*(unspecified)*'
     note_markdown = version_node.note
