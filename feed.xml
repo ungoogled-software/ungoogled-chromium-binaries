@@ -64,10 +64,10 @@
 &lt;/p&gt;</content>
   </entry>
   <entry xml:base="https://ungoogled-software.github.io/ungoogled-chromium-binaries/feed.xml">
-    <title type="text">FreeBSD 64-bit: 110.0.5481.78-1</title>
-    <id>2023-02-13T15:09:03.253983+00:00110.0.5481.78-1FreeBSD64-bit</id>
-    <updated>2023-02-13T15:09:03Z</updated>
-    <link href="https://ungoogled-software.github.io/ungoogled-chromium-binaries/releases/freebsd/64bit/110.0.5481.78-1" />
+    <title type="text">FreeBSD 64-bit: 110.0.5481.100-1</title>
+    <id>2023-02-20T19:28:01.673243+00:00110.0.5481.100-1FreeBSD64-bit</id>
+    <updated>2023-02-20T19:28:01Z</updated>
+    <link href="https://ungoogled-software.github.io/ungoogled-chromium-binaries/releases/freebsd/64bit/110.0.5481.100-1" />
     <author>
       <name></name>
     </author>
