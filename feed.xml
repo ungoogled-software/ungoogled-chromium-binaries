@@ -176,10 +176,10 @@
 &lt;/p&gt;</content>
   </entry>
   <entry xml:base="https://ungoogled-software.github.io/ungoogled-chromium-binaries/feed.xml">
-    <title type="text">Windows 64-bit ARM: 110.0.5481.100-1.1</title>
-    <id>2023-02-24T18:02:33.456293+00:00110.0.5481.100-1.1Windows64-bitARM</id>
-    <updated>2023-02-24T18:02:33Z</updated>
-    <link href="https://ungoogled-software.github.io/ungoogled-chromium-binaries/releases/windows/arm64/110.0.5481.100-1.1" />
+    <title type="text">Windows 64-bit ARM: 111.0.5563.65-1.1</title>
+    <id>2023-03-11T04:22:33.365903+00:00111.0.5563.65-1.1Windows64-bitARM</id>
+    <updated>2023-03-11T04:22:33Z</updated>
+    <link href="https://ungoogled-software.github.io/ungoogled-chromium-binaries/releases/windows/arm64/111.0.5563.65-1.1" />
     <author>
       <name></name>
     </author>
