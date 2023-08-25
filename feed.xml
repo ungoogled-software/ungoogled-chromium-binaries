@@ -2,16 +2,16 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
   <title type="text">ungoogled-chromium Binary Downloads</title>
   <id>https://ungoogled-software.github.io/ungoogled-chromium-binaries/feed.xml</id>
-  <updated>2023-08-23T15:24:54Z</updated>
+  <updated>2023-08-25T18:28:00Z</updated>
   <link href="https://ungoogled-software.github.io/ungoogled-chromium-binaries/" />
   <link href="https://ungoogled-software.github.io/ungoogled-chromium-binaries/feed.xml" rel="self" />
   <subtitle type="text">Feed of contributor-submitted binaries</subtitle>
   <generator>PyAtom</generator>
   <entry xml:base="https://ungoogled-software.github.io/ungoogled-chromium-binaries/feed.xml">
-    <title type="text">Linux AppImage 64-bit: 116.0.5845.96-1</title>
-    <id>2023-08-16T12:15:26.565509+00:00116.0.5845.96-1LinuxAppImage64-bit</id>
-    <updated>2023-08-16T12:15:26Z</updated>
-    <link href="https://ungoogled-software.github.io/ungoogled-chromium-binaries/releases/appimage/64bit/116.0.5845.96-1" />
+    <title type="text">Linux AppImage 64-bit: 116.0.5845.110-1</title>
+    <id>2023-08-25T18:28:00.948987+00:00116.0.5845.110-1LinuxAppImage64-bit</id>
+    <updated>2023-08-25T18:28:00Z</updated>
+    <link href="https://ungoogled-software.github.io/ungoogled-chromium-binaries/releases/appimage/64bit/116.0.5845.110-1" />
     <author>
       <name></name>
     </author>
@@ -78,10 +78,10 @@
 &lt;/p&gt;</content>
   </entry>
   <entry xml:base="https://ungoogled-software.github.io/ungoogled-chromium-binaries/feed.xml">
-    <title type="text">Portable Linux 64-bit: 116.0.5845.96-1</title>
-    <id>2023-08-16T12:15:26.031640+00:00116.0.5845.96-1PortableLinux64-bit</id>
-    <updated>2023-08-16T12:15:26Z</updated>
-    <link href="https://ungoogled-software.github.io/ungoogled-chromium-binaries/releases/linux_portable/64bit/116.0.5845.96-1" />
+    <title type="text">Portable Linux 64-bit: 116.0.5845.110-1</title>
+    <id>2023-08-25T18:28:00.348315+00:00116.0.5845.110-1PortableLinux64-bit</id>
+    <updated>2023-08-25T18:28:00Z</updated>
+    <link href="https://ungoogled-software.github.io/ungoogled-chromium-binaries/releases/linux_portable/64bit/116.0.5845.110-1" />
     <author>
       <name></name>
     </author>
