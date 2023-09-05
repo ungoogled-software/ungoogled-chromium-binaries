@@ -8,10 +8,10 @@
   <subtitle type="text">Feed of contributor-submitted binaries</subtitle>
   <generator>PyAtom</generator>
   <entry xml:base="https://ungoogled-software.github.io/ungoogled-chromium-binaries/feed.xml">
-    <title type="text">Linux AppImage 64-bit: 116.0.5845.110-1</title>
-    <id>2023-08-25T18:28:00.948987+00:00116.0.5845.110-1LinuxAppImage64-bit</id>
-    <updated>2023-08-25T18:28:00Z</updated>
-    <link href="https://ungoogled-software.github.io/ungoogled-chromium-binaries/releases/appimage/64bit/116.0.5845.110-1" />
+    <title type="text">Linux AppImage 64-bit: 116.0.5845.140-1</title>
+    <id>2023-09-02T09:21:01.164578+00:00116.0.5845.140-1LinuxAppImage64-bit</id>
+    <updated>2023-09-02T09:21:01Z</updated>
+    <link href="https://ungoogled-software.github.io/ungoogled-chromium-binaries/releases/appimage/64bit/116.0.5845.140-1" />
     <author>
       <name></name>
     </author>
@@ -78,10 +78,10 @@
 &lt;/p&gt;</content>
   </entry>
   <entry xml:base="https://ungoogled-software.github.io/ungoogled-chromium-binaries/feed.xml">
-    <title type="text">Portable Linux 64-bit: 116.0.5845.110-1</title>
-    <id>2023-08-25T18:28:00.348315+00:00116.0.5845.110-1PortableLinux64-bit</id>
-    <updated>2023-08-25T18:28:00Z</updated>
-    <link href="https://ungoogled-software.github.io/ungoogled-chromium-binaries/releases/linux_portable/64bit/116.0.5845.110-1" />
+    <title type="text">Portable Linux 64-bit: 116.0.5845.140-1</title>
+    <id>2023-09-02T09:21:00.617946+00:00116.0.5845.140-1PortableLinux64-bit</id>
+    <updated>2023-09-02T09:21:00Z</updated>
+    <link href="https://ungoogled-software.github.io/ungoogled-chromium-binaries/releases/linux_portable/64bit/116.0.5845.140-1" />
     <author>
       <name></name>
     </author>
@@ -176,10 +176,10 @@
 &lt;/p&gt;</content>
   </entry>
   <entry xml:base="https://ungoogled-software.github.io/ungoogled-chromium-binaries/feed.xml">
-    <title type="text">Windows 64-bit ARM: 116.0.5845.97-1.1</title>
-    <id>2023-08-22T01:39:26.173626+00:00116.0.5845.97-1.1Windows64-bitARM</id>
-    <updated>2023-08-22T01:39:26Z</updated>
-    <link href="https://ungoogled-software.github.io/ungoogled-chromium-binaries/releases/windows/arm64/116.0.5845.97-1.1" />
+    <title type="text">Windows 64-bit ARM: 116.0.5845.111-1.1</title>
+    <id>2023-08-28T17:35:18.443048+00:00116.0.5845.111-1.1Windows64-bitARM</id>
+    <updated>2023-08-28T17:35:18Z</updated>
+    <link href="https://ungoogled-software.github.io/ungoogled-chromium-binaries/releases/windows/arm64/116.0.5845.111-1.1" />
     <author>
       <name></name>
     </author>
