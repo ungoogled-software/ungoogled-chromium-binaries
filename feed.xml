@@ -2,7 +2,7 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
   <title type="text">ungoogled-chromium Binary Downloads</title>
   <id>https://ungoogled-software.github.io/ungoogled-chromium-binaries/feed.xml</id>
-  <updated>2023-11-05T11:57:43Z</updated>
+  <updated>2023-11-06T15:27:27Z</updated>
   <link href="https://ungoogled-software.github.io/ungoogled-chromium-binaries/" />
   <link href="https://ungoogled-software.github.io/ungoogled-chromium-binaries/feed.xml" rel="self" />
   <subtitle type="text">Feed of contributor-submitted binaries</subtitle>
@@ -148,10 +148,10 @@
 &lt;/p&gt;</content>
   </entry>
   <entry xml:base="https://ungoogled-software.github.io/ungoogled-chromium-binaries/feed.xml">
-    <title type="text">Windows 32-bit: 118.0.5993.117-1</title>
-    <id>2023-11-01T19:45:30.454408+00:00118.0.5993.117-1Windows32-bit</id>
-    <updated>2023-11-01T19:45:30Z</updated>
-    <link href="https://ungoogled-software.github.io/ungoogled-chromium-binaries/releases/windows/32bit/118.0.5993.117-1" />
+    <title type="text">Windows 32-bit: 119.0.6045.105-1</title>
+    <id>2023-11-06T15:27:21.876582+00:00119.0.6045.105-1Windows32-bit</id>
+    <updated>2023-11-06T15:27:21Z</updated>
+    <link href="https://ungoogled-software.github.io/ungoogled-chromium-binaries/releases/windows/32bit/119.0.6045.105-1" />
     <author>
       <name></name>
     </author>
@@ -162,10 +162,10 @@
 &lt;/p&gt;</content>
   </entry>
   <entry xml:base="https://ungoogled-software.github.io/ungoogled-chromium-binaries/feed.xml">
-    <title type="text">Windows 64-bit: 118.0.5993.117-1</title>
-    <id>2023-11-01T19:45:35.580771+00:00118.0.5993.117-1Windows64-bit</id>
-    <updated>2023-11-01T19:45:35Z</updated>
-    <link href="https://ungoogled-software.github.io/ungoogled-chromium-binaries/releases/windows/64bit/118.0.5993.117-1" />
+    <title type="text">Windows 64-bit: 119.0.6045.105-1</title>
+    <id>2023-11-06T15:27:27.295047+00:00119.0.6045.105-1Windows64-bit</id>
+    <updated>2023-11-06T15:27:27Z</updated>
+    <link href="https://ungoogled-software.github.io/ungoogled-chromium-binaries/releases/windows/64bit/119.0.6045.105-1" />
     <author>
       <name></name>
     </author>
