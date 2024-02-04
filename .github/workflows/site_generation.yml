@@ -1,0 +1,25 @@
+name: Site generation
+
+on:
+  pull_request:
+
+jobs:
+  site_generation:
+    runs-on: ubuntu-latest
+    name: Site generation
+
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.9'
+          cache: 'pip'
+      - name: Run pip_install
+        run: pip install -r utilities/requirements.txt
+      - name: Run check_config
+        run: ./.cirrus_get_filelist.py | ./utilities/check_platform_ini.py -
+      - name: Run site_generator
+        run: |
+          git diff --cached --exit-code
+          git diff --exit-code
+          python3 utilities/site_generator.py
