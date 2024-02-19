@@ -3,8 +3,7 @@ name: Site generation
 on:
   workflow_dispatch:
   push:
-    branches:
-      - master
+  pull_request:
 
 jobs:
   site_generation:
@@ -37,7 +36,10 @@ jobs:
           path: "."
 
   site_deployment:
+    name: Site Deployment
     needs: site_generation
+
+    if: ${{ github.ref == 'refs/heads/master' }}
 
     permissions:
       pages: write
