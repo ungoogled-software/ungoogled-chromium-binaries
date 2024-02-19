@@ -22,20 +22,6 @@
 &lt;/p&gt;</content>
   </entry>
   <entry xml:base="https://ungoogled-software.github.io/ungoogled-chromium-binaries/feed.xml">
-    <title type="text">Artix Linux: 94.0.4606.71-1</title>
-    <id>2021-10-04T20:20:41.434143+00:0094.0.4606.71-1ArtixLinux</id>
-    <updated>2021-10-04T20:20:41Z</updated>
-    <link href="https://ungoogled-software.github.io/ungoogled-chromium-binaries/releases/artixlinux/94.0.4606.71-1" />
-    <author>
-      <name></name>
-    </author>
-    <content type="html">&lt;h2&gt;Release Summary&lt;/h2&gt;
-&lt;p&gt;
-&lt;div&gt;Author: deciseiv&lt;/div&gt;
-&lt;div&gt;Number of files: 1&lt;/div&gt;
-&lt;/p&gt;</content>
-  </entry>
-  <entry xml:base="https://ungoogled-software.github.io/ungoogled-chromium-binaries/feed.xml">
     <title type="text">Debian/Ubuntu (unportable) 64-bit: 100.0.4896.127-1</title>
     <id>2022-04-22T11:10:50.211617+00:00100.0.4896.127-1Debian/Ubuntu(unportable)64-bit</id>
     <updated>2022-04-22T11:10:50Z</updated>
@@ -117,20 +103,6 @@
 &lt;p&gt;
 &lt;div&gt;Author: kramred&lt;/div&gt;
 &lt;div&gt;Number of files: 1&lt;/div&gt;
-&lt;/p&gt;</content>
-  </entry>
-  <entry xml:base="https://ungoogled-software.github.io/ungoogled-chromium-binaries/feed.xml">
-    <title type="text">Manjaro: 97.0.4692.71-1</title>
-    <id>2022-01-08T17:37:23.209946+00:0097.0.4692.71-1Manjaro</id>
-    <updated>2022-01-08T17:37:23Z</updated>
-    <link href="https://ungoogled-software.github.io/ungoogled-chromium-binaries/releases/manjaro/97.0.4692.71-1" />
-    <author>
-      <name></name>
-    </author>
-    <content type="html">&lt;h2&gt;Release Summary&lt;/h2&gt;
-&lt;p&gt;
-&lt;div&gt;Author: zocker-160&lt;/div&gt;
-&lt;div&gt;Number of files: 2&lt;/div&gt;
 &lt;/p&gt;</content>
   </entry>
   <entry xml:base="https://ungoogled-software.github.io/ungoogled-chromium-binaries/feed.xml">
