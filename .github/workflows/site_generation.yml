@@ -23,3 +23,29 @@ jobs:
           git diff --cached --exit-code
           git diff --exit-code
           python3 utilities/site_generator.py
+      - name: Fix permissions
+        run: |
+          chmod -c -R +rX "." | while read line; do
+            echo "::warning title=Invalid file permissions automatically fixed::$line"
+          done
+      - name: Upload Pages artifact
+        uses: actions/upload-pages-artifact@v3
+        with:
+          path: "."
+
+  site_deployment:
+    needs: site_generation
+
+    permissions:
+      pages: write
+      id-token: write
+
+    environment:
+      name: github-pages
+      url: ${{ steps.site_deployment.outputs.page_url }}
+
+    runs-on: ubuntu-latest
+    steps:
+      - name: Deploy to GitHub Pages
+        id: deployment
+        uses: actions/deploy-pages@v4
