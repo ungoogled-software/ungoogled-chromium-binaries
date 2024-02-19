@@ -1,6 +1,6 @@
 # Downloads for ungoogled-chromium
 
-**IMPORTANT: These binaries are provided by anyone who are willing to build and submit them. Because these binaries are not necessarily [reproducible](https://reproducible-builds.org/), authenticity cannot be guaranteed. For your consideration, each download page lists the GitHub user that submitted those binaries.**
+**IMPORTANT: These binaries are provided by anyone who are willing to build and submit them, they are NOT official. Because these binaries generally not [reproducible](https://reproducible-builds.org/), authenticity cannot be guaranteed. For your consideration, each download page lists the GitHub user that submitted those binaries.**
 
 [**ungoogled-chromium's GitHub page**](//github.com/ungoogled-software/ungoogled-chromium)
 

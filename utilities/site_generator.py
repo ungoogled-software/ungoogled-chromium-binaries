@@ -17,7 +17,7 @@ import string
 import sys
 
 import markdown  # Python-Markdown: https://github.com/waylan/Python-Markdown
-from pkg_resources.extern.packaging.version import LegacyVersion as VersionSortKey
+from pkg_resources.extern.packaging.version import Version as VersionSortKey
 
 if __name__ == "__main__" and (__package__ is None or __package__ == ""):
 
@@ -116,10 +116,13 @@ class PlatformVersion:
 
 
 def _version_sorting_key(ini_path):
+    version_without_dashes = ini_path.stem.replace("-", ".")
+    version_without_characters = re.sub(r'[a-zA-Z]', '', version_without_dashes)
+
     """
     Returns a comparable object representing the sorting key for the INI path
     """
-    return VersionSortKey(ini_path.stem)
+    return VersionSortKey(version_without_characters)
 
 
 class PlatformDirectory:

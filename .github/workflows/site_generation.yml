@@ -1,0 +1,56 @@
+name: Site generation
+
+on:
+  workflow_dispatch:
+  push:
+  pull_request:
+
+jobs:
+  site_generation:
+    runs-on: ubuntu-latest
+    name: Site generation
+
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+          cache: 'pip'
+      - name: Run pip_install
+        run: pip install -r utilities/requirements.txt
+      - name: Run check_config
+        run: ./.cirrus_get_filelist.py | ./utilities/check_platform_ini.py -
+      - name: Run site_generator
+        run: |
+          git diff --cached --exit-code
+          git diff --exit-code
+          python3 utilities/site_generator.py
+      - name: Fix permissions
+        run: |
+          chmod -c -R +rX "." | while read line; do
+            echo "::warning title=Invalid file permissions automatically fixed::$line"
+          done
+      - name: Upload Pages artifact
+        uses: actions/upload-pages-artifact@v3
+        with:
+          path: "."
+
+  site_deployment:
+    name: Site Deployment
+    needs: site_generation
+
+    if: ${{ github.ref == 'refs/heads/master' }}
+
+    permissions:
+      pages: write
+      id-token: write
+
+    environment:
+      name: github-pages
+      url: ${{ steps.site_deployment.outputs.page_url }}
+
+    runs-on: ubuntu-latest
+    steps:
+      - name: Deploy to GitHub Pages
+        id: deployment
+        uses: actions/deploy-pages@v4

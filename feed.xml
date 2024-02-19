@@ -2,7 +2,7 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
   <title type="text">ungoogled-chromium Binary Downloads</title>
   <id>https://ungoogled-software.github.io/ungoogled-chromium-binaries/feed.xml</id>
-  <updated>2024-02-10T08:04:07Z</updated>
+  <updated>2024-02-16T06:15:54Z</updated>
   <link href="https://ungoogled-software.github.io/ungoogled-chromium-binaries/" />
   <link href="https://ungoogled-software.github.io/ungoogled-chromium-binaries/feed.xml" rel="self" />
   <subtitle type="text">Feed of contributor-submitted binaries</subtitle>
@@ -18,34 +18,6 @@
     <content type="html">&lt;h2&gt;Release Summary&lt;/h2&gt;
 &lt;p&gt;
 &lt;div&gt;Author: clickot&lt;/div&gt;
-&lt;div&gt;Number of files: 1&lt;/div&gt;
-&lt;/p&gt;</content>
-  </entry>
-  <entry xml:base="https://ungoogled-software.github.io/ungoogled-chromium-binaries/feed.xml">
-    <title type="text">Arch Linux: 96.0.4664.45-1</title>
-    <id>2021-11-20T12:31:05.761737+00:0096.0.4664.45-1ArchLinux</id>
-    <updated>2021-11-20T12:31:05Z</updated>
-    <link href="https://ungoogled-software.github.io/ungoogled-chromium-binaries/releases/archlinux/96.0.4664.45-1" />
-    <author>
-      <name></name>
-    </author>
-    <content type="html">&lt;h2&gt;Release Summary&lt;/h2&gt;
-&lt;p&gt;
-&lt;div&gt;Author: shaeinst&lt;/div&gt;
-&lt;div&gt;Number of files: 1&lt;/div&gt;
-&lt;/p&gt;</content>
-  </entry>
-  <entry xml:base="https://ungoogled-software.github.io/ungoogled-chromium-binaries/feed.xml">
-    <title type="text">Artix Linux: 94.0.4606.71-1</title>
-    <id>2021-10-04T20:20:41.434143+00:0094.0.4606.71-1ArtixLinux</id>
-    <updated>2021-10-04T20:20:41Z</updated>
-    <link href="https://ungoogled-software.github.io/ungoogled-chromium-binaries/releases/artixlinux/94.0.4606.71-1" />
-    <author>
-      <name></name>
-    </author>
-    <content type="html">&lt;h2&gt;Release Summary&lt;/h2&gt;
-&lt;p&gt;
-&lt;div&gt;Author: deciseiv&lt;/div&gt;
 &lt;div&gt;Number of files: 1&lt;/div&gt;
 &lt;/p&gt;</content>
   </entry>
@@ -134,24 +106,10 @@
 &lt;/p&gt;</content>
   </entry>
   <entry xml:base="https://ungoogled-software.github.io/ungoogled-chromium-binaries/feed.xml">
-    <title type="text">Manjaro: 97.0.4692.71-1</title>
-    <id>2022-01-08T17:37:23.209946+00:0097.0.4692.71-1Manjaro</id>
-    <updated>2022-01-08T17:37:23Z</updated>
-    <link href="https://ungoogled-software.github.io/ungoogled-chromium-binaries/releases/manjaro/97.0.4692.71-1" />
-    <author>
-      <name></name>
-    </author>
-    <content type="html">&lt;h2&gt;Release Summary&lt;/h2&gt;
-&lt;p&gt;
-&lt;div&gt;Author: zocker-160&lt;/div&gt;
-&lt;div&gt;Number of files: 2&lt;/div&gt;
-&lt;/p&gt;</content>
-  </entry>
-  <entry xml:base="https://ungoogled-software.github.io/ungoogled-chromium-binaries/feed.xml">
-    <title type="text">Windows 32-bit: 121.0.6167.160-1</title>
-    <id>2024-02-10T08:03:38.693732+00:00121.0.6167.160-1Windows32-bit</id>
-    <updated>2024-02-10T08:03:38Z</updated>
-    <link href="https://ungoogled-software.github.io/ungoogled-chromium-binaries/releases/windows/32bit/121.0.6167.160-1" />
+    <title type="text">Windows 32-bit: 121.0.6167.184-1</title>
+    <id>2024-02-16T06:15:49.372995+00:00121.0.6167.184-1Windows32-bit</id>
+    <updated>2024-02-16T06:15:49Z</updated>
+    <link href="https://ungoogled-software.github.io/ungoogled-chromium-binaries/releases/windows/32bit/121.0.6167.184-1" />
     <author>
       <name></name>
     </author>
@@ -162,10 +120,10 @@
 &lt;/p&gt;</content>
   </entry>
   <entry xml:base="https://ungoogled-software.github.io/ungoogled-chromium-binaries/feed.xml">
-    <title type="text">Windows 64-bit: 121.0.6167.160-1</title>
-    <id>2024-02-10T08:04:07.494060+00:00121.0.6167.160-1Windows64-bit</id>
-    <updated>2024-02-10T08:04:07Z</updated>
-    <link href="https://ungoogled-software.github.io/ungoogled-chromium-binaries/releases/windows/64bit/121.0.6167.160-1" />
+    <title type="text">Windows 64-bit: 121.0.6167.184-1</title>
+    <id>2024-02-16T06:15:54.832819+00:00121.0.6167.184-1Windows64-bit</id>
+    <updated>2024-02-16T06:15:54Z</updated>
+    <link href="https://ungoogled-software.github.io/ungoogled-chromium-binaries/releases/windows/64bit/121.0.6167.184-1" />
     <author>
       <name></name>
     </author>
