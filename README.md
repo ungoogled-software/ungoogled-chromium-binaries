@@ -6,7 +6,7 @@ Website for ungoogled-chromium contributor-submitted binaries (contributor binar
 
 [**Link to the website here**](//ungoogled-software.github.io/ungoogled-chromium-binaries/)
 
-[Atom feed for new binaries here](//raw.githubusercontent.com/ungoogled-software/ungoogled-chromium-binaries/master/feed.xml).
+[Atom feed for new binaries here](https://ungoogled-software.github.io/ungoogled-chromium-binaries/feed.xml).
 
 This website uses GitHub Pages on the `master` branch.
 
