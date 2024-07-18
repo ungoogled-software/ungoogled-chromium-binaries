@@ -17,7 +17,7 @@ import string
 import sys
 
 import markdown  # Python-Markdown: https://github.com/waylan/Python-Markdown
-from pkg_resources.extern.packaging.version import Version as VersionSortKey
+from packaging.version import Version as VersionSortKey
 
 if __name__ == "__main__" and (__package__ is None or __package__ == ""):
 
