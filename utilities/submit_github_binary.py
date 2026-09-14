@@ -72,7 +72,7 @@ publication_time = {iso_timestamp}
 github_author = {github_author}
 # Add a `note` field here for additional information. Markdown is supported'''
         ini_header = ini_header_template.format(
-            iso_timestamp=datetime.datetime.utcnow().isoformat(),
+            iso_timestamp=datetime.datetime.now(datetime.UTC).replace(tzinfo=None).isoformat(),
             github_author=cls._username)
         download_template = '''[{filename}]
 url = {url}
